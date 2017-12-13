@@ -52,6 +52,17 @@ void Wall()
     glVertex3i(538,181,0);
     glVertex3i(126,152,0);
     glEnd();
+
+    glColor3ub(153, 77, 0);
+    glPointSize(1.0);
+    glBegin(GL_QUADS);
+    glVertex3i(629,145,0);
+    glVertex3i(995,171,0);
+    glVertex3i(999,212,0);
+    glVertex3i(631,188,0);
+    glEnd();
+
+
 }
 void myDisplay()
 {
