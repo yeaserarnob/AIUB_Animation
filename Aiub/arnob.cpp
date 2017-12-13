@@ -1,5 +1,3 @@
-
-#include <stdio.h>
 #include <windows.h>
 #include <math.h>
 #include <stdlib.h>
@@ -20,51 +18,47 @@ void myInit (void)
 }
 
 void TopView(){
-
+//Ground
     glColor3ub(0, 169, 0);
     glPointSize(1.0);
     glBegin(GL_QUADS);
-    glVertex2i(0,0);
-    glVertex2i(1024,0);
-    glVertex2i(1024,175);
-    glVertex2i(0,99);       //Green Grass
+    glVertex3i(0,0,0);
+    glVertex3i(1024,0,0);
+    glVertex3i(1024,175,0);
+    glVertex3i(0,99,0);       //Green Grass
     glEnd();
 
-    glColor3ub(0, 169, 0);
+    //corner Side
+    /*glColor3ub(0, 169, 0);
     glPointSize(1.0);
     glBegin(GL_QUADS);
-    glVertex2i(0,99);
-    glVertex2i(0,196);
-    glVertex2i(126,196);
-    glVertex2i(106,105);
+    glVertex3i(0,99,0);
+    glVertex3i(0,196,0);
+    glVertex3i(126,196,0);
+    glVertex3i(106,105,0);
     glEnd();
-
-
-
-    glFlush ();
+    glFlush (); */
 }
 
 
-/*void SpecialKeys(int key, int x, int y)
+void Wall()
 {
-    switch (key)
-	{
-		case GLUT_KEY_LEFT:
-
-            glutPostRedisplay();
-			break;
-		case GLUT_KEY_RIGHT:
-          glutPostRedisplay();
-			break;
-	}
-} */
-
-
+    //wall
+    glColor3ub(153, 77, 0);
+    glPointSize(1.0);
+    glBegin(GL_QUADS);
+    glVertex3i(126,108,0);
+    glVertex3i(536,138,0);
+    glVertex3i(538,181,0);
+    glVertex3i(126,152,0);
+    glEnd();
+}
 void myDisplay()
 {
 
     glClear (GL_COLOR_BUFFER_BIT);
     TopView();
+    Wall();
     glFlush();
 }
 
@@ -77,8 +71,7 @@ int main(int argc, char** argv)
     glutInitWindowPosition (0, 0);
     glutCreateWindow ("AIUB");
     glutDisplayFunc(myDisplay);
-    //glutKeyboardFunc(keyboard);
-    //glutSpecialFunc(SpecialKeys);
+
     myInit ();
     srand(clock());
     glutMainLoop();
