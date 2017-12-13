@@ -22,7 +22,7 @@ void myInit (void)
 void TopView(){
 
     glColor3ub(0, 169, 0);
-    glPointSize(4.0);
+    glPointSize(1.0);
     glBegin(GL_QUADS);
     glVertex2i(0,0);
     glVertex2i(1024,0);
@@ -30,6 +30,14 @@ void TopView(){
     glVertex2i(0,99);       //Green Grass
     glEnd();
 
+    glColor3ub(0, 169, 0);
+    glPointSize(1.0);
+    glBegin(GL_QUADS);
+    glVertex2i(0,99);
+    glVertex2i(0,196);
+    glVertex2i(126,196);
+    glVertex2i(106,105);
+    glEnd();
 
 
 
