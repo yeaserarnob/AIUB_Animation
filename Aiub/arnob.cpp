@@ -19,9 +19,25 @@ void myInit (void)
 
 }
 
+void TopView(){
+
+    glColor3ub(0, 169, 0);
+    glPointSize(4.0);
+    glBegin(GL_QUADS);
+    glVertex2i(0,0);
+    glVertex2i(1024,0);
+    glVertex2i(1024,175);
+    glVertex2i(0,99);       //Green Grass
+    glEnd();
 
 
-void SpecialKeys(int key, int x, int y)
+
+
+    glFlush ();
+}
+
+
+/*void SpecialKeys(int key, int x, int y)
 {
     switch (key)
 	{
@@ -33,15 +49,14 @@ void SpecialKeys(int key, int x, int y)
           glutPostRedisplay();
 			break;
 	}
-}
-
+} */
 
 
 void myDisplay()
 {
 
     glClear (GL_COLOR_BUFFER_BIT);
-
+    TopView();
     glFlush();
 }
 
@@ -52,10 +67,10 @@ int main(int argc, char** argv)
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize (1024, 768);
     glutInitWindowPosition (0, 0);
-    glutCreateWindow ("AIUB);
+    glutCreateWindow ("AIUB");
     glutDisplayFunc(myDisplay);
     //glutKeyboardFunc(keyboard);
-    glutSpecialFunc(SpecialKeys);
+    //glutSpecialFunc(SpecialKeys);
     myInit ();
     srand(clock());
     glutMainLoop();
