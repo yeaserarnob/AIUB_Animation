@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-int height = 50, width = 50;
+int height = 100, width = 100;
 int window_width = 1024, window_height = 768;
 int mx = window_width / 2 - width / 2, my = 10;
 int r1x = rand() % window_width + 1, r1y = window_height;
@@ -68,6 +68,7 @@ void translate()
         r3y = rand() % (window_height * 2) + window_height;
     }
     glutPostRedisplay();
+    Sleep(50);
 }
 
 void myDisplay()
