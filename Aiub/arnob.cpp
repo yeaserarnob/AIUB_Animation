@@ -64,12 +64,19 @@ void Wall()
 
 
 }
+
+void Shade(){
+
+
+}
+
 void myDisplay()
 {
 
     glClear (GL_COLOR_BUFFER_BIT);
     TopView();
     Wall();
+    Shade();
     glFlush();
 }
 
