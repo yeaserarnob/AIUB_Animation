@@ -8,7 +8,10 @@
 #include <iostream>
 using namespace std;
 
-int translate=1;
+
+float translate_x = 0.0;
+float translate_y = 0.0;
+float translate_z = 0.0;
 
 void myInit (void)
 {
@@ -71,9 +74,16 @@ void TranslateRoadLine(int x,int y,int z)
 //ROad Line
 void RoadLine(int x,int y,int z)
 {
+    static float a=.0f;
+    a+=.002f;
+    if(a==49)
+    {
+        x=x-49;
+    }
+
     glColor3ub(255,255,255);
     glPushMatrix();
-    glTranslatef(10.0f,.0f,.0f);
+    glTranslatef(a,.0f,.0f);
     glBegin(GL_QUADS);
     glVertex3i(x,y,z);
     glVertex3i(x+50,y,z);
@@ -82,9 +92,8 @@ void RoadLine(int x,int y,int z)
     glEnd();
 
     glPopMatrix();
-    glFlush();
     glutPostRedisplay();
-    Sleep(5);
+    //Sleep(50);
     //TranslateRoadLine(x,y,z);
 }
 
@@ -209,64 +218,79 @@ void Windows(int x,int y,int z)
 }
 
 
+void reshape(int w,int h)
+{
+glViewport(0,0, (GLsizei)w,(GLsizei)h);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+}
+
 void myDisplay()
 {
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//glLoadIdentity();
 
-    glClear (GL_COLOR_BUFFER_BIT);
-    //Full Body
+    int roadlineX=-2048,windowsXf=-74,windowsXl=556,treeXf=-104,treeXl=528;
+
+   //Full Body
     Full();
-    //Road
-    Road();
     //Play Ground
     playGround();
     //Building
     FirstBuilding();
-    //Windows
-    Windows(16,280,0);
-    Windows(106,280,0);
-    Windows(196,280,0);
-    Windows(286,280,0);
-    Windows(646,280,0);
-    Windows(736,280,0);
-    Windows(826,280,0);
-    Windows(916,280,0);
-    Windows(1006,280,0);
-    //Tree
-    Tree(36,260,0);
-    Tree(196,260,0);
-    Tree(356,260,0);
-    Tree(676,260,0);
-    Tree(836,260,0);
-    Tree(996,260,0);
+    //First 4 Windows
+    for(int i=3;i>=0;i--)
+    {
+        windowsXf+=90;
+        Windows(windowsXf,280,0);
+    }
+    //Last 4 Windows
+    for(int i=4;i>=0;i--)
+    {
+        windowsXl+=90;
+        Windows(windowsXl,280,0);
+    }
+    //First 4 Tree
+    for(int i=3;i>=0;i--)
+    {
+        treeXf+=120;
+        Tree(treeXf,260,0);
+    }
+    for(int i=3;i>=0;i--)
+    {
+        treeXl+=120;
+        Tree(treeXl,260,0);
+    }
+
+    //TinShade
+
+    //Road
+    Road();
+    for(int i=33;i>0;i--)
+    {
+        roadlineX+=100;
+        RoadLine(roadlineX,55,0);
+    }
+
     glFlush();
 
-    RoadLine(10,55,0);
-    RoadLine(110,55,0);
-    RoadLine(210,55,0);
-    RoadLine(310,55,0);
-    RoadLine(410,55,0);
-    RoadLine(510,55,0);
-    RoadLine(610,55,0);
-    RoadLine(710,55,0);
-    RoadLine(810,55,0);
-    RoadLine(910,55,0);
-    RoadLine(1010,55,0);
-    //translate();
+//------- custom code ends -------
+//******************************************//
+glutSwapBuffers();
 }
 
 int main(int argc, char** argv)
 {
-
-    glutInit(&argc, argv);
-    glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize (1024, 768);
-    glutInitWindowPosition (0, 0);
-    glutCreateWindow ("AIUB");
-    glutDisplayFunc(myDisplay);
-    //glutKeyboardFunc(keyboard);
-    glutSpecialFunc(SpecialKeys);
-    myInit ();
-    srand(clock());
-    glutMainLoop();
-    return 0;
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (1024, 768);
+glutInitWindowPosition (0, 0);
+glutCreateWindow ("AIUB");
+myInit ();
+glutDisplayFunc(myDisplay);
+glutMainLoop();
+return 0;
 }
