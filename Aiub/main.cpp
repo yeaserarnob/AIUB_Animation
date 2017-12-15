@@ -174,6 +174,33 @@ void FirstBuilding()
     glVertex3i(396,400,0);
     glEnd();
 }
+//TinShade
+void TinShade()
+{
+    glColor3ub(233,235,238);
+    //Right One
+    glBegin(GL_QUADS);
+    glVertex3i(0,375,0);
+    glVertex3i(396,375,0);
+    glVertex3i(396,390,0);
+    glVertex3i(0,390,0);
+    glEnd();
+    //Left One
+    glBegin(GL_QUADS);
+    glVertex3i(628,375,0);
+    glVertex3i(1024,375,0);
+    glVertex3i(1024,390,0);
+    glVertex3i(628,390,0);
+    glEnd();
+    //Middle One
+    glBegin(GL_QUADS);
+    glVertex3i(386,400,0);
+    glVertex3i(638,400,0);
+    glVertex3i(638,420,0);
+    glVertex3i(386,420,0);
+    glEnd();
+}
+
 //Dynamic Windows Function
 void Windows(int x,int y,int z)
 {
@@ -237,6 +264,15 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
    //Full Body
     Full();
+
+    //Road
+    Road();
+    //RoadLine
+    for(int i=33;i>0;i--)
+    {
+        roadlineX+=100;
+        RoadLine(roadlineX,55,0);
+    }
     //Play Ground
     playGround();
     //Building
@@ -259,6 +295,7 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         treeXf+=120;
         Tree(treeXf,260,0);
     }
+    //Last 4 Tree
     for(int i=3;i>=0;i--)
     {
         treeXl+=120;
@@ -266,14 +303,7 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
     //TinShade
-
-    //Road
-    Road();
-    for(int i=33;i>0;i--)
-    {
-        roadlineX+=100;
-        RoadLine(roadlineX,55,0);
-    }
+    TinShade();
 
     glFlush();
 
