@@ -8,6 +8,7 @@
 #include <iostream>
 using namespace std;
 
+int translate=1;
 
 void myInit (void)
 {
@@ -46,7 +47,7 @@ void Full()
     glVertex3i(1024,768,0);
     glVertex3i(0,768,0);
 }
-
+//Road
 void Road()
 {
     glColor3ub(78,78,78);
@@ -56,6 +57,35 @@ void Road()
     glVertex3i(1024,120,0);
     glVertex3i(0,120,0);
     glEnd();
+}
+void TranslateRoadLine(int x,int y,int z)
+{
+    x-=50;
+    if(x<=0)
+    {
+        x=1050;
+    }
+    glutPostRedisplay();
+    Sleep(50);
+}
+//ROad Line
+void RoadLine(int x,int y,int z)
+{
+    glColor3ub(255,255,255);
+    glPushMatrix();
+    glTranslatef(10.0f,.0f,.0f);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+50,y,z);
+    glVertex3i(x+50,y+10,z);
+    glVertex3i(x,y+10,z);
+    glEnd();
+
+    glPopMatrix();
+    glFlush();
+    glutPostRedisplay();
+    Sleep(5);
+    //TranslateRoadLine(x,y,z);
 }
 
 void playGround()
@@ -210,6 +240,17 @@ void myDisplay()
     Tree(996,260,0);
     glFlush();
 
+    RoadLine(10,55,0);
+    RoadLine(110,55,0);
+    RoadLine(210,55,0);
+    RoadLine(310,55,0);
+    RoadLine(410,55,0);
+    RoadLine(510,55,0);
+    RoadLine(610,55,0);
+    RoadLine(710,55,0);
+    RoadLine(810,55,0);
+    RoadLine(910,55,0);
+    RoadLine(1010,55,0);
     //translate();
 }
 
