@@ -225,7 +225,7 @@
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -239,4 +239,21 @@
 1341006776 c:\program files (x86)\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
+
+1513187872 source:f:\graphic project\aiub_animation\aiub\main.cpp
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1513194569 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
 
