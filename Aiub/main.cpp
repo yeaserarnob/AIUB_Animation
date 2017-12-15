@@ -174,6 +174,19 @@ void FirstBuilding()
     glVertex3i(396,400,0);
     glEnd();
 }
+//Cross For Tin Shade;
+void Cross(int x,int y,int z)
+{
+    glColor3b(10,150,12);
+    glBegin(GL_QUADS);
+
+    glVertex3i(x,y,z);
+    glVertex3i(x+2,y,z);
+    glVertex3i(x+2,y+15,z);
+    glVertex3i(x,y+15,z);
+    glEnd();
+
+}
 //TinShade
 void TinShade()
 {
@@ -185,6 +198,7 @@ void TinShade()
     glVertex3i(396,390,0);
     glVertex3i(0,390,0);
     glEnd();
+
     //Left One
     glBegin(GL_QUADS);
     glVertex3i(628,375,0);
@@ -192,12 +206,52 @@ void TinShade()
     glVertex3i(1024,390,0);
     glVertex3i(628,390,0);
     glEnd();
+
     //Middle One
     glBegin(GL_QUADS);
     glVertex3i(386,400,0);
     glVertex3i(638,400,0);
     glVertex3i(638,420,0);
     glVertex3i(386,420,0);
+    glEnd();
+    //Green Top
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(0,390,0);
+    glVertex3i(396,390,0);
+    glVertex3i(396,395,0);
+    glVertex3i(0,395,0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(628,390,0);
+    glVertex3i(1024,390,0);
+    glVertex3i(1024,395,0);
+    glVertex3i(628,395,0);
+    glEnd();
+
+    //Left Top Side
+    glColor3ub(140,140,130);
+    glBegin(GL_QUADS);
+    glVertex3i(0,395,0);
+    glVertex3i(125,395,0);
+    glVertex3i(120,410,0);
+    glVertex3i(0,410,0);
+    glEnd();
+    //Cross
+    int CrossX=0;
+    for(int i=15;i>0;i--)
+    {
+        Cross(CrossX,395,0);
+        CrossX+=8;
+    }
+
+    glColor3b(10,150,12);
+    glBegin(GL_QUADS);
+    glVertex3i(0,400,0);
+    glVertex3i(125,400,0);
+    glVertex3i(122,403,0);
+    glVertex3i(0,403,0);
     glEnd();
 }
 
@@ -304,6 +358,7 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     //TinShade
     TinShade();
+    //
 
     glFlush();
 
