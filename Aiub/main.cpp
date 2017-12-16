@@ -250,8 +250,8 @@ void TinShade()
     glBegin(GL_QUADS);
     glVertex3i(0,400,0);
     glVertex3i(125,400,0);
-    glVertex3i(122,403,0);
-    glVertex3i(0,403,0);
+    glVertex3i(122,402,0);
+    glVertex3i(0,402,0);
     glEnd();
 }
 
