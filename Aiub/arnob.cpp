@@ -65,8 +65,15 @@ void Wall()
 
 }
 
-void Shade(){
-
+void Tin(){
+    glColor3ub(0, 0, 0);
+    glPointSize(1.0);
+    glBegin(GL_QUADS);
+    glVertex3i(126,151,0);
+    glVertex3i(538,181,0);
+    glVertex3i(538,192,0);
+    glVertex3i(126,162,0);
+    glEnd();
 
 }
 
@@ -76,7 +83,7 @@ void myDisplay()
     glClear (GL_COLOR_BUFFER_BIT);
     TopView();
     Wall();
-    Shade();
+    Tin();
     glFlush();
 }
 
