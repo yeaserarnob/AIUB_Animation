@@ -8,12 +8,10 @@
 #include <iostream>
 using namespace std;
 
-int height = 100, width = 100;
-int window_width = 1024, window_height = 768;
-int mx = window_width / 2 - width / 2, my = 10;
-int r1x = rand() % window_width + 1, r1y = window_height;
-int r2x = rand() % window_width + 1, r2y = window_height;
-int r3x  = rand() % window_width + 1, r3y = window_height;
+
+float translate_x = 0.0;
+float translate_y = 0.0;
+float translate_z = 0.0;
 
 void myInit (void)
 {
@@ -33,97 +31,351 @@ void SpecialKeys(int key, int x, int y)
     switch (key)
 	{
 		case GLUT_KEY_LEFT:
-            mx -= 10;
+//            mx -= 10;
             glutPostRedisplay();
 			break;
 		case GLUT_KEY_RIGHT:
-            mx += 10;
+//            mx += 10;
             glutPostRedisplay();
 			break;
 	}
 }
 
-
-
-
-void translate()
+void Full()
 {
-    r1y -= 10;
-    r2y -= 10;
-    r3y -= 10;
-    if(r1y <= 0)
+    glColor3ub(131,183,231);
+    glBegin(GL_QUADS);
+    glVertex3i(0,0,0);
+    glVertex3i(1024,0,0);
+    glVertex3i(1024,768,0);
+    glVertex3i(0,768,0);
+}
+//Road
+void Road()
+{
+    glColor3ub(78,78,78);
+    glBegin(GL_QUADS);
+    glVertex3i(0,0,0);
+    glVertex3i(1024,0,0);
+    glVertex3i(1024,120,0);
+    glVertex3i(0,120,0);
+    glEnd();
+}
+void TranslateRoadLine(int x,int y,int z)
+{
+    x-=50;
+    if(x<=0)
     {
-        r1x = rand() % window_width + 1;
-        r1y = rand() % (window_height * 2) + window_height;
-
-    }
-    if(r2y <= 0)
-    {
-        r2x = rand() % window_width + 1;
-        r2y = rand() % (window_height * 2) + window_height;
-    }
-    if(r3y <= 0)
-    {
-        r3x = rand() % window_width + 1;
-        r3y = rand() % (window_height * 2) + window_height;
+        x=1050;
     }
     glutPostRedisplay();
     Sleep(50);
 }
+//ROad Line
+void RoadLine(int x,int y,int z)
+{
+    static float a=.0f;
+    a+=.002f;
+    if(a==49)
+    {
+        x=x-49;
+    }
+
+    glColor3ub(255,255,255);
+    glPushMatrix();
+    glTranslatef(a,.0f,.0f);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+50,y,z);
+    glVertex3i(x+50,y+10,z);
+    glVertex3i(x,y+10,z);
+    glEnd();
+
+    glPopMatrix();
+    glutPostRedisplay();
+    //Sleep(50);
+    //TranslateRoadLine(x,y,z);
+}
+
+void playGround()
+{
+    //Grass
+    glColor3ub(42,95,17);
+    glBegin(GL_QUADS);
+    glVertex3i(0,120,0);
+    glVertex3i(1024,120,0);
+    glVertex3i(1024,260,0);
+    glVertex3i(0,260,0);
+    glEnd();
+
+    //Walkway
+    glColor3ub(140,88,54);
+    glBegin(GL_QUADS);
+    glVertex3i(0,250,0);
+    glVertex3i(1024,250,0);
+    glVertex3i(1024,260,0);
+    glVertex3i(0,260,0);
+
+}
+//Dynamic Tree Function
+void Tree(int x,int y,int z)
+{
+    //Timber
+    glColor3ub(90,70,60);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+7,y,z);
+    glVertex3i(x+7,y+20,z);
+    glVertex3i(x,y+20,z);
+    glEnd();
+
+    //Lower Leaf
+    glColor3ub(14,120,14);
+    glBegin(GL_TRIANGLES);
+    glVertex3i(x-15,y+19,z);
+    glVertex3i(x+22,y+19,z);
+    glVertex3f(x+3.5,y+45,z);
+    glEnd();
+
+    //Upper Leaf
+    glBegin(GL_TRIANGLES);
+    glVertex3i(x-10,y+35,z);
+    glVertex3i(x+17,y+35,z);
+    glVertex3f(x+3.5,y+60,z);
+    glEnd();
+}
+
+//Buildings
+void FirstBuilding()
+{
+    //Left Building
+    glColor3ub(56,46,47);
+    glBegin(GL_QUADS);
+    glVertex3i(0,260,0);
+    glVertex3i(396,260,0);
+    glVertex3i(396,375,0);
+    glVertex3i(0,375,0);
+    glEnd();
+
+    //Right Building
+    glBegin(GL_QUADS);
+    glVertex3i(628,260,0);
+    glVertex3i(1024,260,0);
+    glVertex3i(1024,375,0);
+    glVertex3i(628,375,0);
+    glEnd();
+
+    //Middle
+    glColor3ub(48,49,54);
+    glBegin(GL_QUADS);
+    glVertex3i(396,260,0);
+    glVertex3i(628,260,0);
+    glVertex3i(628,400,0);
+    glVertex3i(396,400,0);
+    glEnd();
+}
+//Cross For Tin Shade;
+void Cross(int x,int y,int z)
+{
+    glColor3b(10,150,12);
+    glBegin(GL_QUADS);
+
+    glVertex3i(x,y,z);
+    glVertex3i(x+2,y,z);
+    glVertex3i(x+2,y+15,z);
+    glVertex3i(x,y+15,z);
+    glEnd();
+
+}
+//TinShade
+void TinShade()
+{
+    glColor3ub(233,235,238);
+    //Right One
+    glBegin(GL_QUADS);
+    glVertex3i(0,375,0);
+    glVertex3i(396,375,0);
+    glVertex3i(396,390,0);
+    glVertex3i(0,390,0);
+    glEnd();
+
+    //Left One
+    glBegin(GL_QUADS);
+    glVertex3i(628,375,0);
+    glVertex3i(1024,375,0);
+    glVertex3i(1024,390,0);
+    glVertex3i(628,390,0);
+    glEnd();
+
+    //Middle One
+    glBegin(GL_QUADS);
+    glVertex3i(386,400,0);
+    glVertex3i(638,400,0);
+    glVertex3i(638,420,0);
+    glVertex3i(386,420,0);
+    glEnd();
+    //Green Top
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(0,390,0);
+    glVertex3i(396,390,0);
+    glVertex3i(396,395,0);
+    glVertex3i(0,395,0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(628,390,0);
+    glVertex3i(1024,390,0);
+    glVertex3i(1024,395,0);
+    glVertex3i(628,395,0);
+    glEnd();
+
+    //Left Top Side
+    glColor3ub(140,140,130);
+    glBegin(GL_QUADS);
+    glVertex3i(0,395,0);
+    glVertex3i(125,395,0);
+    glVertex3i(120,410,0);
+    glVertex3i(0,410,0);
+    glEnd();
+    //Cross
+    int CrossX=0;
+    for(int i=15;i>0;i--)
+    {
+        Cross(CrossX,395,0);
+        CrossX+=8;
+    }
+
+    glColor3b(10,150,12);
+    glBegin(GL_QUADS);
+    glVertex3i(0,400,0);
+    glVertex3i(125,400,0);
+    glVertex3i(122,403,0);
+    glVertex3i(0,403,0);
+    glEnd();
+}
+
+//Dynamic Windows Function
+void Windows(int x,int y,int z)
+{
+    glColor3ub(255,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+60,y,z);
+    glVertex3i(x+60,y+70,z);
+    glVertex3i(x,y+70,z);
+    glEnd();
+
+    //Black
+
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(x+7,y+7,z);
+    glVertex3i(x+27,y+7,z);
+    glVertex3i(x+27,y+33,z);
+    glVertex3i(x+7,y+33,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+33,y+7,z);
+    glVertex3i(x+54,y+7,z);
+    glVertex3i(x+54,y+33,z);
+    glVertex3i(x+33,y+33,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+7,y+40,z);
+    glVertex3i(x+27,y+40,z);
+    glVertex3i(x+27,y+63,z);
+    glVertex3i(x+7,y+63,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+33,y+40,z);
+    glVertex3i(x+54,y+40,z);
+    glVertex3i(x+54,y+63,z);
+    glVertex3i(x+33,y+63,z);
+    glEnd();
+}
+
+
+void reshape(int w,int h)
+{
+glViewport(0,0, (GLsizei)w,(GLsizei)h);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+}
 
 void myDisplay()
 {
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//glLoadIdentity();
 
-    glClear (GL_COLOR_BUFFER_BIT);
-//    window_height = GLUT_WINDOW_HEIGHT;
-//    window_width = GLUT_WINDOW_WIDTH;
+    int roadlineX=-2048,windowsXf=-74,windowsXl=556,treeXf=-104,treeXl=528;
 
-    glColor3ub(200,150,225);
-    glBegin(GL_QUADS);
-    glVertex2i(mx, my);
-    glVertex2i(mx + width, my);
-    glVertex2i(mx + width, my + height);
-    glVertex2i(mx, my + height);
-    glEnd();
+   //Full Body
+    Full();
 
-    glColor3ub(255,0,100);
-    glBegin(GL_QUADS);
-    glVertex2i(r1x, r1y);
-    glVertex2i(r1x + width, r1y);
-    glVertex2i(r1x + width, r1y + height);
-    glVertex2i(r1x, r1y + height);
-    glEnd();
-    glBegin(GL_QUADS);
-    glVertex2i(r2x, r2y);
-    glVertex2i(r2x + width, r2y);
-    glVertex2i(r2x + width, r2y + height);
-    glVertex2i(r2x, r2y + height);
-    glEnd();
-    glBegin(GL_QUADS);
-    glVertex2i(r3x, r3y);
-    glVertex2i(r3x + width, r3y);
-    glVertex2i(r3x + width, r3y + height);
-    glVertex2i(r3x, r3y + height);
-    glEnd();
+    //Road
+    Road();
+    //RoadLine
+    for(int i=33;i>0;i--)
+    {
+        roadlineX+=100;
+        RoadLine(roadlineX,55,0);
+    }
+    //Play Ground
+    playGround();
+    //Building
+    FirstBuilding();
+    //First 4 Windows
+    for(int i=3;i>=0;i--)
+    {
+        windowsXf+=90;
+        Windows(windowsXf,280,0);
+    }
+    //Last 4 Windows
+    for(int i=4;i>=0;i--)
+    {
+        windowsXl+=90;
+        Windows(windowsXl,280,0);
+    }
+    //First 4 Tree
+    for(int i=3;i>=0;i--)
+    {
+        treeXf+=120;
+        Tree(treeXf,260,0);
+    }
+    //Last 4 Tree
+    for(int i=3;i>=0;i--)
+    {
+        treeXl+=120;
+        Tree(treeXl,260,0);
+    }
+
+    //TinShade
+    TinShade();
+    //
 
     glFlush();
 
-    translate();
+//------- custom code ends -------
+//******************************************//
+glutSwapBuffers();
 }
 
 int main(int argc, char** argv)
 {
-
-    glutInit(&argc, argv);
-    glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize (1024, 768);
-    glutInitWindowPosition (0, 0);
-    glutCreateWindow ("Translate");
-    glutDisplayFunc(myDisplay);
-    //glutKeyboardFunc(keyboard);
-    glutSpecialFunc(SpecialKeys);
-    myInit ();
-    srand(clock());
-    glutMainLoop();
-    return 0;
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (1024, 768);
+glutInitWindowPosition (0, 0);
+glutCreateWindow ("AIUB");
+myInit ();
+glutDisplayFunc(myDisplay);
+glutMainLoop();
+return 0;
 }
