@@ -84,6 +84,26 @@ void TinBar(){
     glVertex3i(631,196,0);
     glEnd();
 
+    glColor3ub(0, 0, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(529,195,0);
+    glVertex3i(638,202,0);
+    glVertex3i(638,215,0);
+    glVertex3i(532,208,0);
+    glEnd();
+
+    glColor3ub(0, 0, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(529,195,0);
+    glVertex3i(532,208,0);
+    glVertex3i(510,308,0);
+    glVertex3i(508,297,0);
+    glEnd();
+
+
+
 }
 
 void Tin(){
@@ -105,11 +125,42 @@ void Tin(){
     glVertex3i(631,196,0);
     glVertex3i(1003,222,0);
     glVertex3i(956,315,0);
-    glVertex3i(608,299,0);
+    glVertex3i(606,299,0);
     glEnd();
 
 }
 
+void UpTin(){
+
+    glColor3ub(0, 0, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(529,195,0);
+    glVertex3i(638,202,0);
+    glVertex3i(638,215,0);
+    glVertex3i(532,208,0);
+    glEnd();
+
+    glColor3ub(0, 0, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(529,195,0);
+    glVertex3i(532,208,0);
+    glVertex3i(510,308,0);
+    glVertex3i(508,297,0);
+    glEnd();
+
+
+    glColor3ub(0, 0,0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(529,195,0);
+    glVertex3i(638,215,0);
+    glVertex3i(601,312,0);
+    glVertex3i(510,308,0);
+    glEnd();
+
+}
 
 void myDisplay()
 {
@@ -119,6 +170,7 @@ void myDisplay()
     Wall();
     TinBar();
     Tin();
+    UpTin();
     glFlush();
 }
 
