@@ -69,11 +69,22 @@ void Tin(){
     glColor3ub(0, 0, 0);
     glPointSize(1.0);
     glBegin(GL_QUADS);
-    glVertex3i(126,151,0);
+    glVertex3i(123,151,0);
     glVertex3i(538,181,0);
     glVertex3i(538,192,0);
-    glVertex3i(126,162,0);
+    glVertex3i(123,162,0);
     glEnd();
+
+    glColor3ub(0, 0, 0);
+    glPointSize(1.0);
+    glBegin(GL_QUADS);
+    glVertex3i(631,187,0);
+    glVertex3i(1003,212,0);
+    glVertex3i(1003,222,0);
+    glVertex3i(631,196,0);
+    glEnd();
+
+
 
 }
 
