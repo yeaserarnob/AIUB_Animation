@@ -144,10 +144,53 @@ void Tree(int x,int y,int z)
     glVertex3f(x+3.5,y+60,z);
     glEnd();
 }
+//Dynamic Windows Function
+void Windows(int x,int y,int z)
+{
+    glColor3ub(255,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+60,y,z);
+    glVertex3i(x+60,y+70,z);
+    glVertex3i(x,y+70,z);
+    glEnd();
 
+    //Black
+
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(x+7,y+7,z);
+    glVertex3i(x+27,y+7,z);
+    glVertex3i(x+27,y+33,z);
+    glVertex3i(x+7,y+33,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+33,y+7,z);
+    glVertex3i(x+54,y+7,z);
+    glVertex3i(x+54,y+33,z);
+    glVertex3i(x+33,y+33,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+7,y+40,z);
+    glVertex3i(x+27,y+40,z);
+    glVertex3i(x+27,y+63,z);
+    glVertex3i(x+7,y+63,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+33,y+40,z);
+    glVertex3i(x+54,y+40,z);
+    glVertex3i(x+54,y+63,z);
+    glVertex3i(x+33,y+63,z);
+    glEnd();
+}
 //Buildings
 void FirstBuilding()
 {
+   int windowsXf=-74,windowsXl=556;
+
     //Left Building
     glColor3ub(56,46,47);
     glBegin(GL_QUADS);
@@ -173,6 +216,19 @@ void FirstBuilding()
     glVertex3i(628,400,0);
     glVertex3i(396,400,0);
     glEnd();
+
+    //First 4 Windows
+    for(int i=3;i>=0;i--)
+    {
+        windowsXf+=90;
+        Windows(windowsXf,280,0);
+    }
+    //Last 4 Windows
+    for(int i=4;i>=0;i--)
+    {
+        windowsXl+=90;
+        Windows(windowsXl,280,0);
+    }
 }
 //Cross For Tin Shade;
 void Cross(int x,int y,int z)
@@ -255,49 +311,160 @@ void TinShade()
     glEnd();
 }
 
-//Dynamic Windows Function
-void Windows(int x,int y,int z)
+void Pillar(int x,int y,int z)
 {
-    glColor3ub(255,255,255);
+    glColor3ub(166,166,166);
     glBegin(GL_QUADS);
     glVertex3i(x,y,z);
-    glVertex3i(x+60,y,z);
-    glVertex3i(x+60,y+70,z);
-    glVertex3i(x,y+70,z);
-    glEnd();
-
-    //Black
-
-    glColor3ub(0,0,0);
-    glBegin(GL_QUADS);
-    glVertex3i(x+7,y+7,z);
-    glVertex3i(x+27,y+7,z);
-    glVertex3i(x+27,y+33,z);
-    glVertex3i(x+7,y+33,z);
+    glVertex3i(x+3,y,z);
+    glVertex3i(x+3,y+45,z);
+    glVertex3i(x,y+45,z);
     glEnd();
 
     glBegin(GL_QUADS);
-    glVertex3i(x+33,y+7,z);
-    glVertex3i(x+54,y+7,z);
-    glVertex3i(x+54,y+33,z);
-    glVertex3i(x+33,y+33,z);
-    glEnd();
-
-    glBegin(GL_QUADS);
-    glVertex3i(x+7,y+40,z);
-    glVertex3i(x+27,y+40,z);
-    glVertex3i(x+27,y+63,z);
-    glVertex3i(x+7,y+63,z);
-    glEnd();
-
-    glBegin(GL_QUADS);
-    glVertex3i(x+33,y+40,z);
-    glVertex3i(x+54,y+40,z);
-    glVertex3i(x+54,y+63,z);
-    glVertex3i(x+33,y+63,z);
+    glVertex3i(x+15,y,z);
+    glVertex3i(x+18,y,z);
+    glVertex3i(x+18,y+40,z);
+    glVertex3i(x+15,y+40,z);
     glEnd();
 }
 
+void FrontTop()
+{
+    int pillarX=0;
+    //Back
+    //glColor4ub(229,229,229,250);
+    glColor3ub(147,154,174);
+    glBegin(GL_QUADS);
+    glVertex3i(3,395,0);
+    glVertex3i(120,395,0);
+    glVertex3i(120,440,0);
+    glVertex3i(3,442,0);
+    glEnd();
+
+    glColor3ub(147,154,174);
+    glBegin(GL_QUADS);
+    glVertex3i(120,395,0);
+    glVertex3i(220,395,0);
+    glVertex3i(220,410,0);
+    glVertex3i(120,410,0);
+    glEnd();
+
+    //Green Tin Shade
+    glColor3ub(83,186,60);
+    glBegin(GL_QUADS);
+    glVertex3i(0,440,0);
+    glVertex3i(200,440,0);
+    glVertex3i(210,455,0);
+    glVertex3i(10,455,0);
+    glEnd();
+    //Front Triangle
+    glColor3ub(48,56,67);
+    glBegin(GL_TRIANGLES);
+    glVertex3i(190,435,0);
+    glVertex3i(220,435,0);
+    glVertex3i(210,455,0);
+    glEnd();
+    //Shadow
+    glBegin(GL_QUADS);
+    glVertex3i(0,436,0);
+    glVertex3i(200,435,0);
+    glVertex3i(210,440,0);
+    glVertex3i(0,440,0);
+    glEnd();
+    //Pillar
+    for(int i=6;i>=0;i--)
+    {
+
+        Pillar(pillarX,395,0);
+        pillarX+=32;
+    }
+
+//    glBegin(GL_QUADS);
+//    glVertex3i(208,395,0);
+//    glVertex3i(211,395,0);
+//    glVertex3i(211,454,0);
+//    glVertex3i(208,454,0);
+//    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(217,395,0);
+    glVertex3i(220,395,0);
+    glVertex3i(220,435,0);
+    glVertex3i(217,435,0);
+    glEnd();
+}
+
+//Middle Top Corridor Functions
+void VerticalLine(int x,int y,int z)
+{
+    for(int i=10;i>=0;i--)
+    {
+        glColor3ub(166,166,166);
+        glBegin(GL_QUADS);
+        glVertex3i(x,y,0);
+        glVertex3i(x+2,y,0);
+        glVertex3i(x+2,y+35,0);
+        glVertex3i(x,y+35,0);
+        glEnd();
+        x+=10;
+    }
+}
+
+void HorizontalLine(int x,int y,int z)
+{
+    for(int i=3;i>=0;i--)
+    {
+        glColor3ub(166,166,166);
+        glBegin(GL_QUADS);
+        glVertex3i(x,y,0);
+        glVertex3i(x+105,y,0);
+        glVertex3i(x+105,y+2,0);
+        glVertex3i(x,y+2,0);
+        glEnd();
+        y+=10;
+    }
+}
+//Middle top Corridor Main Function
+void MiddleTop()
+{
+    //Top
+    glColor3ub(205,205,205);
+    glBegin(GL_QUADS);
+    glVertex3i(300,430,0);
+    glVertex3i(405,430,0);
+    glVertex3i(405,440,0);
+    glVertex3i(300,440,0);
+    glEnd();
+
+    //Pillar
+    glColor3ub(166,166,166);
+    glBegin(GL_QUADS);
+    glVertex3i(300,395,0);
+    glVertex3i(303,395,0);
+    glVertex3i(303,430,0);
+    glVertex3i(300,430,0);
+    glEnd();
+
+    glColor3ub(166,166,166);
+    glBegin(GL_QUADS);
+    glVertex3i(402,420,0);
+    glVertex3i(405,420,0);
+    glVertex3i(405,430,0);
+    glVertex3i(402,430,0);
+    glEnd();
+    //Line
+    VerticalLine(300,395,0);
+    HorizontalLine(300,395,0);
+    //Shadow
+    glColor3ub(5,5,5);
+    glBegin(GL_QUADS);
+    glVertex3i(300,427,0);
+    glVertex3i(405,427,0);
+    glVertex3i(405,431,0);
+    glVertex3i(300,431,0);
+    glEnd();
+}
 
 void reshape(int w,int h)
 {
@@ -312,9 +479,10 @@ glLoadIdentity();
 void myDisplay()
 {
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//glLoadIdentity();
 
-    int roadlineX=-2048,windowsXf=-74,windowsXl=556,treeXf=-104,treeXl=528;
+    int roadlineX=-2048;
+    int treeXf=-104;
+    int treeXl=528;
 
    //Full Body
     Full();
@@ -329,20 +497,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
     //Play Ground
     playGround();
+
+    //Middle Top Corridor
+    MiddleTop();
+
     //Building
     FirstBuilding();
-    //First 4 Windows
-    for(int i=3;i>=0;i--)
-    {
-        windowsXf+=90;
-        Windows(windowsXf,280,0);
-    }
-    //Last 4 Windows
-    for(int i=4;i>=0;i--)
-    {
-        windowsXl+=90;
-        Windows(windowsXl,280,0);
-    }
+
     //First 4 Tree
     for(int i=3;i>=0;i--)
     {
@@ -355,15 +516,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         treeXl+=120;
         Tree(treeXl,260,0);
     }
+    //Front top corridor
+    FrontTop();
 
     //TinShade
     TinShade();
-    //
 
     glFlush();
-
-//------- custom code ends -------
-//******************************************//
 glutSwapBuffers();
 }
 
@@ -374,7 +533,7 @@ glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 glutInitWindowSize (1024, 768);
 glutInitWindowPosition (0, 0);
 glutCreateWindow ("AIUB");
-myInit ();
+myInit();
 glutDisplayFunc(myDisplay);
 glutMainLoop();
 return 0;
