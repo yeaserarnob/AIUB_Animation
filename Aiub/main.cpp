@@ -389,6 +389,80 @@ void FrontTop()
     glEnd();
 }
 
+//HEAD
+//========
+//Middle Top Corridor Functions
+void VerticalLine(int x,int y,int z)
+{
+    for(int i=10;i>=0;i--)
+    {
+        glColor3ub(166,166,166);
+        glBegin(GL_QUADS);
+        glVertex3i(x,y,0);
+        glVertex3i(x+2,y,0);
+        glVertex3i(x+2,y+35,0);
+        glVertex3i(x,y+35,0);
+        glEnd();
+        x+=10;
+    }
+}
+
+void HorizontalLine(int x,int y,int z)
+{
+    for(int i=3;i>=0;i--)
+    {
+        glColor3ub(166,166,166);
+        glBegin(GL_QUADS);
+        glVertex3i(x,y,0);
+        glVertex3i(x+105,y,0);
+        glVertex3i(x+105,y+2,0);
+        glVertex3i(x,y+2,0);
+        glEnd();
+        y+=10;
+    }
+}
+//Middle top Corridor Main Function
+void MiddleTop()
+{
+    //Top
+    glColor3ub(205,205,205);
+    glBegin(GL_QUADS);
+    glVertex3i(300,430,0);
+    glVertex3i(405,430,0);
+    glVertex3i(405,440,0);
+    glVertex3i(300,440,0);
+    glEnd();
+
+    //Pillar
+    glColor3ub(166,166,166);
+    glBegin(GL_QUADS);
+    glVertex3i(300,395,0);
+    glVertex3i(303,395,0);
+    glVertex3i(303,430,0);
+    glVertex3i(300,430,0);
+    glEnd();
+
+    glColor3ub(166,166,166);
+    glBegin(GL_QUADS);
+    glVertex3i(402,420,0);
+    glVertex3i(405,420,0);
+    glVertex3i(405,430,0);
+    glVertex3i(402,430,0);
+    glEnd();
+    //Line
+    VerticalLine(300,395,0);
+    HorizontalLine(300,395,0);
+    //Shadow
+    glColor3ub(5,5,5);
+    glBegin(GL_QUADS);
+    glVertex3i(300,427,0);
+    glVertex3i(405,427,0);
+    glVertex3i(405,431,0);
+    glVertex3i(300,431,0);
+    glEnd();
+}
+
+//312070e231af20f6f8589e992d87108c3139db38
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -402,9 +476,10 @@ glLoadIdentity();
 void myDisplay()
 {
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//glLoadIdentity();
 
-    int roadlineX=-2048,treeXf=-104,treeXl=528;
+    int roadlineX=-2048;
+    int treeXf=-104;
+    int treeXl=528;
 
    //Full Body
     Full();
@@ -419,6 +494,10 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
     //Play Ground
     playGround();
+
+    //Middle Top Corridor
+    MiddleTop();
+
     //Building
     FirstBuilding();
 
@@ -434,17 +513,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         treeXl+=120;
         Tree(treeXl,260,0);
     }
-
-
-    //Front top
+    //Front top corridor
     FrontTop();
+
     //TinShade
     TinShade();
 
     glFlush();
-
-//------- custom code ends -------
-//******************************************//
 glutSwapBuffers();
 }
 
@@ -455,7 +530,7 @@ glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 glutInitWindowSize (1024, 768);
 glutInitWindowPosition (0, 0);
 glutCreateWindow ("AIUB");
-myInit ();
+myInit();
 glutDisplayFunc(myDisplay);
 glutMainLoop();
 return 0;
