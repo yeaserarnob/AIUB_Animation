@@ -310,8 +310,47 @@ void TinShade()
     glVertex3i(0,402,0);
     glEnd();
 }
+
+void Pillar(int x,int y,int z)
+{
+    glColor3ub(166,166,166);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+3,y,z);
+    glVertex3i(x+3,y+45,z);
+    glVertex3i(x,y+45,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(x+15,y,z);
+    glVertex3i(x+18,y,z);
+    glVertex3i(x+18,y+40,z);
+    glVertex3i(x+15,y+40,z);
+    glEnd();
+}
+
 void FrontTop()
 {
+    int pillarX=0;
+    //Back
+    //glColor4ub(229,229,229,250);
+    glColor3ub(147,154,174);
+    glBegin(GL_QUADS);
+    glVertex3i(3,395,0);
+    glVertex3i(120,395,0);
+    glVertex3i(120,440,0);
+    glVertex3i(3,442,0);
+    glEnd();
+
+    glColor3ub(147,154,174);
+    glBegin(GL_QUADS);
+    glVertex3i(120,395,0);
+    glVertex3i(220,395,0);
+    glVertex3i(220,410,0);
+    glVertex3i(120,410,0);
+    glEnd();
+
+    //Green Tin Shade
     glColor3ub(83,186,60);
     glBegin(GL_QUADS);
     glVertex3i(0,440,0);
@@ -319,19 +358,40 @@ void FrontTop()
     glVertex3i(210,455,0);
     glVertex3i(10,455,0);
     glEnd();
-
+    //Front Triangle
     glColor3ub(48,56,67);
     glBegin(GL_TRIANGLES);
     glVertex3i(190,435,0);
     glVertex3i(220,435,0);
     glVertex3i(210,455,0);
     glEnd();
-
+    //Shadow
     glBegin(GL_QUADS);
     glVertex3i(0,436,0);
     glVertex3i(200,435,0);
     glVertex3i(210,440,0);
     glVertex3i(0,440,0);
+    glEnd();
+    //Pillar
+    for(int i=6;i>=0;i--)
+    {
+
+        Pillar(pillarX,395,0);
+        pillarX+=32;
+    }
+
+//    glBegin(GL_QUADS);
+//    glVertex3i(208,395,0);
+//    glVertex3i(211,395,0);
+//    glVertex3i(211,454,0);
+//    glVertex3i(208,454,0);
+//    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(217,395,0);
+    glVertex3i(220,395,0);
+    glVertex3i(220,435,0);
+    glVertex3i(217,435,0);
     glEnd();
 }
 
@@ -383,10 +443,11 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         Tree(treeXl,260,0);
     }
 
-    //TinShade
-    TinShade();
+
     //Front top
     FrontTop();
+    //TinShade
+    TinShade();
 
     glFlush();
 
