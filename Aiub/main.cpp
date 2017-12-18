@@ -8,7 +8,6 @@
 #include <iostream>
 using namespace std;
 
-
 float translate_x = 0.0;
 float translate_y = 0.0;
 float translate_z = 0.0;
@@ -21,10 +20,7 @@ void myInit (void)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
-
 }
-
-
 
 void SpecialKeys(int key, int x, int y)
 {
@@ -80,7 +76,6 @@ void RoadLine(int x,int y,int z)
     {
         x=x-49;
     }
-
     glColor3ub(255,255,255);
     glPushMatrix();
     glTranslatef(a,.0f,.0f);
@@ -156,7 +151,6 @@ void Windows(int x,int y,int z)
     glEnd();
 
     //Black
-
     glColor3ub(0,0,0);
     glBegin(GL_QUADS);
     glVertex3i(x+7,y+7,z);
@@ -394,8 +388,6 @@ void FrontTop()
     glVertex3i(217,435,0);
     glEnd();
 }
-
-
 
 void reshape(int w,int h)
 {
