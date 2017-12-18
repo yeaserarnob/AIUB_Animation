@@ -191,15 +191,43 @@ void SideBuilding(){
     glVertex3i(172,313,0);
     glEnd();
 
+//    glColor3ub(0, 0, 0);
+//    glPointSize(10.0);
+//    glBegin(GL_QUADS);
+//    glVertex3i(140,270,0);
+//    glVertex3i(146,274,0);
+//    glVertex3i(146,304,0);
+//    glVertex3i(140,300,0);
+//    glEnd();
+
+
+
+glColor3ub(153, 77, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(0,180,0);
+    glVertex3i(126,190,0);
+    glVertex3i(131,273,0);
+    glVertex3i(0,265,0);
+    glEnd();
+
+    glColor3ub(179, 89, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(126,190,0);
+    glVertex3i(147,200,0);
+    glVertex3i(147,298,0);
+    glVertex3i(131,273,0);
+    glEnd();
+
     glColor3ub(255, 170, 0);
     glPointSize(10.0);
     glBegin(GL_QUADS);
-    glVertex3i(140,270,0);
-    glVertex3i(146,274,0);
-    glVertex3i(146,304,0);
-    glVertex3i(140,300,0);
+    glVertex3i(128,234,0);
+    glVertex3i(209,244,0);
+    glVertex3i(249,315,0);
+    glVertex3i(172,313,0);
     glEnd();
-
 }
 
 
