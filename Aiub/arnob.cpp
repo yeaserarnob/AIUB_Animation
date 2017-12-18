@@ -162,6 +162,21 @@ void UpTin(){
 
 }
 
+void SideBuilding(){
+
+    glColor3ub(153, 77, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(0,180,0);
+    glVertex3i(126,190,0);
+    glVertex3i(131,273,0);
+    glVertex3i(0,265,0);
+    glEnd();
+
+
+}
+
+
 void myDisplay()
 {
 
@@ -171,7 +186,10 @@ void myDisplay()
     TinBar();
     Tin();
     UpTin();
+    SideBuilding();
+
     glFlush();
+
 }
 
 int main(int argc, char** argv)
