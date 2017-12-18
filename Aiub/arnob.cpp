@@ -173,6 +173,15 @@ void SideBuilding(){
     glVertex3i(0,265,0);
     glEnd();
 
+    glColor3ub(153, 77, 0);
+    glPointSize(10.0);
+    glBegin(GL_QUADS);
+    glVertex3i(126,232,0);
+    glVertex3i(147,269,0);
+    glVertex3i(147,298,0);
+    glVertex3i(131,273,0);
+    glEnd();
+
 
 }
 
