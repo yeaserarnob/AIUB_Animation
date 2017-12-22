@@ -21,11 +21,7 @@ void myInit (void)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
-
 }
-
-
-
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -482,15 +478,27 @@ void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 
 	//GLfloat radius = 0.8f; //radius
 	GLfloat twicePi = 2.0f * 3.1416;
-
-    glColor3ub(117,117,117);
+    int color=137;
+    int counter=0;
+    glColor3ub(color,color,color);
 	glBegin(GL_TRIANGLE_FAN);
 		glVertex3f(x, y,z); // center of circle
 		for(i = 0; i <= triangleAmount;i++) {
+			counter+=1;
 			glVertex3f(
 		            x + (radius * cos(i *  twicePi / triangleAmount)),
 			    y + (radius * sin(i * twicePi / triangleAmount)),z
 			);
+			if(counter<25)
+            {
+                color+=3;
+                glColor3ub(color,color,color);
+            }
+            else
+            {
+                color-=3;
+                glColor3ub(color,color,color);
+            }
 		}
 	glEnd();
 }
