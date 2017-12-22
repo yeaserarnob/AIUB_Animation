@@ -225,7 +225,11 @@
 1341010374 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
+<<<<<<< HEAD
 1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+=======
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+>>>>>>> 381de6beda02eecf3d83a7fc7f1df36fde7ba3de
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
