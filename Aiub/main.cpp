@@ -461,8 +461,12 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
+<<<<<<< HEAD
 
 //312070e231af20f6f8589e992d87108c3139db38
+=======
+//Reshape Function
+>>>>>>> b3a2d3ca463f655a5cc513ab442d8db3bc77705c
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -473,6 +477,26 @@ glMatrixMode(GL_MODELVIEW);
 glLoadIdentity();
 }
 
+void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
+	int i;
+	int triangleAmount = 50; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * 3.1416;
+
+    glColor3ub(117,117,117);
+	glBegin(GL_TRIANGLE_FAN);
+		glVertex3f(x, y,z); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex3f(
+		            x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount)),z
+			);
+		}
+	glEnd();
+}
+
+//Main Display Function
 void myDisplay()
 {
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -483,7 +507,6 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
    //Full Body
     Full();
-
     //Road
     Road();
     //RoadLine
@@ -497,7 +520,7 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     //Middle Top Corridor
     MiddleTop();
-
+    drawFilledCircle(850.0f,500.0f,0.0f,170.0f);
     //Building
     FirstBuilding();
 

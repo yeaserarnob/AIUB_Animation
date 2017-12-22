@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1513608387 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+1513933964 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -253,7 +253,7 @@
 	<time.h>
 	<iostream>
 
-1513442045 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
+1513627031 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
 	<windows.h>
 	<math.h>
 	<stdlib.h>
