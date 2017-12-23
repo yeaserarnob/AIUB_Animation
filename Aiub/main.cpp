@@ -271,8 +271,6 @@ void Cross(int x,int y,int z)
 //TinShade
 void TinShade()
 {
-
-
     glColor3ub(233,235,238);
     //Left One
     glBegin(GL_QUADS);
@@ -628,13 +626,25 @@ void car()
     otherCircle(210.0f,60.0f,0.0f,19.0f,255,0,0);
 
 //Light
-    glColor3ub(22,120,15);
+    glColor3ub(250,250,0);
     glBegin(GL_QUADS);
     glVertex3i(225,55,0);
     glVertex3i(230,55,0);
     glVertex3i(230,65,0);
     glVertex3i(225,65,0);
     glEnd();
+
+    //carlight
+    if(!day)
+    {
+        glColor3ub(200,200,200);
+        glBegin(GL_QUADS);
+        glVertex3i(230,55,0);
+        glVertex3i(280,20,0);
+        glVertex3i(280,95,0);
+        glVertex3i(225,65,0);
+        glEnd();
+    }
 
     otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
     otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
@@ -763,6 +773,18 @@ void truck()
     glVertex3i(750,102,0);
     glVertex3i(740,102,0);
     glEnd();
+
+    //trucklight
+    if(!day)
+    {
+        glColor3ub(200,200,200);
+        glBegin(GL_QUADS);
+        glVertex3i(680,60,0);
+        glVertex3i(740,90,0);
+        glVertex3i(740,102,0);
+        glVertex3i(680,130,0);
+        glEnd();
+    }
 
     glPopMatrix();
     glutPostRedisplay();
@@ -936,47 +958,6 @@ void myDisplay()
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
-<<<<<<< HEAD
-    Full();
-    //Road
-    Road();
-    //RoadLine
-    for(int i=55;i>0;i--)
-    {
-        roadlineX+=100;
-        RoadLine(roadlineX,55,0);
-    }
-    plane();
-    planeTwo();
-    //Play Ground
-    playGround();
-    //Middle Top Corridor
-    MiddleTop();
-
-    drawFilledCircle(950.0f,500.0f,0.0f,170.0f);
-    //Building
-    FirstBuilding();
-
-    //First 4 Tree
-    for(int i=5;i>=0;i--)
-    {
-        treeXf+=120;
-        Tree(treeXf,260,0);
-    }
-    //Last 4 Tree
-    for(int i=5;i>=0;i--)
-    {
-        treeXl+=120;
-        Tree(treeXl,260,0);
-    }
-    //Front top corridor
-    FrontTop();
-
-    //TinShade
-
-    TinShade();
-=======
->>>>>>> 2e8370c8f3a9df41454bd44e868140a443d4defd
 
     if(!day)
     {
@@ -989,6 +970,7 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        otherCircle(150.0f,670.0f,0.0f,32.0f,250,250,250);
         plane();
         planeTwo();
         //Play Ground
@@ -1034,7 +1016,6 @@ void myDisplay()
         roadBorder();
         TinShade();
         glPopMatrix();
-
         truck();
         car();
     }
@@ -1093,15 +1074,6 @@ void myDisplay()
         truck();
         car();
     }
-<<<<<<< HEAD
-    roadBorder();
-    TinShade();
-    glPopMatrix();
-
-    truck();
-    car();
-=======
->>>>>>> 2e8370c8f3a9df41454bd44e868140a443d4defd
     glFlush();
     glutSwapBuffers();
 }
