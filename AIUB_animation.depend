@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1514046962 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+1514049344 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
