@@ -8,7 +8,7 @@
 	<time.h>
 	<iostream>
 
-1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
@@ -16,7 +16,7 @@
 
 1341006770 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
-1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -253,7 +253,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1513187872 source:f:\graphic project\aiub_animation\aiub\main.cpp
+1514026618 source:f:\graphic project\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>

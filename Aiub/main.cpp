@@ -25,7 +25,7 @@ void myInit (void)
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
-<<<<<<< HEAD
+
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -40,8 +40,7 @@ void SpecialKeys(int key, int x, int y)
 			break;
 	}
 }
-=======
->>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
+
 
 void Full()
 {
@@ -96,6 +95,21 @@ void RoadLine(int x,int y,int z)
     glutPostRedisplay();
     //Sleep(50);
     //TranslateRoadLine(x,y,z);
+}
+
+void plane()
+{
+    glColor3ub(128, 0, 0);
+    glBegin(GL_POLYGON);
+    glVertex3i(-190,756,0);
+    glVertex3i(-180,736,0);
+    glVertex3i(-160,736,0);
+    //glVertex3i(-157,741,0);
+    glVertex3i(-160,746,0);
+    glVertex3i(-175,746,0);
+    glVertex3i(-185,756,0);
+    glEnd();
+
 }
 
 void playGround()
@@ -469,7 +483,7 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
-<<<<<<< HEAD
+
 void car()
 {
     glColor3ub(255,0,0);
@@ -483,17 +497,6 @@ void car()
     glVertex3i(20,100,0);
     glEnd();
 }
-void reshape(int w,int h)
-{
-glViewport(0,0, (GLsizei)w,(GLsizei)h);
-glMatrixMode(GL_PROJECTION);
-glLoadIdentity();
-gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
-glMatrixMode(GL_MODELVIEW);
-glLoadIdentity();
-}
-=======
->>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
 
 void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 	int i;
@@ -543,8 +546,8 @@ glLoadIdentity();
 //Main Display Function
 void myDisplay()
 {
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    plane();
     int roadlineX=-4096;
     int treeXf=-304;
     int treeXl=528;
@@ -585,14 +588,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     FrontTop();
 
     //TinShade
-<<<<<<< HEAD
+
     TinShade();
     car();
 =======
 
     TinShade();
     glPopMatrix();
->>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
     glFlush();
 glutSwapBuffers();
 }
