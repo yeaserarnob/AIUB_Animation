@@ -46,6 +46,16 @@ void Road()
     glVertex3i(-200,120,0);
     glEnd();
 }
+void roadBorder()
+{
+    glColor3ub(255,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,120,0);
+    glVertex3i(1324,120,0);
+    glVertex3i(1324,130,0);
+    glVertex3i(-200,130,0);
+    glEnd();
+}
 void TranslateRoadLine(int x,int y,int z)
 {
     x-=50;
@@ -89,6 +99,36 @@ void playGround()
     glVertex3i(1324,260,0);
     glVertex3i(-200,260,0);
 
+}
+//dynamic lamp post function
+void lampPost(int x,int y,int z)
+{
+    //verticle
+    glColor3ub(222,250,50);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+7,y,z);
+    glVertex3i(x+7,y+100,z);
+    glVertex3i(x,y+100,z);
+    glEnd();
+
+    //horizontal
+    glColor3ub(222,250,50);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y+93,z);
+    glVertex3i(x+70,y+93,z);
+    glVertex3i(x+70,y+100,z);
+    glVertex3i(x,y+100,z);
+    glEnd();
+
+    //light
+    glColor3ub(222,250,50);
+    glBegin(GL_TRIANGLES);
+    glVertex3i(x+50,y+85,z);
+    glVertex3i(x+70,y+85,z);
+    glVertex3i(x+60,y+93,z);
+
+    glEnd();
 }
 //Dynamic Tree Function
 void Tree(int x,int y,int z)
@@ -441,11 +481,7 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -704,9 +740,6 @@ void truck()
     glEnd();
 
 }
-<<<<<<< HEAD
-=======
-
 
 //Plane
 
@@ -792,7 +825,6 @@ void planeTwo()
 {
 
 }
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 //Main Display Function
 void myDisplay()
@@ -801,6 +833,7 @@ void myDisplay()
     int roadlineX=-4096;
     int treeXf=-350;
     int treeXl=528;
+    int lamp=-350;
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
@@ -814,6 +847,7 @@ void myDisplay()
         roadlineX+=100;
         RoadLine(roadlineX,55,0);
     }
+
     //Play Ground
     playGround();
     //Middle Top Corridor
@@ -841,16 +875,18 @@ void myDisplay()
 
     TinShade();
 
-
+    //lamp post
+    for(int i=9;i>=0;i--)
+    {
+        lamp+=310;
+        lampPost(lamp,130,0);
+    }
+    roadBorder();
     TinShade();
     glPopMatrix();
-<<<<<<< HEAD
-    car();
-    truck();
-=======
+
     truck();
     car();
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
     plane();
     glFlush();
     glutSwapBuffers();

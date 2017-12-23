@@ -1,10 +1,5 @@
 # depslib dependency file v1.0
-<<<<<<< HEAD
 2010423174 
-
-1514028937 source:h:\study\graphics\aiub_animation\aiub\main.cpp
-=======
-2004613511 APIENTRM1L¥P!
 
 1514039898 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
@@ -14,7 +9,10 @@
 	<GL/glut.h>
 	<time.h>
 	<iostream>
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
+
+2004613511 APIENTRM1L¥P!
+
+1453865572 f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 1453865572 ent of ee21c8b... Car Move Done
 	<stdio.h>
@@ -27,22 +25,21 @@
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
-<<<<<<< HEAD
-=======
+
+1453865572 D
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
 	<sys/types.h>
 
-1341006770 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+1341010370 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
-1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -95,7 +92,7 @@
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\winerror.h
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\string.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -165,7 +162,7 @@
 
 1301111158 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
 
-1341006772 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+1341010372 c:\program files (x86)\codeblocks\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
@@ -227,7 +224,7 @@
 	<objidl.h>
 	<cguid.h>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -248,28 +245,28 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
+1341010374 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-1453865572 D
-<<<<<<< HEAD
-
 1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
-=======
-
-1453865572 0f3f9c7bc7b9c7a771db27283956fb2062c2e
-
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-<<<<<<< HEAD
-902904872 AD
-=======
+1453865572 0f3f9c7bc7b9c7a771db27283956fb2062c2e
+
+976645372 6f6b709b20b8e0372652a09b9fd88dd29f5acc
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
 976645372 AD
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
 
 976645372 553a2f4b2bef79e915c8cd3d6406f2a9e59bd6
 
@@ -280,10 +277,6 @@
 976645372 69bdf9c90b079e32c38ed92e052c217de4aa7a
 
 902904872 fa3f3ca0cc11c5aa0a7fd26d329b7744fbb9d4
-<<<<<<< HEAD
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
 
 1453865572 d5322924e96007913dc57ab55859de467dd6a
 
@@ -292,28 +285,11 @@
 976645372 ebf48a4149dc1e5659899492fdafc7788e84f8
 
 976645372 6496a0bc47557cb346198abe6e0344739a0873
-=======
-
-1453865572 d5322924e96007913dc57ab55859de467dd6a
 
 976645372 e0f3f9c7bc7b9c7a771db27283956fb2062c2e
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
-
-<<<<<<< HEAD
-976645372 6d5322924e96007913dc57ab55859de467dd6a
-=======
-976645372 rent of ee21c8b... Car Move Done
-
-976645372 ebf48a4149dc1e5659899492fdafc7788e84f8
-
-976645372 6496a0bc47557cb346198abe6e0344739a0873
->>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 976645372 6d5322924e96007913dc57ab55859de467dd6a
 
@@ -332,7 +308,7 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\time.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -369,7 +345,7 @@
 	<time.h>
 	<iostream>
 
-1514039504 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+1514043892 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
