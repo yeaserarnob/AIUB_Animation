@@ -498,7 +498,7 @@ void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int b)
 {
 	int i;
-	int triangleAmount = 50; //# of triangles used to draw circle
+	int triangleAmount = 20; //# of triangles used to draw circle
 
 	//GLfloat radius = 0.8f; //radius
 	GLfloat twicePi = 2.0f * 3.1416;
@@ -604,6 +604,110 @@ void car()
 
 void truck()
 {
+    glColor3ub(0,0,255);
+
+    //frontbumper
+    otherCircle(780.0f,130.0f,0.0f,41.0f,0,0,255);
+    //main body
+    glBegin(GL_QUADS);
+    glVertex3i(750,90,0);
+    glVertex3i(1000,90,0);
+    glVertex3i(1000,140,0);
+    glVertex3i(750,140,0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(750,140,0);
+    glVertex3i(860,140,0);
+    glVertex3i(860,160,0);
+    glVertex3i(750,160,0);
+    glEnd();
+    //window
+    glBegin(GL_QUADS);
+    glVertex3i(750,160,0);
+    glVertex3i(860,160,0);
+    glVertex3i(860,190,0);
+    glVertex3i(800,190,0);
+    glEnd();
+
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(760,160,0);
+    glVertex3i(855,160,0);
+    glVertex3i(855,185,0);
+    glVertex3i(800,185,0);
+    glEnd();
+
+    //handle
+    glBegin(GL_QUADS);
+    glVertex3i(840,145,0);
+    glVertex3i(855,145,0);
+    glVertex3i(855,150,0);
+    glVertex3i(840,150,0);
+    glEnd();
+
+    //gril
+    glColor3ub(0,0,0);
+    glBegin(GL_LINES);
+    glVertex3i(860,160,0);
+    glVertex3i(1000,160,0);
+    glVertex3i(860,159,0);
+    glVertex3i(1000,159,0);
+    glVertex3i(1000,160,0);
+    glVertex3i(1000,140,0);
+    glVertex3i(990,160,0);
+    glVertex3i(990,140,0);
+    glVertex3i(980,160,0);
+    glVertex3i(980,140,0);
+    glVertex3i(970,160,0);
+    glVertex3i(970,140,0);
+    glVertex3i(960,160,0);
+    glVertex3i(960,140,0);
+    glVertex3i(950,160,0);
+    glVertex3i(950,140,0);
+    glVertex3i(940,160,0);
+    glVertex3i(940,140,0);
+    glVertex3i(930,160,0);
+    glVertex3i(930,140,0);
+    glVertex3i(920,160,0);
+    glVertex3i(920,140,0);
+    glVertex3i(910,160,0);
+    glVertex3i(910,140,0);
+    glVertex3i(900,160,0);
+    glVertex3i(900,140,0);
+    glVertex3i(890,160,0);
+    glVertex3i(890,140,0);
+    glVertex3i(880,160,0);
+    glVertex3i(880,140,0);
+    glVertex3i(870,160,0);
+    glVertex3i(870,140,0);
+    glEnd();
+
+
+
+    //wheel
+    otherCircle(800.0f,90.0f,0.0f,21.0f,0,0,0);
+    otherCircle(800.0f,90.0f,0.0f,15.0f,131,131,131);
+    otherCircle(950.0f,90.0f,0.0f,21.0f,0,0,0);
+    otherCircle(950.0f,90.0f,0.0f,15.0f,131,131,131);
+
+    //backlight
+    glColor3ub(255,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(1000,110,0);
+    glVertex3i(1005,110,0);
+    glVertex3i(1005,120,0);
+    glVertex3i(1000,120,0);
+    glEnd();
+
+    //frontlignt
+    glColor3ub(255,255,0);
+    glBegin(GL_QUADS);
+    glVertex3i(740,90,0);
+    glVertex3i(750,90,0);
+    glVertex3i(750,102,0);
+    glVertex3i(740,102,0);
+    glEnd();
 
 }
 
@@ -744,7 +848,11 @@ void myDisplay()
     TinShade();
     glPopMatrix();
     car();
+<<<<<<< HEAD
+    truck();
+=======
     plane();
+>>>>>>> 0dfa3f3ca0cc11c5aa0a7fd26d329b7744fbb9d4
     glFlush();
     glutSwapBuffers();
 }
