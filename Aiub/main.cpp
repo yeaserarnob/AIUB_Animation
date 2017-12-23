@@ -721,16 +721,18 @@ void truck()
 
 void plane()
 {
-    static float a=-200.0f;
+    static float a=-250.0f;
     static float b=0.0f;
     if(a>=1324)
     {
-         a=-200.0f;
+         a=-300.0f;
+         b=0.0f;
 
     }
     else
     {
         a+=0.1f;
+        b+=0.005f;
         //glColor3ub(r,g,b);
     }
     //Body
@@ -800,14 +802,17 @@ void plane()
 void planeTwo()
 {
      static float a=550.0f;
+     static float b=0.0f;
     if(a<=-1300)
     {
          a=550.0f;
+         b=0.0f;
 
     }
     else
     {
         a-=0.2f;
+        b-=0.02f;
         //glColor3ub(r,g,b);
     }
 
@@ -815,7 +820,7 @@ void planeTwo()
     //Body
     glColor3ub(128, 0, 0);
     glPushMatrix();
-    glTranslatef(a,0,0);
+    glTranslatef(a,b,0);
     glBegin(GL_QUADS);
     glVertex3i(919,650,0);
     glVertex3i(989,650,0);
