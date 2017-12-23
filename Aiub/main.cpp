@@ -947,12 +947,12 @@ void planeTwo()
 }
 
 //clouds
-void clouds(float x,float y,float z)
+void clouds(float x,float y,float z,int m,int l,int n)
 {
     //cloud1
-    otherCircle(x,y,z,50.0f,250,250,250);
-    otherCircle(x-50,y,z,40.0f,250,250,250);
-    otherCircle(x+50,y,z,40.0f,250,250,250);
+    otherCircle(x,y,z,50.0f,m,l,n);
+    otherCircle(x-50,y,z,40.0f,m,l,n);
+    otherCircle(x+50,y,z,40.0f,m,l,n);
 }
 //circleline
 void circleLine()
@@ -998,11 +998,20 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        //cloud0
+        clouds(-150.0f,630.0f,0.0f,173, 173, 133);
+        //cloud1
+        clouds(150.0f,670.0f,0.0f,173, 173, 133);
         //moon
-        otherCircle(150.0f,670.0f,0.0f,32.0f,250,250,250);
+        otherCircle(300.0f,670.0f,0.0f,32.0f,250,250,250);
         plane();
         planeTwo();
-        //Play Ground
+        //cloud2
+        clouds(450.0f,600.0f,0.0f,205, 205, 177);
+        //cloud3
+        clouds(750.0f,690.0f,0.0f,173, 173, 133);
+        //cloud4
+        clouds(1050.0f,680.0f,0.0f,173, 173, 133);
         playGround(42,55,17);
         //Middle Top Corridor
         MiddleTop();
@@ -1060,14 +1069,18 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        //cloud0
+        clouds(-100.0f,630.0f,0.0f,250,250,250);
         //cloud1
-        clouds(150.0f,670.0f,0.0f);
+        clouds(150.0f,670.0f,0.0f,250,250,250);
         plane();
         planeTwo();
         //cloud2
-        clouds(450.0f,600.0f,0.0f);
+        clouds(450.0f,600.0f,0.0f,250,250,250);
         //cloud3
-        clouds(750.0f,690.0f,0.0f);
+        clouds(750.0f,690.0f,0.0f,250,250,250);
+        //cloud4
+        clouds(1050.0f,710.0f,0.0f,250,250,250);
         //Play Ground
         playGround(42,95,17);
         //Middle Top Corridor
