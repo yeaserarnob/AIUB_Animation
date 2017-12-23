@@ -520,19 +520,6 @@ void MiddleTop()
     glEnd();
 }
 
-void car()
-{
-    glColor3ub(255,0,0);
-    glBegin(GL_QUAD_STRIP);
-    glVertex3i(20,40,0);
-    glVertex3i(100,40,0);
-    glVertex3i(100,100,0);
-    glVertex3i(80,120,0);
-    glVertex3i(50,120,0);
-    glVertex3i(40,100,0);
-    glVertex3i(20,100,0);
-    glEnd();
-}
 
 void reshape(int w,int h)
 {
@@ -595,70 +582,6 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 		}
 	glEnd();
 }
-<<<<<<< HEAD
-//
-//void car()
-//{
-//    glColor3ub(255,0,0);
-//    /*glBegin(GL_QUAD_STRIP);
-//    glVertex3i(20,40,0);
-//    glVertex3i(200,40,0);
-//    glVertex3i(200,80,0);
-//    glVertex3i(180,80,0);
-//    glVertex3i(140,110,0);
-//    glVertex3i(80,110,0);
-//    glVertex3i(40,80,0);
-//    glVertex3i(20,80,0);
-//    glVertex3i(20,40,0);
-//    glEnd();*/
-//
-//    glBegin(GL_QUADS);
-//    glVertex3i(20,40,0);
-//    glVertex3i(220,40,0);
-//    glVertex3i(220,80,0);
-//    glVertex3i(20,80,0);
-//    glEnd();
-//    glBegin(GL_QUADS);
-//    glVertex3i(40,80,0);
-//    glVertex3i(200,80,0);
-//    glVertex3i(160,110,0);
-//    glVertex3i(80,110,0);
-//    glEnd();
-//
-//    glColor3ub(0,0,0);
-//    glBegin(GL_QUADS);
-//    glVertex3i(115,80,0);
-//    glVertex3i(190,80,0);
-//    glVertex3i(155,105,0);
-//    glVertex3i(115,105,0);
-//    glEnd();
-//
-//    glColor3ub(0,0,0);
-//    glBegin(GL_QUADS);
-//    glVertex3i(45,80,0);
-//    glVertex3i(110,80,0);
-//    glVertex3i(110,105,0);
-//    glVertex3i(80,105,0);
-//    glEnd();
-//
-//    otherCircle(30.0f,60.0f,0.0f,19.0f,255,0,0);
-//    otherCircle(210.0f,60.0f,0.0f,19.0f,255,0,0);
-//
-//Light
-//    glColor3ub(255,255,255);
-//    glBegin(GL_QUADS);
-//    glVertex3i(220,55,0);
-//    glVertex3i(225,55,0);
-//    glVertex3i(225,65,0);
-//    glVertex3i(220,65,0);
-//    glEnd();
-//
-//    otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
-//    otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
-//    otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
-//    otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
-//}
-=======
 
 void car()
 {
@@ -839,7 +762,6 @@ void truck()
     glEnd();
 
 }
->>>>>>> ee21c8b4fe88779c8446f329bd587461b71aa61a
 
 //Main Display Function
 void myDisplay()
@@ -892,11 +814,8 @@ void myDisplay()
     TinShade();
     glPopMatrix();
     car();
-<<<<<<< HEAD
     truck();
-=======
     plane();
->>>>>>> 0dfa3f3ca0cc11c5aa0a7fd26d329b7744fbb9d4
     glFlush();
     glutSwapBuffers();
 }
