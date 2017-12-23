@@ -15,6 +15,7 @@ static GLfloat spin = 0.0;
 float spin_x=1.0;
 float spin_y=0.0;
 float spin_z=0.0;
+bool day=true;
 
 void myInit (void)
 {
@@ -494,7 +495,65 @@ void MiddleTop()
     glVertex3i(405,431,0);
     glVertex3i(300,431,0);
     glEnd();
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+}
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+//Middle top Corridor Main Function
+void MiddleTop()
+{
+//Top
+glColor3ub(205,205,205);
+glBegin(GL_QUADS);
+glVertex3i(300,430,0);
+glVertex3i(405,430,0);
+glVertex3i(405,450,0);
+glVertex3i(300,450,0);
+glEnd();
+glColor3ub(255,0,0);
+//Pillar
+glColor3ub(166,166,166);
+glBegin(GL_QUADS);
+glVertex3i(300,395,0);
+glVertex3i(303,395,0);
+glVertex3i(303,430,0);
+glVertex3i(300,430,0);
+glEnd();
+
+glColor3ub(166,166,166);
+glBegin(GL_QUADS);
+glVertex3i(402,420,0);
+glVertex3i(405,420,0);
+glVertex3i(405,430,0);
+glVertex3i(402,430,0);
+glEnd();
+//Line
+VerticalLine(300,395,0);
+HorizontalLine(300,395,0);
+//Shadow
+glColor3ub(5,5,5);
+glBegin(GL_QUADS);
+glVertex3i(300,427,0);
+glVertex3i(405,427,0);
+glVertex3i(405,431,0);
+glVertex3i(300,431,0);
+glEnd();
+}
+=======
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+>>>>>>> 0469f7b89d1285efdadab4c75acbb71e59c665d4
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -764,9 +823,28 @@ void truck()
     glVertex3i(740,102,0);
     glEnd();
 
+<<<<<<< HEAD
     glPopMatrix();
     glutPostRedisplay();
 
+=======
+<<<<<<< HEAD
+    glPopMatrix();
+    glutPostRedisplay();
+
+=======
+
+    glPopMatrix();
+    glutPostRedisplay();
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+>>>>>>> 0469f7b89d1285efdadab4c75acbb71e59c665d4
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
 }
 
 //Plane
@@ -946,8 +1024,21 @@ void myDisplay()
         roadlineX+=100;
         RoadLine(roadlineX,55,0);
     }
+<<<<<<< HEAD
     plane();
     planeTwo();
+=======
+<<<<<<< HEAD
+    plane();
+    planeTwo();
+=======
+
+
+    plane();
+    planeTwo();
+
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
     //Play Ground
     playGround();
     //Middle Top Corridor
@@ -994,11 +1085,31 @@ void myDisplay()
 
     truck();
     car();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
     glFlush();
     glutSwapBuffers();
 }
 
-
+void keyboard(unsigned char key, int x, int y)
+{
+//-------- spin --------
+if(key=='d')
+{
+    day=true;
+}
+else if(key=='n')
+{
+    day=false;
+}
+}
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -1049,6 +1160,7 @@ glutCreateWindow ("AIUB");
 myInit();
 glutDisplayFunc(myDisplay);
 //glutReshapeFunc(reshape);
+glutKeyboardFunc(keyboard);
 glutSpecialFunc(SpecialKeys);
 glutMainLoop();
 return 0;
