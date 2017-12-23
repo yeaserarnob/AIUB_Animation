@@ -11,6 +11,10 @@ using namespace std;
 float translate_x = 0.0;
 float translate_y = 0.0;
 float translate_z = 0.0;
+static GLfloat spin = 0.0;
+float spin_x=1.0;
+float spin_y=0.0;
+float spin_z=0.0;
 
 void myInit (void)
 {
@@ -21,6 +25,23 @@ void myInit (void)
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
+<<<<<<< HEAD
+void SpecialKeys(int key, int x, int y)
+{
+    switch (key)
+	{
+		case GLUT_KEY_LEFT:
+//            mx -= 10;
+            glutPostRedisplay();
+			break;
+		case GLUT_KEY_RIGHT:
+//            mx += 10;
+            glutPostRedisplay();
+			break;
+	}
+}
+=======
+>>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
 
 void Full()
 {
@@ -168,7 +189,7 @@ void Windows(int x,int y,int z)
 //Buildings
 void FirstBuilding()
 {
-   int windowsXf=-220,windowsXl=556;
+   int windowsXf=-310,windowsXl=556;
 
     //Left Building
     glColor3ub(56,46,47);
@@ -197,13 +218,13 @@ void FirstBuilding()
     glEnd();
 
     //First 4 Windows
-    for(int i=5;i>=0;i--)
+    for(int i=6;i>=0;i--)
     {
         windowsXf+=90;
         Windows(windowsXf,280,0);
     }
     //Last 4 Windows
-    for(int i=6;i>=0;i--)
+    for(int i=7;i>=0;i--)
     {
         windowsXl+=90;
         Windows(windowsXl,280,0);
@@ -225,6 +246,8 @@ void Cross(int x,int y,int z)
 //TinShade
 void TinShade()
 {
+
+
     glColor3ub(233,235,238);
     //Left One
     glBegin(GL_QUADS);
@@ -446,6 +469,31 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
+<<<<<<< HEAD
+void car()
+{
+    glColor3ub(255,0,0);
+    glBegin(GL_QUAD_STRIP);
+    glVertex3i(20,40,0);
+    glVertex3i(100,40,0);
+    glVertex3i(100,100,0);
+    glVertex3i(80,120,0);
+    glVertex3i(50,120,0);
+    glVertex3i(40,100,0);
+    glVertex3i(20,100,0);
+    glEnd();
+}
+void reshape(int w,int h)
+{
+glViewport(0,0, (GLsizei)w,(GLsizei)h);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+}
+=======
+>>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
 
 void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 	int i;
@@ -498,7 +546,7 @@ void myDisplay()
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     int roadlineX=-4096;
-    int treeXf=-104;
+    int treeXf=-304;
     int treeXl=528;
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
@@ -522,13 +570,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     FirstBuilding();
 
     //First 4 Tree
-    for(int i=3;i>=0;i--)
+    for(int i=5;i>=0;i--)
     {
         treeXf+=120;
         Tree(treeXf,260,0);
     }
     //Last 4 Tree
-    for(int i=3;i>=0;i--)
+    for(int i=5;i>=0;i--)
     {
         treeXl+=120;
         Tree(treeXl,260,0);
@@ -537,9 +585,14 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     FrontTop();
 
     //TinShade
+<<<<<<< HEAD
+    TinShade();
+    car();
+=======
 
     TinShade();
     glPopMatrix();
+>>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
     glFlush();
 glutSwapBuffers();
 }
@@ -563,6 +616,24 @@ void SpecialKeys(int key, int x, int y)
                 translate_x-=5;
                 glutPostRedisplay();
             }
+			break;
+
+        case GLUT_KEY_UP:
+            spin-=5;
+            if(spin>=360)
+            {
+                spin=0;
+            }
+            glutPostRedisplay();
+			break;
+
+        case GLUT_KEY_DOWN:
+            spin+=5;
+            if(spin<=360)
+            {
+                spin=0;
+            }
+            glutPostRedisplay();
 			break;
 	}
 }
