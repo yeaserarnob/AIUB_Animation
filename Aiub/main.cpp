@@ -81,10 +81,10 @@ void RoadLine(int x,int y,int z)
     //TranslateRoadLine(x,y,z);
 }
 
-void playGround()
+void playGround(int r,int g,int b)
 {
     //Grass
-    glColor3ub(42,95,17);
+    glColor3ub(r,g,b);
     glBegin(GL_QUADS);
     glVertex3i(-200,120,0);
     glVertex3i(1324,120,0);
@@ -212,12 +212,12 @@ void Windows(int x,int y,int z)
     glEnd();
 }
 //Buildings
-void FirstBuilding()
+void FirstBuilding(int r,int g,int b)
 {
    int windowsXf=-310,windowsXl=556;
 
     //Left Building
-    glColor3ub(56,46,47);
+    glColor3ub(r,g,b);
     glBegin(GL_QUADS);
     glVertex3i(-200,260,0);
     glVertex3i(396,260,0);
@@ -951,13 +951,13 @@ void myDisplay()
         plane();
         planeTwo();
         //Play Ground
-        playGround();
+        playGround(42,55,17);
         //Middle Top Corridor
         MiddleTop();
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,55.0f);
         //Building
-        FirstBuilding();
+        FirstBuilding(56,46,47);
 
         //First 4 Tree
         for(int i=5;i>=0;i--)
@@ -1011,13 +1011,13 @@ void myDisplay()
         plane();
         planeTwo();
         //Play Ground
-        playGround();
+        playGround(42,95,17);
         //Middle Top Corridor
         MiddleTop();
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
         //Building
-        FirstBuilding();
+        FirstBuilding(100,88,54);
 
         //First 4 Tree
         for(int i=5;i>=0;i--)
