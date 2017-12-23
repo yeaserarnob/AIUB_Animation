@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1514036967 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+1514037317 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -227,24 +227,18 @@
 
 1341010374 D
 
-<<<<<<< HEAD
-976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 
 902904872 AD
 
 976645372 553a2f4b2bef79e915c8cd3d6406f2a9e59bd6
 
 976645372 6cf5f1d974be8dc325318a0a6fbc20cfcba9d1
-=======
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
->>>>>>> ee21c8b4fe88779c8446f329bd587461b71aa61a
+
+976645372 21c8b4fe88779c8446f329bd587461b71aa61a
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
-
-<<<<<<< HEAD
-=======
-902904872 AD
 
 976645372 69bdf9c90b079e32c38ed92e052c217de4aa7a
 
@@ -252,10 +246,6 @@
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
-
-976645372 553a2f4b2bef79e915c8cd3d6406f2a9e59bd6
-
-976645372 6cf5f1d974be8dc325318a0a6fbc20cfcba9d1
 
 976645372 ebf48a4149dc1e5659899492fdafc7788e84f8
 
@@ -269,7 +259,6 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
->>>>>>> ee21c8b4fe88779c8446f329bd587461b71aa61a
 976645372 1de6beda02eecf3d83a7fc7f1df36fde7ba3de
 
 976645372 72b6ac7c7fbe8514dcf8ccdd4d6a8923299e17
