@@ -946,6 +946,34 @@ void planeTwo()
 
 }
 
+//clouds
+void clouds(float x,float y,float z)
+{
+    //cloud1
+    otherCircle(x,y,z,50.0f,250,250,250);
+    otherCircle(x-50,y,z,40.0f,250,250,250);
+    otherCircle(x+50,y,z,40.0f,250,250,250);
+}
+//circleline
+void circleLine()
+{
+    glColor3ub(240,240,240);
+    glBegin(GL_LINES);
+    glLineWidth(5.0f);
+    glVertex3i(780,500,0);
+    glVertex3i(1120,500,0);
+    glVertex3i(788,550,0);
+    glVertex3i(1112,550,0);
+    glVertex3i(812,600,0);
+    glVertex3i(1088,600,0);
+    glVertex3i(788,450,0);
+    glVertex3i(1112,450,0);
+    glVertex3i(812,400,0);
+    glVertex3i(1088,400,0);
+
+
+    glEnd();
+}
 //Main Display Function
 void myDisplay()
 {
@@ -970,6 +998,7 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        //moon
         otherCircle(150.0f,670.0f,0.0f,32.0f,250,250,250);
         plane();
         planeTwo();
@@ -1015,6 +1044,7 @@ void myDisplay()
         }
         roadBorder();
         TinShade();
+        circleLine();
         glPopMatrix();
         truck();
         car();
@@ -1030,8 +1060,14 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        //cloud1
+        clouds(150.0f,670.0f,0.0f);
         plane();
         planeTwo();
+        //cloud2
+        clouds(450.0f,600.0f,0.0f);
+        //cloud3
+        clouds(750.0f,690.0f,0.0f);
         //Play Ground
         playGround(42,95,17);
         //Middle Top Corridor
@@ -1069,6 +1105,7 @@ void myDisplay()
         //light
         roadBorder();
         TinShade();
+        circleLine();
         glPopMatrix();
 
         truck();
