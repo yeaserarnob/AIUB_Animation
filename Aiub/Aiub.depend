@@ -1,13 +1,21 @@
 # depslib dependency file v1.0
-<<<<<<< HEAD
-2010423174 
+2010423174 \
 
-1514039898 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+1514043892 
+
+<<<<<<< HEAD
+1514045488 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 =======
+1514041818 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+<<<<<<< HEAD
+
 2004613511 lMesh2( …0”¤
 
-1514041818 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+1514043892 7a98602a69509c7ee9012eba6c272290e790d
+=======
 >>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+>>>>>>> dda0968ed78f77a558c2e03d1f11a6730b6400f2
+>>>>>>> 0469f7b89d1285efdadab4c75acbb71e59c665d4
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -15,7 +23,11 @@
 	<GL/glut.h>
 	<time.h>
 	<iostream>
-<<<<<<< HEAD
+
+1341010376 D
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
 
 2004613511 APIENTRM1L¥P!
 
@@ -32,13 +44,6 @@
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
-
-1453865572 D
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
-=======
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
 
 1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
@@ -257,13 +262,19 @@
 1341010374 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-<<<<<<< HEAD
 1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
+<<<<<<< HEAD
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+=======
 1453865572 0f3f9c7bc7b9c7a771db27283956fb2062c2e
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
 
 976645372 6f6b709b20b8e0372652a09b9fd88dd29f5acc
 	<windows.h>
@@ -308,9 +319,8 @@
 976645372 72b6ac7c7fbe8514dcf8ccdd4d6a8923299e17
 
 976645372 bdf649218b2a25ccb310292eb2bb858878e4bb
-=======
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+
+902904872 97a98602a69509c7ee9012eba6c272290e790d
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -326,7 +336,14 @@
 	<stddef.h>
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+1514040651 source:f:\graphic project\aiub_animation\aiub\main.cpp
+=======
+<<<<<<< HEAD
+>>>>>>> 0469f7b89d1285efdadab4c75acbb71e59c665d4
 1514036876 source:f:\graphic project\aiub_animation\aiub\main.cpp
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -359,7 +376,7 @@
 	<time.h>
 	<iostream>
 
-1514043892 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+1514044602 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -368,5 +385,3 @@
 	<time.h>
 	<iostream>
 
-=======
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
