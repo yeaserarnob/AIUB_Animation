@@ -14,7 +14,7 @@
 	<stdarg.h>
 	<sys/types.h>
 
-1341006770 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+1341010370 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
 1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
@@ -69,7 +69,7 @@
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\winerror.h
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\string.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -139,7 +139,7 @@
 
 1301111158 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
 
-1341006772 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+1341010372 c:\program files (x86)\codeblocks\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
@@ -201,7 +201,7 @@
 	<objidl.h>
 	<cguid.h>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -222,12 +222,12 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
+1341010374 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
 1341010374 D
 
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -249,7 +249,7 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\time.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -286,7 +286,7 @@
 	<time.h>
 	<iostream>
 
-1514020027 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+1514026331 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
