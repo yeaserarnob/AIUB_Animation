@@ -82,7 +82,6 @@ void RoadLine(int x,int y,int z)
 
 void tprint(int x, int y,int z, char *string)
 {
-    glColor3ub(0,0,255);
     //set the position of the text in the window using the x and y coordinates
     glRasterPos2f(x,y);
     //get the length of the string to display
@@ -1072,6 +1071,7 @@ void myDisplay()
         roadBorder();
         TinShade();
         circleLine();
+        glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
         glPopMatrix();
         truck();
@@ -1138,6 +1138,7 @@ void myDisplay()
         roadBorder();
         TinShade();
         circleLine();
+        glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
         glPopMatrix();
 
