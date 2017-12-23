@@ -268,29 +268,6 @@ void Cross(int x,int y,int z)
     glEnd();
 
 }
-
-void circleLine()
-{
-    glColor3ub(0, 0, 0);
-    glBegin(GL_LINES);
-    glLineWidth(5.0f);
-    glVertex3i(780,500,0);
-    glVertex3i(1120,500,0);
-    glVertex3i(788,550,0);
-    glVertex3i(1112,550,0);
-    glVertex3i(812,600,0);
-    glVertex3i(1088,600,0);
-    glVertex3i(788,450,0);
-    glVertex3i(1112,450,0);
-    glVertex3i(812,400,0);
-    glVertex3i(1088,400,0);
-
-
-    glEnd();
-}
-
-
-
 //TinShade
 void TinShade()
 {
@@ -311,26 +288,6 @@ void TinShade()
     glVertex3i(628,390,0);
     glEnd();
 
-<<<<<<< HEAD
-    glColor3ub(233,235,238);
-    //Left One
-    glBegin(GL_QUADS);
-    glVertex3i(-200,375,0);
-    glVertex3i(396,375,0);
-    glVertex3i(396,390,0);
-    glVertex3i(-200,390,0);
-    glEnd();
-
-    //Right One
-    glBegin(GL_QUADS);
-    glVertex3i(628,375,0);
-    glVertex3i(1324,375,0);
-    glVertex3i(1324,390,0);
-    glVertex3i(628,390,0);
-    glEnd();
-
-=======
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     //Middle One
     glBegin(GL_QUADS);
     glVertex3i(386,400,0);
@@ -346,7 +303,6 @@ void TinShade()
     glVertex3i(396,395,0);
     glVertex3i(-200,395,0);
     glEnd();
-<<<<<<< HEAD
 
     glBegin(GL_QUADS);
     glVertex3i(628,390,0);
@@ -355,16 +311,6 @@ void TinShade()
     glVertex3i(628,395,0);
     glEnd();
 
-=======
-
-    glBegin(GL_QUADS);
-    glVertex3i(628,390,0);
-    glVertex3i(1324,390,0);
-    glVertex3i(1324,395,0);
-    glVertex3i(628,395,0);
-    glEnd();
-
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     //Left Top Side
     glColor3ub(140,140,130);
     glBegin(GL_QUADS);
@@ -680,11 +626,7 @@ void car()
     otherCircle(210.0f,60.0f,0.0f,19.0f,255,0,0);
 
 //Light
-<<<<<<< HEAD
-    glColor3ub(22,120,15);
-=======
     glColor3ub(250,250,0);
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     glBegin(GL_QUADS);
     glVertex3i(225,55,0);
     glVertex3i(230,55,0);
@@ -692,13 +634,6 @@ void car()
     glVertex3i(225,65,0);
     glEnd();
 
-<<<<<<< HEAD
-    otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
-    otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
-    otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
-    otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
-
-=======
     //carlight
     if(!day)
     {
@@ -716,7 +651,6 @@ void car()
     otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
     otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
 
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     glPopMatrix();
     glutPostRedisplay();
 }
@@ -840,8 +774,6 @@ void truck()
     glVertex3i(740,102,0);
     glEnd();
 
-<<<<<<< HEAD
-=======
     //trucklight
     if(!day)
     {
@@ -854,7 +786,6 @@ void truck()
         glEnd();
     }
 
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     glPopMatrix();
     glutPostRedisplay();
 }
@@ -1015,8 +946,6 @@ void planeTwo()
 
 }
 
-<<<<<<< HEAD
-=======
 //clouds
 void clouds(float x,float y,float z)
 {
@@ -1045,7 +974,6 @@ void circleLine()
 
     glEnd();
 }
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 //Main Display Function
 void myDisplay()
 {
@@ -1055,11 +983,6 @@ void myDisplay()
     int treeXl=528;
     int lamp=-350;
     int light=-350;
-<<<<<<< HEAD
-    int circleLineX=780;
-    int circleLineY=500;
-=======
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
@@ -1075,24 +998,16 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
-<<<<<<< HEAD
-=======
         //moon
         otherCircle(150.0f,670.0f,0.0f,32.0f,250,250,250);
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
         plane();
         planeTwo();
         //Play Ground
         playGround(42,55,17);
         //Middle Top Corridor
         MiddleTop();
-<<<<<<< HEAD
-        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,55.0f);
-
-=======
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,55.0f);
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
         //Building
         FirstBuilding(56,46,47);
 
@@ -1131,10 +1046,6 @@ void myDisplay()
         TinShade();
         circleLine();
         glPopMatrix();
-<<<<<<< HEAD
-
-=======
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
         truck();
         car();
     }
@@ -1149,10 +1060,6 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
-<<<<<<< HEAD
-        plane();
-        planeTwo();
-=======
         //cloud1
         clouds(150.0f,670.0f,0.0f);
         plane();
@@ -1161,7 +1068,6 @@ void myDisplay()
         clouds(450.0f,600.0f,0.0f);
         //cloud3
         clouds(750.0f,690.0f,0.0f);
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
         //Play Ground
         playGround(42,95,17);
         //Middle Top Corridor
@@ -1210,17 +1116,10 @@ void myDisplay()
 }
 
 void keyboard(unsigned char key, int x, int y)
-<<<<<<< HEAD
 {
 //-------- spin --------
 if(key=='d')
 {
-=======
-{
-//-------- spin --------
-if(key=='d')
-{
->>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
     day=true;
 }
 else if(key=='n')
