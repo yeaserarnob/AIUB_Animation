@@ -1,9 +1,30 @@
 # depslib dependency file v1.0
+1514054641 
+
+1117768 <<<<<<< HEAD
+
 2010423174 \
 
-1514043892 
+1341006776 D
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
 
-1514040651 D
+1514036876 cd2d489e7eb4bac01d9c1b87ab2ae31650baf
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -17,13 +38,6 @@
 1514043892 0968ed78f77a558c2e03d1f11a6730b6400f2
 
 1514040651 9f7b89d1285efdadab4c75acbb71e59c665d4
-	<stdio.h>
-	<windows.h>
-	<math.h>
-	<stdlib.h>
-	<GL/glut.h>
-	<time.h>
-	<iostream>
 
 2004613511 APIENTRM1L¥P!
 
@@ -42,14 +56,10 @@
 	<GL/glu.h>
 
 1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
-	<_mingw.h>
-	<stddef.h>
-	<stdarg.h>
-	<sys/types.h>
 
 1341010370 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
-1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -259,9 +269,6 @@
 	<_mingw.h>
 
 1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
 
 976645372 >
 
@@ -336,6 +343,13 @@
 	<stddef.h>
 
 1514036876 source:f:\graphic project\aiub_animation\aiub\main.cpp
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
 
 1514023457 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
 	<windows.h>
@@ -361,7 +375,7 @@
 	<time.h>
 	<iostream>
 
-1514057183 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+1514064167 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>

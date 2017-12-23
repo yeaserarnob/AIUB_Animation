@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <windows.h>
 #include <math.h>
@@ -81,6 +80,34 @@ void RoadLine(int x,int y,int z)
     //Sleep(50);
     //TranslateRoadLine(x,y,z);
 }
+
+void tprint(int x, int y,int z, char *string)
+{
+    //set the position of the text in the window using the x and y coordinates
+    glRasterPos2f(x,y);
+    //get the length of the string to display
+    int len = (int) strlen(string);
+
+    //loop to display character by character
+    for (int i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,string[i]);
+    }
+};
+void ttprint(int x, int y,int z, char *string)
+{
+    //set the position of the text in the window using the x and y coordinates
+    glRasterPos2f(x,y);
+    //get the length of the string to display
+    int len = (int) strlen(string);
+
+    //loop to display character by character
+    for (int i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    }
+};
+
 
 void playGround(int r,int g,int b)
 {
@@ -682,6 +709,7 @@ void truck()
     glVertex3i(750,140,0);
     glEnd();
 
+
     glBegin(GL_QUADS);
     glVertex3i(750,140,0);
     glVertex3i(860,140,0);
@@ -775,6 +803,8 @@ void truck()
     glVertex3i(740,102,0);
     glEnd();
 
+
+
     //trucklight
     if(!day)
     {
@@ -786,7 +816,8 @@ void truck()
         glVertex3i(680,130,0);
         glEnd();
     }
-
+    glColor3ub(255,255,255);
+    ttprint(860,110,0,"AIUB");
     glPopMatrix();
     glutPostRedisplay();
 }
@@ -948,12 +979,12 @@ void planeTwo()
 }
 
 //clouds
-void clouds(float x,float y,float z)
+void clouds(float x,float y,float z,int m,int l,int n)
 {
     //cloud1
-    otherCircle(x,y,z,50.0f,250,250,250);
-    otherCircle(x-50,y,z,40.0f,250,250,250);
-    otherCircle(x+50,y,z,40.0f,250,250,250);
+    otherCircle(x,y,z,50.0f,m,l,n);
+    otherCircle(x-50,y,z,40.0f,m,l,n);
+    otherCircle(x+50,y,z,40.0f,m,l,n);
 }
 //circleline
 void circleLine()
@@ -1035,11 +1066,20 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        //cloud0
+        clouds(-150.0f,630.0f,0.0f,173, 173, 133);
+        //cloud1
+        clouds(150.0f,670.0f,0.0f,173, 173, 133);
         //moon
-        otherCircle(150.0f,670.0f,0.0f,32.0f,250,250,250);
+        otherCircle(300.0f,670.0f,0.0f,32.0f,250,250,250);
         plane();
         planeTwo();
-        //Play Ground
+        //cloud2
+        clouds(450.0f,600.0f,0.0f,205, 205, 177);
+        //cloud3
+        clouds(750.0f,690.0f,0.0f,173, 173, 133);
+        //cloud4
+        clouds(1050.0f,680.0f,0.0f,173, 173, 133);
         playGround(42,55,17);
         //Middle Top Corridor
         MiddleTop();
@@ -1082,6 +1122,8 @@ void myDisplay()
         roadBorder();
         TinShade();
         circleLine();
+        glColor3ub(0,0,255);
+        tprint(330,433,0,"AIUB");
         glPopMatrix();
         truck();
         car();
@@ -1101,14 +1143,18 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+        //cloud0
+        clouds(-100.0f,630.0f,0.0f,250,250,250);
         //cloud1
-        clouds(150.0f,670.0f,0.0f);
+        clouds(150.0f,670.0f,0.0f,250,250,250);
         plane();
         planeTwo();
         //cloud2
-        clouds(450.0f,600.0f,0.0f);
+        clouds(450.0f,600.0f,0.0f,250,250,250);
         //cloud3
-        clouds(750.0f,690.0f,0.0f);
+        clouds(750.0f,690.0f,0.0f,250,250,250);
+        //cloud4
+        clouds(1050.0f,710.0f,0.0f,250,250,250);
         //Play Ground
         playGround(42,95,17);
         //Middle Top Corridor
@@ -1147,6 +1193,8 @@ void myDisplay()
         roadBorder();
         TinShade();
         circleLine();
+        glColor3ub(0,0,255);
+        tprint(330,433,0,"AIUB");
         glPopMatrix();
 
         truck();
