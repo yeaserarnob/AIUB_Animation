@@ -21,6 +21,7 @@ void myInit (void)
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
+<<<<<<< HEAD
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -35,25 +36,27 @@ void SpecialKeys(int key, int x, int y)
 			break;
 	}
 }
+=======
+>>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
 
 void Full()
 {
     glColor3ub(131,183,231);
     glBegin(GL_QUADS);
-    glVertex3i(0,0,0);
-    glVertex3i(1024,0,0);
-    glVertex3i(1024,768,0);
-    glVertex3i(0,768,0);
+    glVertex3i(-200,0,0);
+    glVertex3i(1324,0,0);
+    glVertex3i(1324,768,0);
+    glVertex3i(-200,768,0);
 }
 //Road
 void Road()
 {
     glColor3ub(78,78,78);
     glBegin(GL_QUADS);
-    glVertex3i(0,0,0);
-    glVertex3i(1024,0,0);
-    glVertex3i(1024,120,0);
-    glVertex3i(0,120,0);
+    glVertex3i(-200,0,0);
+    glVertex3i(1324,0,0);
+    glVertex3i(1324,120,0);
+    glVertex3i(-200,120,0);
     glEnd();
 }
 void TranslateRoadLine(int x,int y,int z)
@@ -96,19 +99,19 @@ void playGround()
     //Grass
     glColor3ub(42,95,17);
     glBegin(GL_QUADS);
-    glVertex3i(0,120,0);
-    glVertex3i(1024,120,0);
-    glVertex3i(1024,260,0);
-    glVertex3i(0,260,0);
+    glVertex3i(-200,120,0);
+    glVertex3i(1324,120,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(-200,260,0);
     glEnd();
 
     //Walkway
     glColor3ub(140,88,54);
     glBegin(GL_QUADS);
-    glVertex3i(0,250,0);
-    glVertex3i(1024,250,0);
-    glVertex3i(1024,260,0);
-    glVertex3i(0,260,0);
+    glVertex3i(-200,250,0);
+    glVertex3i(1324,250,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(-200,260,0);
 
 }
 //Dynamic Tree Function
@@ -182,22 +185,22 @@ void Windows(int x,int y,int z)
 //Buildings
 void FirstBuilding()
 {
-   int windowsXf=-74,windowsXl=556;
+   int windowsXf=-220,windowsXl=556;
 
     //Left Building
     glColor3ub(56,46,47);
     glBegin(GL_QUADS);
-    glVertex3i(0,260,0);
+    glVertex3i(-200,260,0);
     glVertex3i(396,260,0);
     glVertex3i(396,375,0);
-    glVertex3i(0,375,0);
+    glVertex3i(-200,375,0);
     glEnd();
 
     //Right Building
     glBegin(GL_QUADS);
     glVertex3i(628,260,0);
-    glVertex3i(1024,260,0);
-    glVertex3i(1024,375,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(1324,375,0);
     glVertex3i(628,375,0);
     glEnd();
 
@@ -211,13 +214,13 @@ void FirstBuilding()
     glEnd();
 
     //First 4 Windows
-    for(int i=3;i>=0;i--)
+    for(int i=5;i>=0;i--)
     {
         windowsXf+=90;
         Windows(windowsXf,280,0);
     }
     //Last 4 Windows
-    for(int i=4;i>=0;i--)
+    for(int i=6;i>=0;i--)
     {
         windowsXl+=90;
         Windows(windowsXl,280,0);
@@ -240,19 +243,19 @@ void Cross(int x,int y,int z)
 void TinShade()
 {
     glColor3ub(233,235,238);
-    //Right One
-    glBegin(GL_QUADS);
-    glVertex3i(0,375,0);
-    glVertex3i(396,375,0);
-    glVertex3i(396,390,0);
-    glVertex3i(0,390,0);
-    glEnd();
-
     //Left One
     glBegin(GL_QUADS);
+    glVertex3i(-200,375,0);
+    glVertex3i(396,375,0);
+    glVertex3i(396,390,0);
+    glVertex3i(-200,390,0);
+    glEnd();
+
+    //Right One
+    glBegin(GL_QUADS);
     glVertex3i(628,375,0);
-    glVertex3i(1024,375,0);
-    glVertex3i(1024,390,0);
+    glVertex3i(1324,375,0);
+    glVertex3i(1324,390,0);
     glVertex3i(628,390,0);
     glEnd();
 
@@ -266,16 +269,16 @@ void TinShade()
     //Green Top
     glColor3ub(42,85,6);
     glBegin(GL_QUADS);
-    glVertex3i(0,390,0);
+    glVertex3i(-200,390,0);
     glVertex3i(396,390,0);
     glVertex3i(396,395,0);
-    glVertex3i(0,395,0);
+    glVertex3i(-200,395,0);
     glEnd();
 
     glBegin(GL_QUADS);
     glVertex3i(628,390,0);
-    glVertex3i(1024,390,0);
-    glVertex3i(1024,395,0);
+    glVertex3i(1324,390,0);
+    glVertex3i(1324,395,0);
     glVertex3i(628,395,0);
     glEnd();
 
@@ -460,6 +463,7 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
+<<<<<<< HEAD
 void car()
 {
     glColor3ub(255,0,0);
@@ -482,6 +486,8 @@ gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
 glMatrixMode(GL_MODELVIEW);
 glLoadIdentity();
 }
+=======
+>>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
 
 void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 	int i;
@@ -514,31 +520,46 @@ void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 	glEnd();
 }
 
+
+
+
+
+
+void reshape(int w,int h)
+{
+glViewport(0,0, (GLsizei)w,(GLsizei)h);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+}
 //Main Display Function
 void myDisplay()
 {
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    int roadlineX=-2048;
+    int roadlineX=-4096;
     int treeXf=-104;
     int treeXl=528;
-
+    glPushMatrix();
+    glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
     Full();
+
     //Road
     Road();
     //RoadLine
-    for(int i=33;i>0;i--)
+    for(int i=55;i>0;i--)
     {
         roadlineX+=100;
         RoadLine(roadlineX,55,0);
     }
     //Play Ground
     playGround();
-
     //Middle Top Corridor
     MiddleTop();
-    drawFilledCircle(850.0f,500.0f,0.0f,170.0f);
+    drawFilledCircle(950.0f,500.0f,0.0f,170.0f);
     //Building
     FirstBuilding();
 
@@ -558,11 +579,41 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     FrontTop();
 
     //TinShade
+<<<<<<< HEAD
     TinShade();
     car();
+=======
+
+    TinShade();
+    glPopMatrix();
+>>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
     glFlush();
 glutSwapBuffers();
 }
+
+
+void SpecialKeys(int key, int x, int y)
+{
+    switch (key)
+	{
+		case GLUT_KEY_LEFT:
+            if(translate_x<200)
+            {
+                translate_x+=5;
+                glutPostRedisplay();
+            }
+			break;
+
+		case GLUT_KEY_RIGHT:
+            if(translate_x>-300)
+            {
+                translate_x-=5;
+                glutPostRedisplay();
+            }
+			break;
+	}
+}
+
 
 int main(int argc, char** argv)
 {
@@ -573,6 +624,8 @@ glutInitWindowPosition (0, 0);
 glutCreateWindow ("AIUB");
 myInit();
 glutDisplayFunc(myDisplay);
+//glutReshapeFunc(reshape);
+glutSpecialFunc(SpecialKeys);
 glutMainLoop();
 return 0;
 }
