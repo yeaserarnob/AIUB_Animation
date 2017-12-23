@@ -1,7 +1,17 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
+2010423174 
+
+1514039898 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+=======
 2004613511 lMesh2( …0”¤
 
+<<<<<<< HEAD
 1514045488 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+=======
+1514041818 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+>>>>>>> dda0968ed78f77a558c2e03d1f11a6730b6400f2
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -9,16 +19,40 @@
 	<GL/glut.h>
 	<time.h>
 	<iostream>
+<<<<<<< HEAD
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+2004613511 APIENTRM1L¥P!
+
+1453865572 f6b709b20b8e0372652a09b9fd88dd29f5acc
+
+1453865572 ent of ee21c8b... Car Move Done
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1453865572 D
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+
+1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
 	<sys/types.h>
 
-1341006770 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+1341010370 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
-1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -71,7 +105,7 @@
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\winerror.h
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\string.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -141,7 +175,7 @@
 
 1301111158 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
 
-1341006772 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+1341010372 c:\program files (x86)\codeblocks\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
@@ -203,7 +237,7 @@
 	<objidl.h>
 	<cguid.h>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -224,10 +258,70 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
+1341010374 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
+<<<<<<< HEAD
+1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+<<<<<<< HEAD
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+=======
+1453865572 0f3f9c7bc7b9c7a771db27283956fb2062c2e
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+
+976645372 6f6b709b20b8e0372652a09b9fd88dd29f5acc
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+976645372 AD
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+976645372 553a2f4b2bef79e915c8cd3d6406f2a9e59bd6
+
+976645372 6cf5f1d974be8dc325318a0a6fbc20cfcba9d1
+
+976645372 21c8b4fe88779c8446f329bd587461b71aa61a
+
+976645372 69bdf9c90b079e32c38ed92e052c217de4aa7a
+
+902904872 fa3f3ca0cc11c5aa0a7fd26d329b7744fbb9d4
+
+1453865572 d5322924e96007913dc57ab55859de467dd6a
+
+976645372 rent of ee21c8b... Car Move Done
+
+976645372 ebf48a4149dc1e5659899492fdafc7788e84f8
+
+976645372 6496a0bc47557cb346198abe6e0344739a0873
+
+976645372 e0f3f9c7bc7b9c7a771db27283956fb2062c2e
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+976645372 6d5322924e96007913dc57ab55859de467dd6a
+
+976645372 1de6beda02eecf3d83a7fc7f1df36fde7ba3de
+
+976645372 72b6ac7c7fbe8514dcf8ccdd4d6a8923299e17
+
+976645372 bdf649218b2a25ccb310292eb2bb858878e4bb
+=======
 902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -238,7 +332,56 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\time.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
+<<<<<<< HEAD
+1514040651 source:f:\graphic project\aiub_animation\aiub\main.cpp
+=======
+<<<<<<< HEAD
+1514036876 source:f:\graphic project\aiub_animation\aiub\main.cpp
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1514023457 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1513354193 source:h:\study\graphics\aiub_animation\aiub\arnob.cpp
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1513958431 source:c:\users\user\documents\github\aiub_animation\aiub\arnob.cpp
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1514043892 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
