@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <windows.h>
 #include <math.h>
@@ -80,6 +79,22 @@ void RoadLine(int x,int y,int z)
     //Sleep(50);
     //TranslateRoadLine(x,y,z);
 }
+
+void tprint(int x, int y,int z, char *string)
+{
+    glColor3ub(0,0,255);
+    //set the position of the text in the window using the x and y coordinates
+    glRasterPos2f(x,y);
+    //get the length of the string to display
+    int len = (int) strlen(string);
+
+    //loop to display character by character
+    for (int i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,string[i]);
+    }
+};
+
 
 void playGround(int r,int g,int b)
 {
@@ -681,6 +696,7 @@ void truck()
     glVertex3i(750,140,0);
     glEnd();
 
+
     glBegin(GL_QUADS);
     glVertex3i(750,140,0);
     glVertex3i(860,140,0);
@@ -773,6 +789,8 @@ void truck()
     glVertex3i(750,102,0);
     glVertex3i(740,102,0);
     glEnd();
+
+
 
     //trucklight
     if(!day)
@@ -1111,6 +1129,7 @@ void myDisplay()
         truck();
         car();
     }
+    tprint(330,433,0,"AIUB");
     glFlush();
     glutSwapBuffers();
 }
