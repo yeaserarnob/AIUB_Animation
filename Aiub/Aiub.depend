@@ -227,7 +227,10 @@
 
 1341010374 D
 
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
 
 902904872 AD
 
@@ -278,7 +281,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1514036876 source:f:\graphic project\aiub_animation\aiub\main.cpp
+1514040651 source:f:\graphic project\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
