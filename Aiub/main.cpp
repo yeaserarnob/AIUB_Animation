@@ -1072,6 +1072,7 @@ void myDisplay()
         roadBorder();
         TinShade();
         circleLine();
+        tprint(330,433,0,"AIUB");
         glPopMatrix();
         truck();
         car();
