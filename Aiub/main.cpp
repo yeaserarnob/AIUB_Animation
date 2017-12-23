@@ -59,24 +59,13 @@ void TranslateRoadLine(int x,int y,int z)
 //ROad Line
 void RoadLine(int x,int y,int z)
 {
-    static float a=.0f;
-    a+=.002f;
-    if(a==49)
-    {
-        x=x-49;
-    }
     glColor3ub(255,255,255);
-    glPushMatrix();
-    glTranslatef(a,.0f,.0f);
     glBegin(GL_QUADS);
     glVertex3i(x,y,z);
     glVertex3i(x+50,y,z);
     glVertex3i(x+50,y+10,z);
     glVertex3i(x,y+10,z);
     glEnd();
-
-    glPopMatrix();
-    glutPostRedisplay();
     //Sleep(50);
     //TranslateRoadLine(x,y,z);
 }
@@ -802,7 +791,7 @@ void myDisplay()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int roadlineX=-4096;
-    int treeXf=-304;
+    int treeXf=-350;
     int treeXl=528;
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
@@ -847,12 +836,9 @@ void myDisplay()
 
     TinShade();
     glPopMatrix();
-    car();
-<<<<<<< HEAD
     truck();
-=======
+    car();
     plane();
->>>>>>> 0dfa3f3ca0cc11c5aa0a7fd26d329b7744fbb9d4
     glFlush();
     glutSwapBuffers();
 }
