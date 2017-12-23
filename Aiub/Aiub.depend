@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1513608387 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+1514022206 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -8,7 +8,7 @@
 	<time.h>
 	<iostream>
 
-1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
@@ -16,7 +16,7 @@
 
 1341006770 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
-1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -225,7 +225,20 @@
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
+1341010374 D
+
 976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+976645372 1de6beda02eecf3d83a7fc7f1df36fde7ba3de
+
+902904872 AD
+
+976645372 72b6ac7c7fbe8514dcf8ccdd4d6a8923299e17
+
+976645372 bdf649218b2a25ccb310292eb2bb858878e4bb
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -249,7 +262,7 @@
 	<time.h>
 	<iostream>
 
-1513633419 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
+1514023457 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
 	<windows.h>
 	<math.h>
 	<stdlib.h>
@@ -258,6 +271,23 @@
 	<iostream>
 
 1513354193 source:h:\study\graphics\aiub_animation\aiub\arnob.cpp
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1513958431 source:c:\users\user\documents\github\aiub_animation\aiub\arnob.cpp
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+
+1514020027 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+	<stdio.h>
 	<windows.h>
 	<math.h>
 	<stdlib.h>
