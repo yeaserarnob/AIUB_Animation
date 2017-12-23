@@ -27,9 +27,9 @@ void myInit (void)
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
 
-void Full()
+void Full(int r,int g,int b)
 {
-    glColor3ub(131,183,231);
+    glColor3ub(r,g,b);
     glBegin(GL_QUADS);
     glVertex3i(-200,0,0);
     glVertex3i(1324,0,0);
@@ -81,10 +81,10 @@ void RoadLine(int x,int y,int z)
     //TranslateRoadLine(x,y,z);
 }
 
-void playGround()
+void playGround(int r,int g,int b)
 {
     //Grass
-    glColor3ub(42,95,17);
+    glColor3ub(r,g,b);
     glBegin(GL_QUADS);
     glVertex3i(-200,120,0);
     glVertex3i(1324,120,0);
@@ -212,12 +212,12 @@ void Windows(int x,int y,int z)
     glEnd();
 }
 //Buildings
-void FirstBuilding()
+void FirstBuilding(int r,int g,int b)
 {
    int windowsXf=-310,windowsXl=556;
 
     //Left Building
-    glColor3ub(56,46,47);
+    glColor3ub(r,g,b);
     glBegin(GL_QUADS);
     glVertex3i(-200,260,0);
     glVertex3i(396,260,0);
@@ -507,13 +507,12 @@ glLoadIdentity();
 }
 
 
-void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
+void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int color){
 	int i;
 	int triangleAmount = 50; //# of triangles used to draw circle
 
 	//GLfloat radius = 0.8f; //radius
 	GLfloat twicePi = 2.0f * 3.1416;
-    int color=137;
     int counter=0;
     glColor3ub(color,color,color);
 	glBegin(GL_TRIANGLE_FAN);
@@ -937,6 +936,7 @@ void myDisplay()
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
+<<<<<<< HEAD
     Full();
     //Road
     Road();
@@ -975,25 +975,133 @@ void myDisplay()
     //TinShade
 
     TinShade();
+=======
+>>>>>>> 2e8370c8f3a9df41454bd44e868140a443d4defd
 
-    //lamp post
-    for(int i=9;i>=0;i--)
+    if(!day)
     {
-        lamp+=310;
-        lampPost(lamp,130,0);
+        Full(55,55,55);
+        //Road
+        Road();
+        //RoadLine
+        for(int i=55;i>0;i--)
+        {
+            roadlineX+=100;
+            RoadLine(roadlineX,55,0);
+        }
+        plane();
+        planeTwo();
+        //Play Ground
+        playGround(42,55,17);
+        //Middle Top Corridor
+        MiddleTop();
+
+        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,55.0f);
+        //Building
+        FirstBuilding(56,46,47);
+
+        //First 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXf+=120;
+            Tree(treeXf,260,0);
+        }
+        //Last 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXl+=120;
+            Tree(treeXl,260,0);
+        }
+        //Front top corridor
+        FrontTop();
+
+        //TinShade
+
+        TinShade();
+
+        //lamp post
+        for(int i=9;i>=0;i--)
+        {
+            lamp+=310;
+            lampPost(lamp,130,0);
+        }
+        //light
+        for(int i=9;i>=0;i--)
+        {
+            light+=310;
+            Light(light,130,0);
+        }
+        roadBorder();
+        TinShade();
+        glPopMatrix();
+
+        truck();
+        car();
     }
-    //light
-    for(int i=9;i>=0;i--)
+    else
     {
-        light+=310;
-        Light(light,130,0);
+        Full(131,183,231);
+        //Road
+        Road();
+        //RoadLine
+        for(int i=55;i>0;i--)
+        {
+            roadlineX+=100;
+            RoadLine(roadlineX,55,0);
+        }
+        plane();
+        planeTwo();
+        //Play Ground
+        playGround(42,95,17);
+        //Middle Top Corridor
+        MiddleTop();
+
+        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
+        //Building
+        FirstBuilding(100,88,54);
+
+        //First 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXf+=120;
+            Tree(treeXf,260,0);
+        }
+        //Last 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXl+=120;
+            Tree(treeXl,260,0);
+        }
+        //Front top corridor
+        FrontTop();
+
+        //TinShade
+
+        TinShade();
+
+        //lamp post
+        for(int i=9;i>=0;i--)
+        {
+            lamp+=310;
+            lampPost(lamp,130,0);
+        }
+        //light
+        roadBorder();
+        TinShade();
+        glPopMatrix();
+
+        truck();
+        car();
     }
+<<<<<<< HEAD
     roadBorder();
     TinShade();
     glPopMatrix();
 
     truck();
     car();
+=======
+>>>>>>> 2e8370c8f3a9df41454bd44e868140a443d4defd
     glFlush();
     glutSwapBuffers();
 }
