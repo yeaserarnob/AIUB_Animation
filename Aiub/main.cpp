@@ -25,24 +25,6 @@ void myInit (void)
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
-<<<<<<< HEAD
-void SpecialKeys(int key, int x, int y)
-{
-    switch (key)
-	{
-		case GLUT_KEY_LEFT:
-//            mx -= 10;
-            glutPostRedisplay();
-			break;
-		case GLUT_KEY_RIGHT:
-//            mx += 10;
-            glutPostRedisplay();
-			break;
-	}
-}
-=======
->>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
-
 void Full()
 {
     glColor3ub(131,183,231);
@@ -469,20 +451,7 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
-<<<<<<< HEAD
-void car()
-{
-    glColor3ub(255,0,0);
-    glBegin(GL_QUAD_STRIP);
-    glVertex3i(20,40,0);
-    glVertex3i(100,40,0);
-    glVertex3i(100,100,0);
-    glVertex3i(80,120,0);
-    glVertex3i(50,120,0);
-    glVertex3i(40,100,0);
-    glVertex3i(20,100,0);
-    glEnd();
-}
+
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -492,8 +461,7 @@ gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
 glMatrixMode(GL_MODELVIEW);
 glLoadIdentity();
 }
-=======
->>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
+
 
 void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 	int i;
@@ -526,20 +494,88 @@ void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
 	glEnd();
 }
 
+void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int b){
+	int i;
+	int triangleAmount = 50; //# of triangles used to draw circle
 
-
-
-
-
-void reshape(int w,int h)
-{
-glViewport(0,0, (GLsizei)w,(GLsizei)h);
-glMatrixMode(GL_PROJECTION);
-glLoadIdentity();
-gluPerspective(100.0f, (GLfloat)w/(GLfloat)h, 1.0f, 100.0f);
-glMatrixMode(GL_MODELVIEW);
-glLoadIdentity();
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * 3.1416;
+    int counter=0;
+    glColor3ub(r,g,b);
+	glBegin(GL_TRIANGLE_FAN);
+		glVertex3f(x, y,z); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			counter+=1;
+			glVertex3f(
+		            x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount)),z
+			);
+		}
+	glEnd();
 }
+
+void car()
+{
+    glColor3ub(255,0,0);
+    /*glBegin(GL_QUAD_STRIP);
+    glVertex3i(20,40,0);
+    glVertex3i(200,40,0);
+    glVertex3i(200,80,0);
+    glVertex3i(180,80,0);
+    glVertex3i(140,110,0);
+    glVertex3i(80,110,0);
+    glVertex3i(40,80,0);
+    glVertex3i(20,80,0);
+    glVertex3i(20,40,0);
+    glEnd();*/
+
+    glBegin(GL_QUADS);
+    glVertex3i(20,40,0);
+    glVertex3i(220,40,0);
+    glVertex3i(220,80,0);
+    glVertex3i(20,80,0);
+    glEnd();
+    glBegin(GL_QUADS);
+    glVertex3i(40,80,0);
+    glVertex3i(200,80,0);
+    glVertex3i(160,110,0);
+    glVertex3i(80,110,0);
+    glEnd();
+
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(115,80,0);
+    glVertex3i(190,80,0);
+    glVertex3i(155,105,0);
+    glVertex3i(115,105,0);
+    glEnd();
+
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(45,80,0);
+    glVertex3i(110,80,0);
+    glVertex3i(110,105,0);
+    glVertex3i(80,105,0);
+    glEnd();
+
+    otherCircle(30.0f,60.0f,0.0f,19.0f,255,0,0);
+    otherCircle(210.0f,60.0f,0.0f,19.0f,255,0,0);
+
+//Light
+    glColor3ub(255,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(220,55,0);
+    glVertex3i(225,55,0);
+    glVertex3i(225,65,0);
+    glVertex3i(220,65,0);
+    glEnd();
+
+    otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
+    otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
+    otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
+    otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
+}
+
 //Main Display Function
 void myDisplay()
 {
@@ -585,14 +621,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     FrontTop();
 
     //TinShade
-<<<<<<< HEAD
+
     TinShade();
-    car();
-=======
+
 
     TinShade();
     glPopMatrix();
->>>>>>> d93bc1eedd3c32ef3e4cda702647b6ec5e6f1b99
+    car();
     glFlush();
 glutSwapBuffers();
 }
