@@ -21,10 +21,6 @@ void myInit (void)
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> e872b6ac7c7fbe8514dcf8ccdd4d6a8923299e17
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -464,12 +460,19 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
-<<<<<<< HEAD
-
-//312070e231af20f6f8589e992d87108c3139db38
-=======
-//Reshape Function
->>>>>>> b3a2d3ca463f655a5cc513ab442d8db3bc77705c
+void car()
+{
+    glColor3ub(255,0,0);
+    glBegin(GL_QUAD_STRIP);
+    glVertex3i(20,40,0);
+    glVertex3i(100,40,0);
+    glVertex3i(100,100,0);
+    glVertex3i(80,120,0);
+    glVertex3i(50,120,0);
+    glVertex3i(40,100,0);
+    glVertex3i(20,100,0);
+    glEnd();
+}
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -556,7 +559,7 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     //TinShade
     TinShade();
-
+    car();
     glFlush();
 glutSwapBuffers();
 }
