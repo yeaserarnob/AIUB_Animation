@@ -585,6 +585,11 @@ void car()
     otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
 }
 
+void truck()
+{
+
+}
+
 //Main Display Function
 void myDisplay()
 {
@@ -681,7 +686,6 @@ void SpecialKeys(int key, int x, int y)
 			break;
 	}
 }
-
 
 int main(int argc, char** argv)
 {
