@@ -593,9 +593,21 @@ void car()
 
 void truck()
 {
-    glColor3ub(0,0,255);
+    static float a=550.0f;
+    if(a<=-1300)
+    {
+         a=550.0f;
 
+    }
+    else
+    {
+        a-=0.5f;
+        //glColor3ub(r,g,b);
+    }
+    glColor3ub(0,0,255);
     //frontbumper
+    glPushMatrix();
+    glTranslatef(a,0,0);
     otherCircle(780.0f,130.0f,0.0f,41.0f,0,0,255);
     //main body
     glBegin(GL_QUADS);
@@ -698,6 +710,9 @@ void truck()
     glVertex3i(740,102,0);
     glEnd();
 
+    glPopMatrix();
+    glutPostRedisplay();
+
 }
 
 
@@ -714,7 +729,7 @@ void plane()
     }
     else
     {
-        a+=0.5f;
+        a+=0.1f;
         //glColor3ub(r,g,b);
     }
     //Body
