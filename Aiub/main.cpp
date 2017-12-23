@@ -29,7 +29,11 @@ void myInit (void)
 
 void Full(int x,int y,int z)
 {
+<<<<<<< HEAD
     glColor3ub(x,y,z);
+=======
+    glColor3ub(131,183,231);
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
     glBegin(GL_QUADS);
     glVertex3i(-200,0,0);
     glVertex3i(1324,0,0);
@@ -289,6 +293,7 @@ void TinShade()
     glVertex3i(1324,390,0);
     glVertex3i(628,390,0);
     glEnd();
+<<<<<<< HEAD
 
     //Middle One
     glBegin(GL_QUADS);
@@ -329,6 +334,48 @@ void TinShade()
         CrossX+=8;
     }
 
+=======
+
+    //Middle One
+    glBegin(GL_QUADS);
+    glVertex3i(386,400,0);
+    glVertex3i(638,400,0);
+    glVertex3i(638,420,0);
+    glVertex3i(386,420,0);
+    glEnd();
+    //Green Top
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,390,0);
+    glVertex3i(396,390,0);
+    glVertex3i(396,395,0);
+    glVertex3i(-200,395,0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3i(628,390,0);
+    glVertex3i(1324,390,0);
+    glVertex3i(1324,395,0);
+    glVertex3i(628,395,0);
+    glEnd();
+
+    //Left Top Side
+    glColor3ub(140,140,130);
+    glBegin(GL_QUADS);
+    glVertex3i(0,395,0);
+    glVertex3i(125,395,0);
+    glVertex3i(120,410,0);
+    glVertex3i(0,410,0);
+    glEnd();
+    //Cross
+    int CrossX=0;
+    for(int i=15;i>0;i--)
+    {
+        Cross(CrossX,395,0);
+        CrossX+=8;
+    }
+
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
     glColor3b(10,150,12);
     glBegin(GL_QUADS);
     glVertex3i(0,400,0);
@@ -368,6 +415,7 @@ void FrontTop()
     glVertex3i(120,440,0);
     glVertex3i(3,442,0);
     glEnd();
+<<<<<<< HEAD
 
     glColor3ub(147,154,174);
     glBegin(GL_QUADS);
@@ -403,6 +451,43 @@ void FrontTop()
     for(int i=6;i>=0;i--)
     {
 
+=======
+
+    glColor3ub(147,154,174);
+    glBegin(GL_QUADS);
+    glVertex3i(120,395,0);
+    glVertex3i(220,395,0);
+    glVertex3i(220,410,0);
+    glVertex3i(120,410,0);
+    glEnd();
+
+    //Green Tin Shade
+    glColor3ub(83,186,60);
+    glBegin(GL_QUADS);
+    glVertex3i(0,440,0);
+    glVertex3i(200,440,0);
+    glVertex3i(210,455,0);
+    glVertex3i(10,455,0);
+    glEnd();
+    //Front Triangle
+    glColor3ub(48,56,67);
+    glBegin(GL_TRIANGLES);
+    glVertex3i(190,435,0);
+    glVertex3i(220,435,0);
+    glVertex3i(210,455,0);
+    glEnd();
+    //Shadow
+    glBegin(GL_QUADS);
+    glVertex3i(0,436,0);
+    glVertex3i(200,435,0);
+    glVertex3i(210,440,0);
+    glVertex3i(0,440,0);
+    glEnd();
+    //Pillar
+    for(int i=6;i>=0;i--)
+    {
+
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
         Pillar(pillarX,395,0);
         pillarX+=32;
     }
@@ -495,7 +580,69 @@ void MiddleTop()
     glVertex3i(405,431,0);
     glVertex3i(300,431,0);
     glEnd();
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+}
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+//Middle top Corridor Main Function
+void MiddleTop()
+{
+//Top
+glColor3ub(205,205,205);
+glBegin(GL_QUADS);
+glVertex3i(300,430,0);
+glVertex3i(405,430,0);
+glVertex3i(405,450,0);
+glVertex3i(300,450,0);
+glEnd();
+glColor3ub(255,0,0);
+//Pillar
+glColor3ub(166,166,166);
+glBegin(GL_QUADS);
+glVertex3i(300,395,0);
+glVertex3i(303,395,0);
+glVertex3i(303,430,0);
+glVertex3i(300,430,0);
+glEnd();
+
+glColor3ub(166,166,166);
+glBegin(GL_QUADS);
+glVertex3i(402,420,0);
+glVertex3i(405,420,0);
+glVertex3i(405,430,0);
+glVertex3i(402,430,0);
+glEnd();
+//Line
+VerticalLine(300,395,0);
+HorizontalLine(300,395,0);
+//Shadow
+glColor3ub(5,5,5);
+glBegin(GL_QUADS);
+glVertex3i(300,427,0);
+glVertex3i(405,427,0);
+glVertex3i(405,431,0);
+glVertex3i(300,431,0);
+glEnd();
+}
+=======
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+>>>>>>> 0469f7b89d1285efdadab4c75acbb71e59c665d4
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -507,7 +654,11 @@ glLoadIdentity();
 }
 
 
+<<<<<<< HEAD
 void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,float color){
+=======
+void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
 	int i;
 	int triangleAmount = 50; //# of triangles used to draw circle
 
@@ -635,6 +786,7 @@ void car()
     glVertex3i(230,65,0);
     glVertex3i(225,65,0);
     glEnd();
+<<<<<<< HEAD
 
     otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
     otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
@@ -645,6 +797,18 @@ void car()
     glutPostRedisplay();
 }
 
+=======
+
+    otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
+    otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
+    otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
+    otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
+
+    glPopMatrix();
+    glutPostRedisplay();
+}
+
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
 void truck()
 {
     static float a=550.0f;
@@ -766,6 +930,28 @@ void truck()
 
     glPopMatrix();
     glutPostRedisplay();
+<<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+    glPopMatrix();
+    glutPostRedisplay();
+
+=======
+
+    glPopMatrix();
+    glutPostRedisplay();
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
+>>>>>>> 1de34999e01a29612ae83718535e82db72570895
+>>>>>>> 0469f7b89d1285efdadab4c75acbb71e59c665d4
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
 }
 
 //Plane
@@ -936,8 +1122,52 @@ void myDisplay()
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
+<<<<<<< HEAD
 
     if(!day)
+=======
+    Full();
+    //Road
+    Road();
+    //RoadLine
+    for(int i=55;i>0;i--)
+    {
+        roadlineX+=100;
+        RoadLine(roadlineX,55,0);
+    }
+<<<<<<< HEAD
+    plane();
+    planeTwo();
+=======
+<<<<<<< HEAD
+    plane();
+    planeTwo();
+=======
+
+
+    plane();
+    planeTwo();
+
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
+    //Play Ground
+    playGround();
+    //Middle Top Corridor
+    MiddleTop();
+
+    drawFilledCircle(950.0f,500.0f,0.0f,170.0f);
+    //Building
+    FirstBuilding();
+
+    //First 4 Tree
+    for(int i=5;i>=0;i--)
+    {
+        treeXf+=120;
+        Tree(treeXf,260,0);
+    }
+    //Last 4 Tree
+    for(int i=5;i>=0;i--)
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
     {
         Full(31,31,32);
         Road();
@@ -996,7 +1226,19 @@ void myDisplay()
         truck();
         car();
     }
+<<<<<<< HEAD
     else
+=======
+    //Front top corridor
+    FrontTop();
+
+    //TinShade
+
+    TinShade();
+
+    //lamp post
+    for(int i=9;i>=0;i--)
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
     {
         Full(131,183,231);
         //Road
@@ -1050,6 +1292,30 @@ void myDisplay()
         truck();
         car();
     }
+<<<<<<< HEAD
+=======
+    //light
+    for(int i=9;i>=0;i--)
+    {
+        light+=310;
+        Light(light,130,0);
+    }
+    roadBorder();
+    TinShade();
+    glPopMatrix();
+
+    truck();
+    car();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 267d49676f9b7251fba1889fff9f5c093344c07c
+>>>>>>> fa00a27ace647f02ea73d5e1b933c4682521ba8e
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
     glFlush();
     glutSwapBuffers();
 }
@@ -1121,4 +1387,7 @@ glutSpecialFunc(SpecialKeys);
 glutMainLoop();
 return 0;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 261e067a1088b35e379dba73ada191142a81be85
