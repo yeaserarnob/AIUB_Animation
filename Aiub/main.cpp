@@ -11,6 +11,10 @@ using namespace std;
 float translate_x = 0.0;
 float translate_y = 0.0;
 float translate_z = 0.0;
+static GLfloat spin = 0.0;
+float spin_x=1.0;
+float spin_y=0.0;
+float spin_z=0.0;
 
 void myInit (void)
 {
@@ -167,7 +171,7 @@ void Windows(int x,int y,int z)
 //Buildings
 void FirstBuilding()
 {
-   int windowsXf=-220,windowsXl=556;
+   int windowsXf=-310,windowsXl=556;
 
     //Left Building
     glColor3ub(56,46,47);
@@ -196,13 +200,13 @@ void FirstBuilding()
     glEnd();
 
     //First 4 Windows
-    for(int i=5;i>=0;i--)
+    for(int i=6;i>=0;i--)
     {
         windowsXf+=90;
         Windows(windowsXf,280,0);
     }
     //Last 4 Windows
-    for(int i=6;i>=0;i--)
+    for(int i=7;i>=0;i--)
     {
         windowsXl+=90;
         Windows(windowsXl,280,0);
@@ -224,6 +228,8 @@ void Cross(int x,int y,int z)
 //TinShade
 void TinShade()
 {
+
+
     glColor3ub(233,235,238);
     //Left One
     glBegin(GL_QUADS);
@@ -576,7 +582,7 @@ void myDisplay()
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     int roadlineX=-4096;
-    int treeXf=-104;
+    int treeXf=-304;
     int treeXl=528;
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
@@ -600,13 +606,13 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     FirstBuilding();
 
     //First 4 Tree
-    for(int i=3;i>=0;i--)
+    for(int i=5;i>=0;i--)
     {
         treeXf+=120;
         Tree(treeXf,260,0);
     }
     //Last 4 Tree
-    for(int i=3;i>=0;i--)
+    for(int i=5;i>=0;i--)
     {
         treeXl+=120;
         Tree(treeXl,260,0);
@@ -645,6 +651,24 @@ void SpecialKeys(int key, int x, int y)
                 translate_x-=5;
                 glutPostRedisplay();
             }
+			break;
+
+        case GLUT_KEY_UP:
+            spin-=5;
+            if(spin>=360)
+            {
+                spin=0;
+            }
+            glutPostRedisplay();
+			break;
+
+        case GLUT_KEY_DOWN:
+            spin+=5;
+            if(spin<=360)
+            {
+                spin=0;
+            }
+            glutPostRedisplay();
 			break;
 	}
 }
