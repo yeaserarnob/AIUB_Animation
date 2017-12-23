@@ -15,6 +15,7 @@ static GLfloat spin = 0.0;
 float spin_x=1.0;
 float spin_y=0.0;
 float spin_z=0.0;
+bool day=true;
 
 void myInit (void)
 {
@@ -483,10 +484,6 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -756,12 +753,9 @@ void truck()
     glVertex3i(740,102,0);
     glEnd();
 
-<<<<<<< HEAD
-=======
     glPopMatrix();
     glutPostRedisplay();
 
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
 }
 
 //Plane
@@ -940,12 +934,8 @@ void myDisplay()
         roadlineX+=100;
         RoadLine(roadlineX,55,0);
     }
-
-<<<<<<< HEAD
-=======
     plane();
     planeTwo();
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
     //Play Ground
     playGround();
     //Middle Top Corridor
@@ -986,15 +976,22 @@ void myDisplay()
 
     truck();
     car();
-<<<<<<< HEAD
-    plane();
-=======
->>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
     glFlush();
     glutSwapBuffers();
 }
 
-
+void keyboard(unsigned char key, int x, int y)
+{
+//-------- spin --------
+if(key=='d')
+{
+    day=true;
+}
+else if(key=='n')
+{
+    day=false;
+}
+}
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -1045,6 +1042,7 @@ glutCreateWindow ("AIUB");
 myInit();
 glutDisplayFunc(myDisplay);
 //glutReshapeFunc(reshape);
+glutKeyboardFunc(keyboard);
 glutSpecialFunc(SpecialKeys);
 glutMainLoop();
 return 0;
