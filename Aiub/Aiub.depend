@@ -1,4 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
+1117768 <<<<<<< HEAD
+
+1514043892 
+=======
 2010423174 \
 
 1514043892 
@@ -7,16 +12,20 @@
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
+>>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 
 1514041818 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 
 2004613511 lMesh2( …0”¤
 
 1514043892 7a98602a69509c7ee9012eba6c272290e790d
+<<<<<<< HEAD
+=======
 
 1514043892 0968ed78f77a558c2e03d1f11a6730b6400f2
 
 1514040651 9f7b89d1285efdadab4c75acbb71e59c665d4
+>>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -24,6 +33,14 @@
 	<GL/glut.h>
 	<time.h>
 	<iostream>
+<<<<<<< HEAD
+
+1514040651 D
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+=======
+>>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 
 2004613511 APIENTRM1L¥P!
 
@@ -41,15 +58,19 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
+<<<<<<< HEAD
+1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+=======
 1341010376 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+>>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
 	<sys/types.h>
 
-1341010370 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+1341006770 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
 
-1341010380 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -102,7 +123,7 @@
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\winerror.h
 
-1341010376 c:\program files (x86)\codeblocks\mingw\include\string.h
+1341006776 c:\program files (x86)\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -172,7 +193,7 @@
 
 1301111158 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
 
-1341010372 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+1341006772 c:\program files (x86)\codeblocks\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
@@ -234,7 +255,7 @@
 	<objidl.h>
 	<cguid.h>
 
-1341010376 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+1341006776 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -255,10 +276,14 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1341010374 c:\program files (x86)\codeblocks\mingw\include\math.h
+1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
+<<<<<<< HEAD
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+=======
 1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+>>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -331,11 +356,22 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1341010376 c:\program files (x86)\codeblocks\mingw\include\time.h
+1341006776 c:\program files (x86)\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
+<<<<<<< HEAD
+1514054641 source:f:\graphic project\aiub_animation\aiub\main.cpp
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<time.h>
+	<iostream>
+=======
 1514036876 source:f:\graphic project\aiub_animation\aiub\main.cpp
+>>>>>>> 270cd2d489e7eb4bac01d9c1b87ab2ae31650baf
 
 1514023457 source:f:\graphic project\aiub_animation\aiub\arnob.cpp
 	<windows.h>
