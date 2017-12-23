@@ -66,8 +66,8 @@ void RoadLine(int x,int y,int z)
         x=x-49;
     }
     glColor3ub(255,255,255);
-//    glPushMatrix();
-//    glTranslatef(a,.0f,.0f);
+    glPushMatrix();
+    glTranslatef(a,.0f,.0f);
     glBegin(GL_QUADS);
     glVertex3i(x,y,z);
     glVertex3i(x+50,y,z);
@@ -75,8 +75,8 @@ void RoadLine(int x,int y,int z)
     glVertex3i(x,y+10,z);
     glEnd();
 
- //   glPopMatrix();
-//    glutPostRedisplay();
+    glPopMatrix();
+    glutPostRedisplay();
     //Sleep(50);
     //TranslateRoadLine(x,y,z);
 }
@@ -662,20 +662,8 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 
 void car()
 {
-    static float a=-200.0f;
-    if(a>=1324)
-    {
-         a=-200.0f;
-
-    }
-    else
-    {
-        a+=0.5f;
-        //glColor3ub(r,g,b);
-    }
     glColor3ub(255,0,0);
-    glPushMatrix();
-    glTranslatef(a,0,0);
+
     glBegin(GL_QUADS);
     glVertex3i(20,40,0);
     glVertex3i(220,40,0);
@@ -741,9 +729,6 @@ void car()
     otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
     otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
     otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
-
-    glPopMatrix();
-    glutPostRedisplay();
 }
 
 void truck()
