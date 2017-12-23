@@ -517,17 +517,6 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 void car()
 {
     glColor3ub(255,0,0);
-    /*glBegin(GL_QUAD_STRIP);
-    glVertex3i(20,40,0);
-    glVertex3i(200,40,0);
-    glVertex3i(200,80,0);
-    glVertex3i(180,80,0);
-    glVertex3i(140,110,0);
-    glVertex3i(80,110,0);
-    glVertex3i(40,80,0);
-    glVertex3i(20,80,0);
-    glVertex3i(20,40,0);
-    glEnd();*/
 
     glBegin(GL_QUADS);
     glVertex3i(20,40,0);
@@ -535,6 +524,7 @@ void car()
     glVertex3i(220,80,0);
     glVertex3i(20,80,0);
     glEnd();
+
     glBegin(GL_QUADS);
     glVertex3i(40,80,0);
     glVertex3i(200,80,0);
@@ -558,16 +548,35 @@ void car()
     glVertex3i(80,105,0);
     glEnd();
 
+    //handle
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(115,70,0);
+    glVertex3i(135,70,0);
+    glVertex3i(135,75,0);
+    glVertex3i(115,75,0);
+    glEnd();
+
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(45,70,0);
+    glVertex3i(65,70,0);
+    glVertex3i(65,75,0);
+    glVertex3i(45,75,0);
+    glEnd();
+
+    //backbumper
     otherCircle(30.0f,60.0f,0.0f,19.0f,255,0,0);
+    //front bumper
     otherCircle(210.0f,60.0f,0.0f,19.0f,255,0,0);
 
 //Light
-    glColor3ub(255,255,255);
+    glColor3ub(22,120,15);
     glBegin(GL_QUADS);
-    glVertex3i(220,55,0);
     glVertex3i(225,55,0);
+    glVertex3i(230,55,0);
+    glVertex3i(230,65,0);
     glVertex3i(225,65,0);
-    glVertex3i(220,65,0);
     glEnd();
 
     otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
