@@ -441,6 +441,8 @@ void HorizontalLine(int x,int y,int z)
         y+=10;
     }
 }
+
+
 //Middle top Corridor Main Function
 void MiddleTop()
 {
@@ -449,10 +451,10 @@ void MiddleTop()
     glBegin(GL_QUADS);
     glVertex3i(300,430,0);
     glVertex3i(405,430,0);
-    glVertex3i(405,440,0);
-    glVertex3i(300,440,0);
+    glVertex3i(405,450,0);
+    glVertex3i(300,450,0);
     glEnd();
-
+    glColor3ub(255,0,0);
     //Pillar
     glColor3ub(166,166,166);
     glBegin(GL_QUADS);
@@ -481,7 +483,10 @@ void MiddleTop()
     glVertex3i(300,431,0);
     glEnd();
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -634,9 +639,21 @@ void car()
 
 void truck()
 {
-    glColor3ub(0,0,255);
+    static float a=550.0f;
+    if(a<=-1300)
+    {
+         a=550.0f;
 
+    }
+    else
+    {
+        a-=0.3f;
+        //glColor3ub(r,g,b);
+    }
+    glColor3ub(0,0,255);
     //frontbumper
+    glPushMatrix();
+    glTranslatef(a,0,0);
     otherCircle(780.0f,130.0f,0.0f,41.0f,0,0,255);
     //main body
     glBegin(GL_QUADS);
@@ -739,6 +756,12 @@ void truck()
     glVertex3i(740,102,0);
     glEnd();
 
+<<<<<<< HEAD
+=======
+    glPopMatrix();
+    glutPostRedisplay();
+
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
 }
 
 //Plane
@@ -754,7 +777,7 @@ void plane()
     }
     else
     {
-        a+=0.5f;
+        a+=0.1f;
         //glColor3ub(r,g,b);
     }
     //Body
@@ -823,6 +846,77 @@ void plane()
 
 void planeTwo()
 {
+     static float a=550.0f;
+    if(a<=-1300)
+    {
+         a=550.0f;
+
+    }
+    else
+    {
+        a-=0.2f;
+        //glColor3ub(r,g,b);
+    }
+
+
+    //Body
+    glColor3ub(128, 0, 0);
+    glPushMatrix();
+    glTranslatef(a,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(919,650,0);
+    glVertex3i(989,650,0);
+    glVertex3i(989,665,0);
+    glVertex3i(919,665,0);
+    glEnd();
+
+    //Front
+    glColor3ub(128,0,0);
+    glBegin(GL_TRIANGLES);
+    glVertex3i(919,650,0);
+    glVertex3i(909,657,0);
+    glVertex3i(919,665,0);
+    glEnd();
+
+    //FanBack
+    glColor3ub(128,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(987,665,0);
+    glVertex3i(1010,680,0);
+    glVertex3i(990,680,0);
+    glVertex3i(967,665,0);
+    glEnd();
+
+    //FanFrontUp
+    glColor3ub(128,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(949,665,0);
+    glVertex3i(959,665,0);
+    glVertex3i(979,685,0);
+    glVertex3i(969,685,0);
+    glEnd();
+
+    //FanFrontDown
+    glColor3ub(128,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(949,650,0);
+    glVertex3i(969,630,0);
+    glVertex3i(979,630,0);
+    glVertex3i(959,650,0);
+    glEnd();
+
+    int x=924;
+    //Window
+    glColor3ub(255,255,255);
+    glBegin(GL_POINTS);
+    for(int i=9;i>=0;i--)
+    {
+        glVertex3i(x,660,0);
+        x+=5;
+    }
+    glEnd();
+    glPopMatrix();
+    glutPostRedisplay();
 
 }
 
@@ -838,7 +932,6 @@ void myDisplay()
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
     Full();
-
     //Road
     Road();
     //RoadLine
@@ -848,10 +941,16 @@ void myDisplay()
         RoadLine(roadlineX,55,0);
     }
 
+<<<<<<< HEAD
+=======
+    plane();
+    planeTwo();
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
     //Play Ground
     playGround();
     //Middle Top Corridor
     MiddleTop();
+
     drawFilledCircle(950.0f,500.0f,0.0f,170.0f);
     //Building
     FirstBuilding();
@@ -887,7 +986,10 @@ void myDisplay()
 
     truck();
     car();
+<<<<<<< HEAD
     plane();
+=======
+>>>>>>> 9497a98602a69509c7ee9012eba6c272290e790d
     glFlush();
     glutSwapBuffers();
 }
