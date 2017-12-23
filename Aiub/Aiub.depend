@@ -1,4 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
+2010423174 
+
+1514028937 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+=======
 2004613511 APIENTRM1L¥P!
 
 1514041276 source:h:\study\graphics\aiub_animation\aiub\main.cpp
@@ -9,6 +14,7 @@
 	<GL/glut.h>
 	<time.h>
 	<iostream>
+>>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 1453865572 ent of ee21c8b... Car Move Done
 	<stdio.h>
@@ -21,9 +27,12 @@
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
+<<<<<<< HEAD
+=======
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
+>>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
@@ -243,15 +252,24 @@
 	<_mingw.h>
 
 1453865572 D
+<<<<<<< HEAD
+
+1453865572 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+=======
 
 1453865572 0f3f9c7bc7b9c7a771db27283956fb2062c2e
 
 902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+>>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
+<<<<<<< HEAD
+902904872 AD
+=======
 976645372 AD
+>>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 976645372 553a2f4b2bef79e915c8cd3d6406f2a9e59bd6
 
@@ -262,6 +280,19 @@
 976645372 69bdf9c90b079e32c38ed92e052c217de4aa7a
 
 902904872 fa3f3ca0cc11c5aa0a7fd26d329b7744fbb9d4
+<<<<<<< HEAD
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1453865572 d5322924e96007913dc57ab55859de467dd6a
+
+976645372 rent of ee21c8b... Car Move Done
+
+976645372 ebf48a4149dc1e5659899492fdafc7788e84f8
+
+976645372 6496a0bc47557cb346198abe6e0344739a0873
+=======
 
 1453865572 d5322924e96007913dc57ab55859de467dd6a
 
@@ -269,15 +300,20 @@
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
+>>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
+<<<<<<< HEAD
+976645372 6d5322924e96007913dc57ab55859de467dd6a
+=======
 976645372 rent of ee21c8b... Car Move Done
 
 976645372 ebf48a4149dc1e5659899492fdafc7788e84f8
 
 976645372 6496a0bc47557cb346198abe6e0344739a0873
+>>>>>>> e76f6b709b20b8e0372652a09b9fd88dd29f5acc
 
 976645372 6d5322924e96007913dc57ab55859de467dd6a
 
@@ -333,7 +369,7 @@
 	<time.h>
 	<iostream>
 
-1514029389 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
+1514039504 source:c:\users\user\documents\github\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
