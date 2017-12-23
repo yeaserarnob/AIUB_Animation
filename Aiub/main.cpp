@@ -27,9 +27,9 @@ void myInit (void)
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
 
-void Full()
+void Full(int r,int g,int b)
 {
-    glColor3ub(131,183,231);
+    glColor3ub(r,g,b);
     glBegin(GL_QUADS);
     glVertex3i(-200,0,0);
     glVertex3i(1324,0,0);
@@ -507,13 +507,12 @@ glLoadIdentity();
 }
 
 
-void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius){
+void drawFilledCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int color){
 	int i;
 	int triangleAmount = 50; //# of triangles used to draw circle
 
 	//GLfloat radius = 0.8f; //radius
 	GLfloat twicePi = 2.0f * 3.1416;
-    int color=137;
     int counter=0;
     glColor3ub(color,color,color);
 	glBegin(GL_TRIANGLE_FAN);
@@ -937,63 +936,122 @@ void myDisplay()
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
    //Full Body
-    Full();
-    //Road
-    Road();
-    //RoadLine
-    for(int i=55;i>0;i--)
+
+    if(!day)
     {
-        roadlineX+=100;
-        RoadLine(roadlineX,55,0);
+        Full(55,55,55);
+        //Road
+        Road();
+        //RoadLine
+        for(int i=55;i>0;i--)
+        {
+            roadlineX+=100;
+            RoadLine(roadlineX,55,0);
+        }
+        plane();
+        planeTwo();
+        //Play Ground
+        playGround();
+        //Middle Top Corridor
+        MiddleTop();
+
+        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,55.0f);
+        //Building
+        FirstBuilding();
+
+        //First 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXf+=120;
+            Tree(treeXf,260,0);
+        }
+        //Last 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXl+=120;
+            Tree(treeXl,260,0);
+        }
+        //Front top corridor
+        FrontTop();
+
+        //TinShade
+
+        TinShade();
+
+        //lamp post
+        for(int i=9;i>=0;i--)
+        {
+            lamp+=310;
+            lampPost(lamp,130,0);
+        }
+        //light
+        for(int i=9;i>=0;i--)
+        {
+            light+=310;
+            Light(light,130,0);
+        }
+        roadBorder();
+        TinShade();
+        glPopMatrix();
+
+        truck();
+        car();
     }
-    plane();
-    planeTwo();
-    //Play Ground
-    playGround();
-    //Middle Top Corridor
-    MiddleTop();
-
-    drawFilledCircle(950.0f,500.0f,0.0f,170.0f);
-    //Building
-    FirstBuilding();
-
-    //First 4 Tree
-    for(int i=5;i>=0;i--)
+    else
     {
-        treeXf+=120;
-        Tree(treeXf,260,0);
-    }
-    //Last 4 Tree
-    for(int i=5;i>=0;i--)
-    {
-        treeXl+=120;
-        Tree(treeXl,260,0);
-    }
-    //Front top corridor
-    FrontTop();
+        Full(131,183,231);
+        //Road
+        Road();
+        //RoadLine
+        for(int i=55;i>0;i--)
+        {
+            roadlineX+=100;
+            RoadLine(roadlineX,55,0);
+        }
+        plane();
+        planeTwo();
+        //Play Ground
+        playGround();
+        //Middle Top Corridor
+        MiddleTop();
 
-    //TinShade
+        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
+        //Building
+        FirstBuilding();
 
-    TinShade();
+        //First 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXf+=120;
+            Tree(treeXf,260,0);
+        }
+        //Last 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXl+=120;
+            Tree(treeXl,260,0);
+        }
+        //Front top corridor
+        FrontTop();
 
-    //lamp post
-    for(int i=9;i>=0;i--)
-    {
-        lamp+=310;
-        lampPost(lamp,130,0);
+        //TinShade
+
+        TinShade();
+
+        //lamp post
+        for(int i=9;i>=0;i--)
+        {
+            lamp+=310;
+            lampPost(lamp,130,0);
+        }
+        //light
+        roadBorder();
+        TinShade();
+        glPopMatrix();
+
+        truck();
+        car();
     }
-    //light
-    for(int i=9;i>=0;i--)
-    {
-        light+=310;
-        Light(light,130,0);
-    }
-    roadBorder();
-    TinShade();
-    glPopMatrix();
-
-    truck();
-    car();
     glFlush();
     glutSwapBuffers();
 }
