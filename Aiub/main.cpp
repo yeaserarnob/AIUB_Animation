@@ -816,7 +816,7 @@ void truck()
         glEnd();
     }
     glColor3ub(255,255,255);
-    ttprint(860,115,0,"AIUB");
+    ttprint(860,110,0,"AIUB");
     glPopMatrix();
     glutPostRedisplay();
 }
