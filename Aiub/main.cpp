@@ -20,11 +20,12 @@ void myInit (void)
 {
     glClearColor(1.0, 1.0, 1.0, 0.0);
     glColor3f(0.0f, 0.0f, 0.0f);
-    glPointSize(1.0);
+    glPointSize(2.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
+
 void Full()
 {
     glColor3ub(131,183,231);
@@ -65,8 +66,8 @@ void RoadLine(int x,int y,int z)
         x=x-49;
     }
     glColor3ub(255,255,255);
-//    glPushMatrix();
-//    glTranslatef(a,.0f,.0f);
+    glPushMatrix();
+    glTranslatef(a,.0f,.0f);
     glBegin(GL_QUADS);
     glVertex3i(x,y,z);
     glVertex3i(x+50,y,z);
@@ -74,10 +75,77 @@ void RoadLine(int x,int y,int z)
     glVertex3i(x,y+10,z);
     glEnd();
 
- //   glPopMatrix();
-//    glutPostRedisplay();
+    glPopMatrix();
+    glutPostRedisplay();
     //Sleep(50);
     //TranslateRoadLine(x,y,z);
+}
+
+void plane()
+{
+    //Body
+    glColor3ub(128, 0, 0);
+    glBegin(GL_QUADS);
+    glVertex3i(30,700,0);
+    glVertex3i(100,700,0);
+    glVertex3i(100,715,0);
+    glVertex3i(35,715,0);
+    glEnd();
+
+    //front
+    glColor3ub(128,0,0);
+    glBegin(GL_TRIANGLES);
+    glVertex3i(100,700,0);
+    glVertex3i(110,707,0);
+    glVertex3i(100,715,0);
+    glEnd();
+
+    //fanback
+    glColor3ub(128, 0, 0);
+    glBegin(GL_QUADS);
+    glVertex3i(37,715,0);
+    glVertex3i(57,715,0);
+    glVertex3i(40,730,0);
+    glVertex3i(20,730,0);
+    glEnd();
+
+    //fanFrontUp
+    glColor3ub(128, 0, 0);
+    glBegin(GL_QUADS);
+    glVertex3i(70,715,0);
+    glVertex3i(80,715,0);
+    glVertex3i(60,735,0);
+    glVertex3i(50,735,0);
+    glEnd();
+
+    //FanFrontDown
+    glColor3ub(128,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(70,700,0);
+    glVertex3i(80,700,0);
+    glVertex3i(60,680,0);
+    glVertex3i(50,680,0);
+    glEnd();
+
+    //window
+    glColor3ub(255,255,255);
+    glBegin(GL_POINTS);
+    glVertex3i(95,710,0);
+    glVertex3i(90,710,0);
+    glVertex3i(85,710,0);
+    glVertex3i(80,710,0);
+    glVertex3i(75,710,0);
+    glVertex3i(70,710,0);
+    glVertex3i(65,710,0);
+    glVertex3i(60,710,0);
+    glVertex3i(55,710,0);
+    glEnd();
+
+}
+
+void planeTwo()
+{
+
 }
 
 void playGround()
@@ -452,6 +520,20 @@ void MiddleTop()
     glEnd();
 }
 
+void car()
+{
+    glColor3ub(255,0,0);
+    glBegin(GL_QUAD_STRIP);
+    glVertex3i(20,40,0);
+    glVertex3i(100,40,0);
+    glVertex3i(100,100,0);
+    glVertex3i(80,120,0);
+    glVertex3i(50,120,0);
+    glVertex3i(40,100,0);
+    glVertex3i(20,100,0);
+    glEnd();
+}
+
 void reshape(int w,int h)
 {
 glViewport(0,0, (GLsizei)w,(GLsizei)h);
@@ -513,23 +595,75 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 		}
 	glEnd();
 }
+<<<<<<< HEAD
+//
+//void car()
+//{
+//    glColor3ub(255,0,0);
+//    /*glBegin(GL_QUAD_STRIP);
+//    glVertex3i(20,40,0);
+//    glVertex3i(200,40,0);
+//    glVertex3i(200,80,0);
+//    glVertex3i(180,80,0);
+//    glVertex3i(140,110,0);
+//    glVertex3i(80,110,0);
+//    glVertex3i(40,80,0);
+//    glVertex3i(20,80,0);
+//    glVertex3i(20,40,0);
+//    glEnd();*/
+//
+//    glBegin(GL_QUADS);
+//    glVertex3i(20,40,0);
+//    glVertex3i(220,40,0);
+//    glVertex3i(220,80,0);
+//    glVertex3i(20,80,0);
+//    glEnd();
+//    glBegin(GL_QUADS);
+//    glVertex3i(40,80,0);
+//    glVertex3i(200,80,0);
+//    glVertex3i(160,110,0);
+//    glVertex3i(80,110,0);
+//    glEnd();
+//
+//    glColor3ub(0,0,0);
+//    glBegin(GL_QUADS);
+//    glVertex3i(115,80,0);
+//    glVertex3i(190,80,0);
+//    glVertex3i(155,105,0);
+//    glVertex3i(115,105,0);
+//    glEnd();
+//
+//    glColor3ub(0,0,0);
+//    glBegin(GL_QUADS);
+//    glVertex3i(45,80,0);
+//    glVertex3i(110,80,0);
+//    glVertex3i(110,105,0);
+//    glVertex3i(80,105,0);
+//    glEnd();
+//
+//    otherCircle(30.0f,60.0f,0.0f,19.0f,255,0,0);
+//    otherCircle(210.0f,60.0f,0.0f,19.0f,255,0,0);
+//
+//Light
+//    glColor3ub(255,255,255);
+//    glBegin(GL_QUADS);
+//    glVertex3i(220,55,0);
+//    glVertex3i(225,55,0);
+//    glVertex3i(225,65,0);
+//    glVertex3i(220,65,0);
+//    glEnd();
+//
+//    otherCircle(60.0f,40.0f,0.0f,18.0f,0,0,0);
+//    otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
+//    otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
+//    otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
+//}
+=======
 
 void car()
 {
-    static float a=-200.0f;
-    if(a>=1324)
-    {
-         a=-200.0f;
-
-    }
-    else
-    {
-        a+=0.5f;
-        //glColor3ub(r,g,b);
-    }
     glColor3ub(255,0,0);
-    glPushMatrix();
-    glTranslatef(a,0,0);
+
     glBegin(GL_QUADS);
     glVertex3i(20,40,0);
     glVertex3i(220,40,0);
@@ -595,21 +729,18 @@ void car()
     otherCircle(60.0f,40.0f,0.0f,10.0f,137,137,137);
     otherCircle(170.0f,40.0f,0.0f,18.0f,0,0,0);
     otherCircle(170.0f,40.0f,0.0f,10.0f,137,137,137);
-
-    glPopMatrix();
-    glutPostRedisplay();
 }
 
 void truck()
 {
 
 }
+>>>>>>> ee21c8b4fe88779c8446f329bd587461b71aa61a
 
 //Main Display Function
 void myDisplay()
 {
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int roadlineX=-4096;
     int treeXf=-304;
     int treeXl=528;
@@ -657,8 +788,9 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     TinShade();
     glPopMatrix();
     car();
+    plane();
     glFlush();
-glutSwapBuffers();
+    glutSwapBuffers();
 }
 
 
