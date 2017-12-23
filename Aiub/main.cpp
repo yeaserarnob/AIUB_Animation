@@ -16,6 +16,7 @@ float spin_x=1.0;
 float spin_y=0.0;
 float spin_z=0.0;
 bool day=true;
+bool rain=false;
 
 void myInit (void)
 {
@@ -974,6 +975,42 @@ void circleLine()
 
     glEnd();
 }
+
+void rainf()
+{
+    int x=0;
+    int y=778;
+    static float a=-760.0f;
+    if(a<=-768)
+    {
+         a=-760.0f;
+
+    }
+    else
+    {
+        a-=0.5f;
+        //glColor3ub(r,g,b);
+    }
+    glColor3ub(255,255,255);
+    glPushMatrix();
+    glTranslatef(0.0f,a,0.0f);
+    glBegin(GL_LINES);
+    for(int i=500;i>=0;i--)
+    {
+        for(int j=0;j<=i;j++)
+        {
+            glVertex3i(x,y,0);
+            glVertex3i(x+3,y+10,0);
+            x+=rand()%1050;
+        }
+        y+=rand()%15;
+        x=0;
+
+    }
+    glEnd();
+    glPopMatrix();
+    glutPostRedisplay();
+}
 //Main Display Function
 void myDisplay()
 {
@@ -1048,6 +1085,10 @@ void myDisplay()
         glPopMatrix();
         truck();
         car();
+        if(rain)
+        {
+            rainf();
+        }
     }
     else
     {
@@ -1110,10 +1151,16 @@ void myDisplay()
 
         truck();
         car();
+        if(rain)
+        {
+            rainf();
+        }
     }
     glFlush();
     glutSwapBuffers();
 }
+
+
 
 void keyboard(unsigned char key, int x, int y)
 {
@@ -1125,6 +1172,14 @@ if(key=='d')
 else if(key=='n')
 {
     day=false;
+}
+else if(key=='r')
+{
+    rain=true;
+}
+else if(key=='t')
+{
+    rain=false;
 }
 }
 void SpecialKeys(int key, int x, int y)
