@@ -826,11 +826,11 @@ void truck()
 
 void plane()
 {
-    static float a=-200.0f;
+    static float a=-300.0f;
     static float b=0.0f;
     if(a>=1324)
     {
-         a=-200.0f;
+         a=-300.0f;
          b=0.0f;
 
     }
@@ -841,7 +841,7 @@ void plane()
         //glColor3ub(r,g,b);
     }
     //Body
-    glColor3ub(128, 0, 0);
+    glColor3ub(66, 66, 66);
     glPushMatrix();
     glTranslatef(a,b,0);
     glBegin(GL_QUADS);
@@ -852,7 +852,6 @@ void plane()
     glEnd();
 
     //front
-    glColor3ub(128,0,0);
     glBegin(GL_TRIANGLES);
     glVertex3i(100,700,0);
     glVertex3i(110,707,0);
@@ -860,7 +859,6 @@ void plane()
     glEnd();
 
     //fanback
-    glColor3ub(128, 0, 0);
     glBegin(GL_QUADS);
     glVertex3i(37,715,0);
     glVertex3i(57,715,0);
@@ -869,7 +867,6 @@ void plane()
     glEnd();
 
     //fanFrontUp
-    glColor3ub(128, 0, 0);
     glBegin(GL_QUADS);
     glVertex3i(70,715,0);
     glVertex3i(80,715,0);
@@ -878,7 +875,6 @@ void plane()
     glEnd();
 
     //FanFrontDown
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(70,700,0);
     glVertex3i(80,700,0);
@@ -923,7 +919,7 @@ void planeTwo()
 
 
     //Body
-    glColor3ub(128, 0, 0);
+    glColor3ub(128, 128, 128);
     glPushMatrix();
     glTranslatef(a,b,0);
     glBegin(GL_QUADS);
@@ -934,7 +930,6 @@ void planeTwo()
     glEnd();
 
     //Front
-    glColor3ub(128,0,0);
     glBegin(GL_TRIANGLES);
     glVertex3i(919,650,0);
     glVertex3i(909,657,0);
@@ -942,7 +937,6 @@ void planeTwo()
     glEnd();
 
     //FanBack
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(987,665,0);
     glVertex3i(1010,680,0);
@@ -951,7 +945,6 @@ void planeTwo()
     glEnd();
 
     //FanFrontUp
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(949,665,0);
     glVertex3i(959,665,0);
@@ -960,7 +953,6 @@ void planeTwo()
     glEnd();
 
     //FanFrontDown
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(949,650,0);
     glVertex3i(969,630,0);
@@ -986,10 +978,27 @@ void planeTwo()
 //clouds
 void clouds(float x,float y,float z,int m,int l,int n)
 {
+    static float a=-1300.0f;
+    if(a>=1324)
+    {
+         a=-1300.0f;
+
+    }
+    else
+    {
+        a+=0.05f;
+        //glColor3ub(r,g,b);
+    }
+    glPushMatrix();
+    glTranslatef(a,0,0);
+
+
     //cloud1
     otherCircle(x,y,z,50.0f,m,l,n);
     otherCircle(x-50,y,z,40.0f,m,l,n);
     otherCircle(x+50,y,z,40.0f,m,l,n);
+    glPopMatrix();
+    glutPostRedisplay();
 }
 //circleline
 void circleLine()
@@ -1071,12 +1080,13 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+
+        //moon
+        otherCircle(300.0f,670.0f,0.0f,32.0f,250,250,250);
         //cloud0
         clouds(-150.0f,630.0f,0.0f,173, 173, 133);
         //cloud1
         clouds(150.0f,670.0f,0.0f,173, 173, 133);
-        //moon
-        otherCircle(300.0f,670.0f,0.0f,32.0f,250,250,250);
         plane();
         planeTwo();
         //cloud2
