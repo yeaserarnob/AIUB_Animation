@@ -1064,8 +1064,6 @@ void rainf()
 
 
 
-
-
 //LampStand
 void toplampPost(int x,int y,int z)
 {
@@ -1190,6 +1188,208 @@ void topView(int x,int y,int z)
         otherCircle(treeXl,250,0,10,70,180,50);
 
     }
+
+    //Top Tin Shade
+
+    //left
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(0,260,0);
+    glVertex3i(396,260,0);
+    glVertex3i(396,360,0);
+    glVertex3i(0,360,0);
+    glEnd();
+
+    glColor3ub(25,25,25);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,260,0);
+    glVertex3i(0,260,0);
+    glVertex3i(0,320,0);
+    glVertex3i(-200,320,0);
+    glEnd();
+    //right
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(628,260,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(1324,360,0);
+    glVertex3i(628,360,0);
+    glEnd();
+    //white shade bottom
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(0,260,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(1324,265,0);
+    glVertex3i(0,265,0);
+    glEnd();
+    //white shade top
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(0,360,0);
+    glVertex3i(1324,360,0);
+    glVertex3i(1324,355,0);
+    glVertex3i(0,355,0);
+    glEnd();
+
+    //middle
+
+    glColor3ub(42,105,6);
+    glBegin(GL_QUADS);
+    glVertex3i(396,255,0);
+    glVertex3i(628,255,0);
+    glVertex3i(628,365,0);
+    glVertex3i(396,365,0);
+    glEnd();
+    //white shade middle
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(396,255,0);
+    glVertex3i(628,255,0);
+    glVertex3i(628,260,0);
+    glVertex3i(396,260,0);
+    glEnd();
+
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(396,360,0);
+    glVertex3i(628,360,0);
+    glVertex3i(628,365,0);
+    glVertex3i(396,365,0);
+    glEnd();
+
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(396,255,0);
+    glVertex3i(400,255,0);
+    glVertex3i(400,365,0);
+    glVertex3i(396,365,0);
+    glEnd();
+
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(624,255,0);
+    glVertex3i(628,255,0);
+    glVertex3i(628,365,0);
+    glVertex3i(624,365,0);
+    glEnd();
+
+//    Anex-2
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,320,0);
+    glVertex3i(0,320,0);
+    glVertex3i(0,410,0);
+    glVertex3i(-200,410,0);
+    glEnd();
+//    white shade
+    //bottom
+    glColor3ub(255,255,225);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,320,0);
+    glVertex3i(0,320,0);
+    glVertex3i(0,325,0);
+    glVertex3i(-200,325,0);
+    glEnd();
+//    top
+    glColor3ub(255,255,225);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,405,0);
+    glVertex3i(0,405,0);
+    glVertex3i(0,410,0);
+    glVertex3i(-200,410,0);
+    glEnd();
+    //Right
+    glColor3ub(255,255,225);
+    glBegin(GL_QUADS);
+    glVertex3i(-5,260,0);
+    glVertex3i(0,260,0);
+    glVertex3i(0,410,0);
+    glVertex3i(-5,410,0);
+    glEnd();
+
+    //Coridor
+    glColor3ub(40,90,100);
+    glBegin(GL_QUADS);
+    glVertex3i(0,340,0);
+    glVertex3i(100,340,0);
+    glVertex3i(100,400,0);
+    glVertex3i(0,400,0);
+    glEnd();
+
+//Middle Coridor Top
+    glColor3ub(42,105,5);
+    glBegin(GL_QUADS);
+    glVertex3i(0,400,0);
+    glVertex3i(200,400,0);
+    glVertex3i(200,410,0);
+    glVertex3i(0,410,0);
+    glEnd();
+
+//    middle coridor Top
+    glBegin(GL_QUADS);
+    glVertex3i(0,410,0);
+    glVertex3i(200,410,0);
+    glVertex3i(200,510,0);
+    glVertex3i(0,510,0);
+    glEnd();
+
+//    annex 3
+
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,510,0);
+    glVertex3i(200,510,0);
+    glVertex3i(200,610,0);
+    glVertex3i(-200,610,0);
+    glEnd();
+
+//    Annex 4
+
+
+    glColor3ub(42,95,5);
+    glBegin(GL_QUADS);
+    glVertex3i(100,610,0);
+    glVertex3i(300,610,0);
+    glVertex3i(300,770,0);
+    glVertex3i(100,770,0);
+    glEnd();
+
+    glColor3ub(42,105,5);
+    glBegin(GL_QUADS);
+    glVertex3i(300,610,0);
+    glVertex3i(500,610,0);
+    glVertex3i(500,650,0);
+    glVertex3i(300,650,0);
+    glEnd();
+
+//    annex 5
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(500,620,0);
+    glVertex3i(700,620,0);
+    glVertex3i(700,770,0);
+    glVertex3i(500,770,0);
+    glEnd();
+
+//Ashiq Chattor
+    glColor3ub(42,90,5);
+    glBegin(GL_QUADS);
+    glVertex3i(700,640,0);
+    glVertex3i(800,640,0);
+    glVertex3i(800,690,0);
+    glVertex3i(700,690,0);
+    glEnd();
+
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(750,640,0);
+    glVertex3i(900,640,0);
+    glVertex3i(900,770,0);
+    glVertex3i(750,770,0);
+    glEnd();
+
+    drawFilledCircle(900,520,0,110,177);
 
 }
 
@@ -1430,7 +1630,7 @@ void myDisplay()
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
 
-
+        Full(181,153,131);
         topView(0,0,0);
         glPopMatrix();
     }
