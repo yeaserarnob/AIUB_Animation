@@ -1611,16 +1611,15 @@ void startscreen(void)
     setFont(GLUT_BITMAP_TIMES_ROMAN_24);
     glClearColor(0.000, 0.000, 0.000,0);
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(1,0,0);
-    drawstring(250.0,700.0,0.0,"AMERICAN INTERNATIONAL UNIVERSITY-BANGLADESH");
-    glColor3f(0.7,0,1);
-    drawstring(250,650,0.0,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
-    glColor3f(1,0.5,0);
+    glColor3f(0,1,0);
+    drawstring(200.0,700.0,0.0,"AMERICAN INTERNATIONAL UNIVERSITY-BANGLADESH");
+    glColor3f(0,0,1);
+    drawstring(200,650,0.0,"FACULTY OF SCIENCE AND INFORMATION TECHNOLOGY");
+    glColor3f(0.7,0.7,0.7);
     drawstring(450,530,0.0,"PROJECT ON");
-    glColor3f(1,0,0);
-    drawstring(200,500,0.0,"COMPUTER GRAPHICS: AIUB CAMPUS 2D VIEW");
+    drawstring(250,500,0.0,"COMPUTER GRAPHICS: AIUB CAMPUS 2D VIEW");
     glColor3f(1,0.5,0);
-    drawstring(270,400,0.0,"SUBMITTED BY:");
+    drawstring(100,400,0.0,"SUBMITTED BY:");
     glColor3f(1,1,1);
     drawstring(100,370,0.0,"UZZAMAN,MD.HASAN              (15-28858-1)");
     drawstring(100,290,0.0,"BABUL,MAHMODUL HASAN   (15-29262-1)");
@@ -1630,7 +1629,7 @@ void startscreen(void)
     drawstring(700,400,0.0,"SUBMITTED TO:");
     glColor3f(1,1,1);
     drawstring(700,370,0.0,"MD. SAEF ULLAH MIAH");
-    glColor3f(1,0.1,1);
+    glColor3f(0,1,0);
     drawstring(400,80,0.0,"PRESS ENTER TO START");
     glFlush();
 }
@@ -1640,7 +1639,7 @@ void controlsScreen()
     glClearColor(0.000, 0.000, 0.000,0);
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0.596, 0.984, 0.596);
-    drawstring(600.0,700.0,0.0,"INSTRUCTIONS");
+    drawstring(370.0,700.0,0.0,"INSTRUCTIONS");
     glColor3f(1.000, 0.980, 0.941);
     drawstring(250.0,640.0,0.0,"DAY MODE");
     glColor3f(1.000, 0.980, 0.941);
@@ -1683,7 +1682,7 @@ void controlsScreen()
     glColor3f(1.000, 0.980, 0.941);
     drawstring(600.0,320.0,0.0,"PRESS 'ESC'");
     glColor3f(0.596, 0.984, 0.596);
-    drawstring(400.0,200.0,0.0,"NOW PRESS ENTER TO START THE SYSTEM");
+    drawstring(360.0,200.0,0.0,"NOW PRESS ENTER");
     glFlush();
 }
 
@@ -1778,6 +1777,10 @@ else if(key=='h')
 {
     flag=1;
     myDisplay();
+}
+else if(key==27)
+{
+    exit(0);
 }
 }
 
