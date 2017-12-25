@@ -667,7 +667,7 @@ void car()
     glEnd();
 
     //carlight
-    if(!day)
+    if(day==2)
     {
         glColor3ub(200,200,200);
         glBegin(GL_QUADS);
@@ -810,7 +810,7 @@ void truck()
 
 
     //trucklight
-    if(!day)
+    if(day==2)
     {
         glColor3ub(200,200,200);
         glBegin(GL_QUADS);
