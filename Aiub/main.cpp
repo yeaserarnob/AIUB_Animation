@@ -32,6 +32,25 @@ void myInit (void)
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
 }
 
+
+void *currentfont; ///added by mahmodul
+
+void setFont(void *font) ///added by mahmodul
+{
+	currentfont=font;
+}
+
+void drawstring(float x,float y,float z,char *string) ///added by mahmodul
+{
+	char *c;
+	glRasterPos3f(x,y,z);
+
+	for(c=string;*c!='\0';c++)
+	{
+		glutBitmapCharacter(currentfont,*c);
+	}
+}
+
 void Full(int r,int g,int b)
 {
     glColor3ub(r,g,b);
@@ -1580,6 +1599,37 @@ void topViewf()
 
 }
 
+
+void startscreen(void)
+{
+    setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+    glClearColor(0.000, 0.000, 0.000,0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1,0,0);
+    drawstring(250.0,700.0,0.0,"AMERICAN INTERNATIONAL UNIVERSITY-BANGLADESH");
+    glColor3f(0.7,0,1);
+    drawstring(250,650,0.0,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
+    glColor3f(1,0.5,0);
+    drawstring(450,530,0.0,"PROJECT ON");
+    glColor3f(1,0,0);
+    drawstring(200,500,0.0,"COMPUTER GRAPHICS: AIUB CAMPUS 2D VIEW");
+    glColor3f(1,0.5,0);
+    drawstring(270,400,0.0,"SUBMITTED BY:");
+    glColor3f(1,1,1);
+    drawstring(100,370,0.0,"UZZAMAN,MD.HASAN              (15-28858-1)");
+    drawstring(100,290,0.0,"BABUL,MAHMODUL HASAN   (15-29262-1)");
+    drawstring(100,210,0.0,"ARNOB,MD.YEASER                  (15-28915-1)");
+    drawstring(100,130,0.0,"RAHMAN,MD.MOBINUR          (15-28878-1)");
+    glColor3f(1,0.5,0);
+    drawstring(700,400,0.0,"SUBMITTED TO:");
+    glColor3f(1,1,1);
+    drawstring(700,370,0.0,"MD. SAEF ULLAH MIAH");
+    glColor3f(1,0.1,1);
+    drawstring(400,80,0.0,"PRESS ENTER TO START");
+    glFlush();
+}
+
+
 void display()
 {
     glPushMatrix();
@@ -1617,9 +1667,11 @@ void myDisplay()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    if(flag==0)
-        nightMode();
-        //startscreen();
+    if(flag==0){
+
+        startscreen();
+
+    }
     if(flag==1)
         topViewf();
         //controlsScreen();
@@ -1672,6 +1724,7 @@ else if(key=='o')
 else if(key==13)
 {
     flag++;
+    myDisplay();
 }
 }
 

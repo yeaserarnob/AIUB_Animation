@@ -228,7 +228,7 @@
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+1508088669 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -246,4 +246,14 @@
 1341006776 
 
 1341006776 f4a7b0da864fe2d16a45b360bde3ae564fd1d
+
+1514221273 source:d:\graohicsproject\aiub\aiub\main.cpp
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<time.h>
+	<iostream>
 
