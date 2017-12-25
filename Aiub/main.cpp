@@ -20,6 +20,15 @@ bool rain=false;
 bool carv=false;
 bool planev=false;
 bool top=false;
+int flag=0;
+bool help=false;
+
+
+void delay(unsigned int mseconds)
+{
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
+}
 
 void myInit (void)
 {
@@ -29,6 +38,25 @@ void myInit (void)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0.0, 1024, 0.0, 768.0);
+}
+
+
+void *currentfont;
+
+void setFont(void *font)
+{
+	currentfont=font;
+}
+
+void drawstring(float x,float y,float z,char *string)
+{
+	char *c;
+	glRasterPos3f(x,y,z);
+
+	for(c=string;*c!='\0';c++)
+	{
+		glutBitmapCharacter(currentfont,*c);
+	}
 }
 
 void Full(int r,int g,int b)
@@ -1060,10 +1088,6 @@ void rainf()
     glPopMatrix();
     glutPostRedisplay();
 }
-
-
-
-
 //LampStand
 void toplampPost(int x,int y,int z)
 {
@@ -1192,7 +1216,7 @@ void topView(int x,int y,int z)
     //Top Tin Shade
 
     //left
-    glColor3ub(42,85,6);
+    glColor3ub(42,85,66);
     glBegin(GL_QUADS);
     glVertex3i(0,260,0);
     glVertex3i(396,260,0);
@@ -1208,7 +1232,7 @@ void topView(int x,int y,int z)
     glVertex3i(-200,320,0);
     glEnd();
     //right
-    glColor3ub(42,85,6);
+    glColor3ub(42,85,66);
     glBegin(GL_QUADS);
     glVertex3i(628,260,0);
     glVertex3i(1324,260,0);
@@ -1234,7 +1258,7 @@ void topView(int x,int y,int z)
 
     //middle
 
-    glColor3ub(42,105,6);
+    glColor3ub(42,105,86);
     glBegin(GL_QUADS);
     glVertex3i(396,255,0);
     glVertex3i(628,255,0);
@@ -1275,7 +1299,7 @@ void topView(int x,int y,int z)
     glEnd();
 
 //    Anex-2
-    glColor3ub(42,85,5);
+    glColor3ub(42,85,45);
     glBegin(GL_QUADS);
     glVertex3i(-200,320,0);
     glVertex3i(0,320,0);
@@ -1317,8 +1341,8 @@ void topView(int x,int y,int z)
     glVertex3i(0,400,0);
     glEnd();
 
-//Middle Coridor Top
-    glColor3ub(42,105,5);
+    //Middle Coridor Top
+    glColor3ub(42,105,85);
     glBegin(GL_QUADS);
     glVertex3i(0,400,0);
     glVertex3i(200,400,0);
@@ -1327,6 +1351,8 @@ void topView(int x,int y,int z)
     glEnd();
 
 //    middle coridor Top
+
+    glColor3ub(42,105,85);
     glBegin(GL_QUADS);
     glVertex3i(0,410,0);
     glVertex3i(200,410,0);
@@ -1336,18 +1362,18 @@ void topView(int x,int y,int z)
 
 //    annex 3
 
-    glColor3ub(42,85,5);
+    glColor3ub(42,95,45);
     glBegin(GL_QUADS);
     glVertex3i(-200,510,0);
     glVertex3i(200,510,0);
-    glVertex3i(200,610,0);
-    glVertex3i(-200,610,0);
+    glVertex3i(200,660,0);
+    glVertex3i(-200,660,0);
     glEnd();
 
 //    Annex 4
 
 
-    glColor3ub(42,95,5);
+    glColor3ub(42,95,45);
     glBegin(GL_QUADS);
     glVertex3i(100,610,0);
     glVertex3i(300,610,0);
@@ -1355,7 +1381,7 @@ void topView(int x,int y,int z)
     glVertex3i(100,770,0);
     glEnd();
 
-    glColor3ub(42,105,5);
+    glColor3ub(42,105,85);
     glBegin(GL_QUADS);
     glVertex3i(300,610,0);
     glVertex3i(500,610,0);
@@ -1364,7 +1390,7 @@ void topView(int x,int y,int z)
     glEnd();
 
 //    annex 5
-    glColor3ub(42,85,5);
+    glColor3ub(42,85,45);
     glBegin(GL_QUADS);
     glVertex3i(500,620,0);
     glVertex3i(700,620,0);
@@ -1373,7 +1399,7 @@ void topView(int x,int y,int z)
     glEnd();
 
 //Ashiq Chattor
-    glColor3ub(42,90,5);
+    glColor3ub(42,90,45);
     glBegin(GL_QUADS);
     glVertex3i(700,640,0);
     glVertex3i(800,640,0);
@@ -1381,7 +1407,7 @@ void topView(int x,int y,int z)
     glVertex3i(700,690,0);
     glEnd();
 
-    glColor3ub(42,85,5);
+    glColor3ub(42,85,45);
     glBegin(GL_QUADS);
     glVertex3i(750,640,0);
     glVertex3i(900,640,0);
@@ -1394,22 +1420,14 @@ void topView(int x,int y,int z)
 }
 
 
-//Main Display Function
-void myDisplay()
+void nightMode()
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int roadlineX=-300;
     int treeXf=-350;
     int treeXl=528;
     int lamp=-350;
     int light=-350;
-    glPushMatrix();
-    glTranslatef(translate_x,translate_y,translate_z);
-
-
-    if(day==2)
-    {
-       //Full Body
+    //Full Body
         Full(55,55,55);
         //Road
         Road();
@@ -1483,19 +1501,27 @@ void myDisplay()
         circleLine();
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
-        glPopMatrix();
         if(carv)
         {
             truck();
             car();
         }
+        glPopMatrix();
+
         if(rain)
         {
             rainf();
         }
-    }
-    else if(day==1)
-    {
+}
+
+void dayMode()
+{
+        int roadlineX=-300;
+        int treeXf=-350;
+        int treeXl=528;
+        int lamp=-350;
+        int light=-350;
+
         Full(131,183,231);
         //Road
         Road();
@@ -1527,7 +1553,7 @@ void myDisplay()
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
         //Building
-        FirstBuilding(100,88,54);
+        FirstBuilding(140,80,60);
 
         //First 4 Tree
         for(int i=5;i>=0;i--)
@@ -1560,80 +1586,147 @@ void myDisplay()
         circleLine();
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
-        glPopMatrix();
         if(carv)
         {
             truck();
             car();
         }
+        glPopMatrix();
+
         if(rain)
         {
             rainf();
         }
+}
 
+void topViewf()
+{
+    Full(181,153,131);
+    topView(0,0,0);
+    glPopMatrix();
+
+}
+
+
+void startscreen(void)
+{
+    setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+    glClearColor(0.000, 0.000, 0.000,0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0,1,0);
+    drawstring(200.0,700.0,0.0,"AMERICAN INTERNATIONAL UNIVERSITY-BANGLADESH");
+    glColor3f(0,0,1);
+    drawstring(200,650,0.0,"FACULTY OF SCIENCE AND INFORMATION TECHNOLOGY");
+    glColor3f(0.7,0.7,0.7);
+    drawstring(450,530,0.0,"PROJECT ON");
+    drawstring(250,500,0.0,"COMPUTER GRAPHICS: AIUB CAMPUS 2D VIEW");
+    glColor3f(1,0.5,0);
+    drawstring(100,400,0.0,"SUBMITTED BY:");
+    glColor3f(1,1,1);
+    drawstring(100,370,0.0,"UZZAMAN,MD.HASAN              (15-28858-1)");
+    drawstring(100,290,0.0,"BABUL,MAHMODUL HASAN   (15-29262-1)");
+    drawstring(100,210,0.0,"ARNOB,MD.YEASER                  (15-28915-1)");
+    drawstring(100,130,0.0,"RAHMAN,MD.MOBINUR          (15-28878-1)");
+    glColor3f(1,0.5,0);
+    drawstring(700,400,0.0,"SUBMITTED TO:");
+    glColor3f(1,1,1);
+    drawstring(700,370,0.0,"MD. SAEF ULLAH MIAH");
+    glColor3f(0,1,0);
+    drawstring(400,80,0.0,"PRESS ENTER TO START");
+    glFlush();
+}
+void controlsScreen()
+{
+    setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+    glClearColor(0.000, 0.000, 0.000,0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0.596, 0.984, 0.596);
+    drawstring(370.0,700.0,0.0,"INSTRUCTIONS");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,640.0,0.0,"DAY MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,640.0,0.0,"PRESS 'D'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,640.0,0.0,"DAY MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,640.0,0.0,"PRESS 'D'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,600.0,0.0,"NIGHT MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,600.0,0.0,"PRESS 'N'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,560.0,0.0,"CAR MOVING");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,560.0,0.0,"PRESS 'C'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,520.0,0.0,"RAIN MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,520.0,0.0,"PRESS 'R'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,480.0,0.0,"NO RAIN");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,480.0,0.0,"PRESS 'E'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,440.0,0.0,"TOP VIEW");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,440.0,0.0,"PRESS 'T'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,400.0,0.0,"PLANE MOVEMENT");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,400.0,0.0,"PRESS 'P'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,360.0,0.0,"Help");
+
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,360.0,0.0,"PRESS 'H'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,320.0,0.0,"Escape");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,320.0,0.0,"PRESS 'ESC'");
+    glColor3f(0.596, 0.984, 0.596);
+    drawstring(360.0,200.0,0.0,"NOW PRESS ENTER");
+    glFlush();
+}
+
+void display()
+{
+    glPushMatrix();
+    glTranslatef(translate_x,translate_y,translate_z);
+
+    if(day==2)
+    {
+       nightMode();
+    }
+    else if(day==1)
+    {
+        dayMode();
     }
 
     else if(day==3)
     {
-        Full(131,183,231);
-        //Road
-        Road();
-        //RoadLine
-        for(int i=25;i>0;i--)
-        {
-            roadlineX+=100;
-            RoadLine(roadlineX,55,0);
-        }
-       if(planev)
-        {
-            plane();
-            planeTwo();
-        }
-        //Play Ground
-        playGround(42,95,17);
-        //Middle Top Corridor
-        MiddleTop();
-
-        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
-        //Building
-        FirstBuilding(100,88,54);
-
-        //First 4 Tree
-        for(int i=5;i>=0;i--)
-        {
-            treeXf+=120;
-            Tree(treeXf,260,0);
-        }
-        //Last 4 Tree
-        for(int i=5;i>=0;i--)
-        {
-            treeXl+=120;
-            Tree(treeXl,260,0);
-        }
-        //Front top corridor
-        FrontTop();
-
-        //TinShade
-
-        TinShade();
-
-        //lamp post
-        for(int i=9;i>=0;i--)
-        {
-            lamp+=310;
-            lampPost(lamp,130,0);
-        }
-        //light
-        roadBorder();
-        TinShade();
-        circleLine();
-        glColor3ub(0,0,255);
-        tprint(330,433,0,"AIUB");
-
-        Full(181,153,131);
-        topView(0,0,0);
-        glPopMatrix();
+        topViewf();
     }
+    glFlush();
+    glutSwapBuffers();
+}
+
+
+//Main Display Function
+void myDisplay()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    if(flag==0){
+
+        startscreen();
+
+    }
+    if(flag==1)
+        controlsScreen();
+        //controlsScreen();
+    if(flag>1)
+        display();
+
     glFlush();
     glutSwapBuffers();
 }
@@ -1676,6 +1769,20 @@ else if(key=='p')
 else if(key=='o')
 {
     planev=false;
+}
+else if(key==13)
+{
+    flag++;
+    myDisplay();
+}
+else if(key=='h')
+{
+    flag=1;
+    myDisplay();
+}
+else if(key==27)
+{
+    exit(0);
 }
 }
 

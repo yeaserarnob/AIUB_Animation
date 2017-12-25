@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-<<<<<<< HEAD
-1514194389 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+8511632 <<<< HEAD
+
+1514219745 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -227,7 +228,7 @@
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+1508088669 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -242,5 +243,17 @@
 	<_mingw.h>
 	<stddef.h>
 
-=======
->>>>>>> b83f4a7b0da864fe2d16a45b360bde3ae564fd1d
+1341006776 
+
+1341006776 f4a7b0da864fe2d16a45b360bde3ae564fd1d
+
+1514227398 source:d:\graohicsproject\aiub\aiub\main.cpp
+	<stdio.h>
+	<windows.h>
+	<math.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<time.h>
+	<iostream>
+
