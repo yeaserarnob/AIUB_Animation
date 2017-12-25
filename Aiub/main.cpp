@@ -6,6 +6,7 @@
 #include <GL/gl.h>
 #include <time.h>
 #include <iostream>
+#include <MMSystem.h>
 using namespace std;
 
 float translate_x = 0.0;
@@ -619,7 +620,7 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 
 void car()
 {
-    static float a=-200.0f;
+    static float a=-300.0f;
     if(a>=1324)
     {
          a=-200.0f;
@@ -717,7 +718,7 @@ void car()
 
 void truck()
 {
-    static float a=550.0f;
+    static float a=650.0f;
     if(a<=-1300)
     {
          a=550.0f;
@@ -1048,8 +1049,6 @@ void circleLine()
     glVertex3i(1112,450,0);
     glVertex3i(812,400,0);
     glVertex3i(1088,400,0);
-
-
     glEnd();
 }
 
@@ -1087,6 +1086,7 @@ void rainf()
     glEnd();
     glPopMatrix();
     glutPostRedisplay();
+
 }
 //LampStand
 void toplampPost(int x,int y,int z)
@@ -1419,7 +1419,6 @@ void topView(int x,int y,int z)
 
 }
 
-
 void nightMode()
 {
     int roadlineX=-300;
@@ -1510,7 +1509,9 @@ void nightMode()
 
         if(rain)
         {
+
             rainf();
+            //PlaySound(TEXT("D:\\GraohicsProject\\AIUB\\Aiub\\rain-07.wav"), NULL,SND_FILENAME|SND_LOOP);
         }
 }
 
