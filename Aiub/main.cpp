@@ -21,6 +21,7 @@ bool carv=false;
 bool planev=false;
 bool top=false;
 int flag=0;
+bool help=false;
 
 
 void delay(unsigned int mseconds)
@@ -1087,10 +1088,6 @@ void rainf()
     glPopMatrix();
     glutPostRedisplay();
 }
-
-
-
-
 //LampStand
 void toplampPost(int x,int y,int z)
 {
@@ -1775,6 +1772,11 @@ else if(key=='o')
 else if(key==13)
 {
     flag++;
+    myDisplay();
+}
+else if(key=='h')
+{
+    flag=1;
     myDisplay();
 }
 }
