@@ -3,6 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <GL/glut.h>
+#include <GL/gl.h>
 #include <time.h>
 #include <iostream>
 using namespace std;
@@ -14,8 +15,11 @@ static GLfloat spin = 0.0;
 float spin_x=1.0;
 float spin_y=0.0;
 float spin_z=0.0;
-bool day=true;
+int day=1;
 bool rain=false;
+bool carv=false;
+bool planev=false;
+bool top=false;
 
 void myInit (void)
 {
@@ -595,7 +599,7 @@ void car()
     }
     else
     {
-        a+=0.5f;
+        a+=0.2f;
         //glColor3ub(r,g,b);
     }
     glColor3ub(255,0,0);
@@ -693,7 +697,7 @@ void truck()
     }
     else
     {
-        a-=0.3f;
+        a-=0.2f;
         //glColor3ub(r,g,b);
     }
     glColor3ub(0,0,255);
@@ -826,20 +830,22 @@ void truck()
 
 void plane()
 {
-    static float a=-200.0f;
+    static float a=-300.0f;
     static float b=0.0f;
     if(a>=1324)
     {
-         a=-200.0f;
+         a=-300.0f;
+         b=0.0f;
 
     }
     else
     {
         a+=0.1f;
+        b+=0.005f;
         //glColor3ub(r,g,b);
     }
     //Body
-    glColor3ub(128, 0, 0);
+    glColor3ub(66, 66, 66);
     glPushMatrix();
     glTranslatef(a,b,0);
     glBegin(GL_QUADS);
@@ -850,7 +856,6 @@ void plane()
     glEnd();
 
     //front
-    glColor3ub(128,0,0);
     glBegin(GL_TRIANGLES);
     glVertex3i(100,700,0);
     glVertex3i(110,707,0);
@@ -858,7 +863,6 @@ void plane()
     glEnd();
 
     //fanback
-    glColor3ub(128, 0, 0);
     glBegin(GL_QUADS);
     glVertex3i(37,715,0);
     glVertex3i(57,715,0);
@@ -867,7 +871,6 @@ void plane()
     glEnd();
 
     //fanFrontUp
-    glColor3ub(128, 0, 0);
     glBegin(GL_QUADS);
     glVertex3i(70,715,0);
     glVertex3i(80,715,0);
@@ -876,7 +879,6 @@ void plane()
     glEnd();
 
     //FanFrontDown
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(70,700,0);
     glVertex3i(80,700,0);
@@ -905,22 +907,25 @@ void plane()
 void planeTwo()
 {
      static float a=550.0f;
+     static float b=0.0f;
     if(a<=-1300)
     {
          a=550.0f;
+         b=0.0f;
 
     }
     else
     {
         a-=0.2f;
+        b-=0.02f;
         //glColor3ub(r,g,b);
     }
 
 
     //Body
-    glColor3ub(128, 0, 0);
+    glColor3ub(128, 128, 128);
     glPushMatrix();
-    glTranslatef(a,0,0);
+    glTranslatef(a,b,0);
     glBegin(GL_QUADS);
     glVertex3i(919,650,0);
     glVertex3i(989,650,0);
@@ -929,7 +934,6 @@ void planeTwo()
     glEnd();
 
     //Front
-    glColor3ub(128,0,0);
     glBegin(GL_TRIANGLES);
     glVertex3i(919,650,0);
     glVertex3i(909,657,0);
@@ -937,7 +941,6 @@ void planeTwo()
     glEnd();
 
     //FanBack
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(987,665,0);
     glVertex3i(1010,680,0);
@@ -946,7 +949,6 @@ void planeTwo()
     glEnd();
 
     //FanFrontUp
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(949,665,0);
     glVertex3i(959,665,0);
@@ -955,7 +957,6 @@ void planeTwo()
     glEnd();
 
     //FanFrontDown
-    glColor3ub(128,0,0);
     glBegin(GL_QUADS);
     glVertex3i(949,650,0);
     glVertex3i(969,630,0);
@@ -981,10 +982,27 @@ void planeTwo()
 //clouds
 void clouds(float x,float y,float z,int m,int l,int n)
 {
+    static float a=-1300.0f;
+    if(a>=1324)
+    {
+         a=-1300.0f;
+
+    }
+    else
+    {
+        a+=0.005f;
+        //glColor3ub(r,g,b);
+    }
+    glPushMatrix();
+    glTranslatef(a,0,0);
+
+
     //cloud1
     otherCircle(x,y,z,50.0f,m,l,n);
     otherCircle(x-50,y,z,40.0f,m,l,n);
     otherCircle(x+50,y,z,40.0f,m,l,n);
+    glPopMatrix();
+    glutPostRedisplay();
 }
 //circleline
 void circleLine()
@@ -1042,21 +1060,356 @@ void rainf()
     glPopMatrix();
     glutPostRedisplay();
 }
+
+
+
+
+//LampStand
+void toplampPost(int x,int y,int z)
+{
+    otherCircle(x+60,y+3,0,5,222,250,50);
+    glColor3ub(222,250,50);
+    glBegin(GL_QUADS);
+    glVertex3i(x,y,z);
+    glVertex3i(x+70,y,z);
+    glVertex3i(x+70,y+5,z);
+    glVertex3i(x,y+5,z);
+    glEnd();
+}
+//Car
+
+void topCar()
+{
+    static float a=-400.0f;
+    if(a>=1324)
+    {
+         a=-500.0f;
+
+    }
+    else
+    {
+        a+=0.5f;
+        //glColor3ub(r,g,b);
+    }
+    glPushMatrix();
+    glTranslatef(a,0,0);
+    otherCircle(-100,18,0,23,255,0,0);
+    otherCircle(-130,18,0,23,255,0,0);
+    glColor3ub(255,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(-100,0,0);
+    glVertex3i(-135,0,0);
+    glVertex3i(-135,40,0);
+    glVertex3i(-100,40,0);
+    glEnd();
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex3i(-105,5,0);
+    glVertex3i(-90,10,0);
+    glVertex3i(-90,30,0);
+    glVertex3i(-105,35,0);
+    glEnd();
+
+    glPopMatrix();
+    glutPostRedisplay();
+}
+//Top View
+
+void topView(int x,int y,int z)
+{
+    int roadlineX=-300;
+    int LamppostX=-350;
+    int treeXf=-350;
+    int treeXl=528;
+//    Road
+    glColor3ub(58,58,58);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,0,0);
+    glVertex3i(1324,0,0);
+    glVertex3i(1324,100,0);
+    glVertex3i(-200,100,0);
+    glEnd();
+
+    for(int i=25;i>0;i--)
+    {
+        roadlineX+=100;
+        RoadLine(roadlineX,40,0);
+    }
+    //RoadBorder
+    glColor3ub(255,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,95,0);
+    glVertex3i(1324,95,0);
+    glVertex3i(1324,110,0);
+    glVertex3i(-200,110,0);
+    glEnd();
+
+    for(int i=10;i>0;i--)
+    {
+        toplampPost(LamppostX,100,0);
+        LamppostX+=310;
+    }
+
+    topCar();
+    //topTruck();
+
+    //PlayGround
+
+    glColor3ub(52,135,37);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,110,0);
+    glVertex3i(1324,110,0);
+    glVertex3i(1324,240,0);
+    glVertex3i(-200,240,0);
+    glEnd();
+
+    //walkway
+
+    glColor3ub(150,90,50);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,240,0);
+    glVertex3i(1324,240,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(-200,260,0);
+    glEnd();
+
+    //Tree
+
+    for(int i=5;i>=0;i--)
+    {
+        treeXf+=120;
+        otherCircle(treeXf,250,0,10,70,180,50);
+
+    }
+
+    for(int i=5;i>=0;i--)
+    {
+        treeXl+=120;
+        otherCircle(treeXl,250,0,10,70,180,50);
+
+    }
+
+    //Top Tin Shade
+
+    //left
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(0,260,0);
+    glVertex3i(396,260,0);
+    glVertex3i(396,360,0);
+    glVertex3i(0,360,0);
+    glEnd();
+
+    glColor3ub(25,25,25);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,260,0);
+    glVertex3i(0,260,0);
+    glVertex3i(0,320,0);
+    glVertex3i(-200,320,0);
+    glEnd();
+    //right
+    glColor3ub(42,85,6);
+    glBegin(GL_QUADS);
+    glVertex3i(628,260,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(1324,360,0);
+    glVertex3i(628,360,0);
+    glEnd();
+    //white shade bottom
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(0,260,0);
+    glVertex3i(1324,260,0);
+    glVertex3i(1324,265,0);
+    glVertex3i(0,265,0);
+    glEnd();
+    //white shade top
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(0,360,0);
+    glVertex3i(1324,360,0);
+    glVertex3i(1324,355,0);
+    glVertex3i(0,355,0);
+    glEnd();
+
+    //middle
+
+    glColor3ub(42,105,6);
+    glBegin(GL_QUADS);
+    glVertex3i(396,255,0);
+    glVertex3i(628,255,0);
+    glVertex3i(628,365,0);
+    glVertex3i(396,365,0);
+    glEnd();
+    //white shade middle
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(396,255,0);
+    glVertex3i(628,255,0);
+    glVertex3i(628,260,0);
+    glVertex3i(396,260,0);
+    glEnd();
+
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(396,360,0);
+    glVertex3i(628,360,0);
+    glVertex3i(628,365,0);
+    glVertex3i(396,365,0);
+    glEnd();
+
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(396,255,0);
+    glVertex3i(400,255,0);
+    glVertex3i(400,365,0);
+    glVertex3i(396,365,0);
+    glEnd();
+
+    glColor3ub(242,255,255);
+    glBegin(GL_QUADS);
+    glVertex3i(624,255,0);
+    glVertex3i(628,255,0);
+    glVertex3i(628,365,0);
+    glVertex3i(624,365,0);
+    glEnd();
+
+//    Anex-2
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,320,0);
+    glVertex3i(0,320,0);
+    glVertex3i(0,410,0);
+    glVertex3i(-200,410,0);
+    glEnd();
+//    white shade
+    //bottom
+    glColor3ub(255,255,225);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,320,0);
+    glVertex3i(0,320,0);
+    glVertex3i(0,325,0);
+    glVertex3i(-200,325,0);
+    glEnd();
+//    top
+    glColor3ub(255,255,225);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,405,0);
+    glVertex3i(0,405,0);
+    glVertex3i(0,410,0);
+    glVertex3i(-200,410,0);
+    glEnd();
+    //Right
+    glColor3ub(255,255,225);
+    glBegin(GL_QUADS);
+    glVertex3i(-5,260,0);
+    glVertex3i(0,260,0);
+    glVertex3i(0,410,0);
+    glVertex3i(-5,410,0);
+    glEnd();
+
+    //Coridor
+    glColor3ub(40,90,100);
+    glBegin(GL_QUADS);
+    glVertex3i(0,340,0);
+    glVertex3i(100,340,0);
+    glVertex3i(100,400,0);
+    glVertex3i(0,400,0);
+    glEnd();
+
+//Middle Coridor Top
+    glColor3ub(42,105,5);
+    glBegin(GL_QUADS);
+    glVertex3i(0,400,0);
+    glVertex3i(200,400,0);
+    glVertex3i(200,410,0);
+    glVertex3i(0,410,0);
+    glEnd();
+
+//    middle coridor Top
+    glBegin(GL_QUADS);
+    glVertex3i(0,410,0);
+    glVertex3i(200,410,0);
+    glVertex3i(200,510,0);
+    glVertex3i(0,510,0);
+    glEnd();
+
+//    annex 3
+
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(-200,510,0);
+    glVertex3i(200,510,0);
+    glVertex3i(200,610,0);
+    glVertex3i(-200,610,0);
+    glEnd();
+
+//    Annex 4
+
+
+    glColor3ub(42,95,5);
+    glBegin(GL_QUADS);
+    glVertex3i(100,610,0);
+    glVertex3i(300,610,0);
+    glVertex3i(300,770,0);
+    glVertex3i(100,770,0);
+    glEnd();
+
+    glColor3ub(42,105,5);
+    glBegin(GL_QUADS);
+    glVertex3i(300,610,0);
+    glVertex3i(500,610,0);
+    glVertex3i(500,650,0);
+    glVertex3i(300,650,0);
+    glEnd();
+
+//    annex 5
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(500,620,0);
+    glVertex3i(700,620,0);
+    glVertex3i(700,770,0);
+    glVertex3i(500,770,0);
+    glEnd();
+
+//Ashiq Chattor
+    glColor3ub(42,90,5);
+    glBegin(GL_QUADS);
+    glVertex3i(700,640,0);
+    glVertex3i(800,640,0);
+    glVertex3i(800,690,0);
+    glVertex3i(700,690,0);
+    glEnd();
+
+    glColor3ub(42,85,5);
+    glBegin(GL_QUADS);
+    glVertex3i(750,640,0);
+    glVertex3i(900,640,0);
+    glVertex3i(900,770,0);
+    glVertex3i(750,770,0);
+    glEnd();
+
+    drawFilledCircle(900,520,0,110,177);
+
+}
+
+
 //Main Display Function
 void myDisplay()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    int roadlineX=-4096;
+    int roadlineX=-300;
     int treeXf=-350;
     int treeXl=528;
     int lamp=-350;
     int light=-350;
     glPushMatrix();
     glTranslatef(translate_x,translate_y,translate_z);
-   //Full Body
 
-    if(!day)
+
+    if(day==2)
     {
+       //Full Body
         Full(55,55,55);
         //Road
         Road();
@@ -1066,14 +1419,20 @@ void myDisplay()
             roadlineX+=100;
             RoadLine(roadlineX,55,0);
         }
+
+        //moon
+        otherCircle(300.0f,670.0f,0.0f,32.0f,250,250,250);
+        //cloud-1
+        clouds(-450.0f,670.0f,0.0f,173, 173, 133);
         //cloud0
         clouds(-150.0f,630.0f,0.0f,173, 173, 133);
         //cloud1
         clouds(150.0f,670.0f,0.0f,173, 173, 133);
-        //moon
-        otherCircle(300.0f,670.0f,0.0f,32.0f,250,250,250);
-        plane();
-        planeTwo();
+        if(planev)
+        {
+            plane();
+            planeTwo();
+        }
         //cloud2
         clouds(450.0f,600.0f,0.0f,205, 205, 177);
         //cloud3
@@ -1125,14 +1484,17 @@ void myDisplay()
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
         glPopMatrix();
-        truck();
-        car();
+        if(carv)
+        {
+            truck();
+            car();
+        }
         if(rain)
         {
             rainf();
         }
     }
-    else
+    else if(day==1)
     {
         Full(131,183,231);
         //Road
@@ -1147,8 +1509,11 @@ void myDisplay()
         clouds(-100.0f,630.0f,0.0f,250,250,250);
         //cloud1
         clouds(150.0f,670.0f,0.0f,250,250,250);
-        plane();
-        planeTwo();
+       if(planev)
+        {
+            plane();
+            planeTwo();
+        }
         //cloud2
         clouds(450.0f,600.0f,0.0f,250,250,250);
         //cloud3
@@ -1196,40 +1561,125 @@ void myDisplay()
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
         glPopMatrix();
-
-        truck();
-        car();
+        if(carv)
+        {
+            truck();
+            car();
+        }
         if(rain)
         {
             rainf();
         }
+
+    }
+
+    else if(day==3)
+    {
+        Full(131,183,231);
+        //Road
+        Road();
+        //RoadLine
+        for(int i=25;i>0;i--)
+        {
+            roadlineX+=100;
+            RoadLine(roadlineX,55,0);
+        }
+       if(planev)
+        {
+            plane();
+            planeTwo();
+        }
+        //Play Ground
+        playGround(42,95,17);
+        //Middle Top Corridor
+        MiddleTop();
+
+        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
+        //Building
+        FirstBuilding(100,88,54);
+
+        //First 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXf+=120;
+            Tree(treeXf,260,0);
+        }
+        //Last 4 Tree
+        for(int i=5;i>=0;i--)
+        {
+            treeXl+=120;
+            Tree(treeXl,260,0);
+        }
+        //Front top corridor
+        FrontTop();
+
+        //TinShade
+
+        TinShade();
+
+        //lamp post
+        for(int i=9;i>=0;i--)
+        {
+            lamp+=310;
+            lampPost(lamp,130,0);
+        }
+        //light
+        roadBorder();
+        TinShade();
+        circleLine();
+        glColor3ub(0,0,255);
+        tprint(330,433,0,"AIUB");
+
+        Full(181,153,131);
+        topView(0,0,0);
+        glPopMatrix();
     }
     glFlush();
     glutSwapBuffers();
 }
-
-
 
 void keyboard(unsigned char key, int x, int y)
 {
 //-------- spin --------
 if(key=='d')
 {
-    day=true;
+    day=1;
 }
 else if(key=='n')
 {
-    day=false;
+    day=2;
+}
+else if(key=='t')
+{
+    day=3;
 }
 else if(key=='r')
 {
     rain=true;
 }
-else if(key=='t')
+else if(key=='e')
 {
     rain=false;
 }
+else if(key=='c')
+{
+    carv=true;
 }
+else if(key=='v')
+{
+    carv=false;
+}
+else if(key=='p')
+{
+    planev=true;
+}
+else if(key=='o')
+{
+    planev=false;
+}
+}
+
+
 void SpecialKeys(int key, int x, int y)
 {
     switch (key)
@@ -1269,6 +1719,9 @@ void SpecialKeys(int key, int x, int y)
 			break;
 	}
 }
+
+
+
 
 int main(int argc, char** argv)
 {
