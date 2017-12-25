@@ -1631,9 +1631,54 @@ void startscreen(void)
 void controlsScreen()
 {
     setFont(GLUT_BITMAP_TIMES_ROMAN_24);
-    glClearColor(0.000, 0.392, 0.000,0);
+    glClearColor(0.000, 0.000, 0.000,0);
     glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0.596, 0.984, 0.596);
+    drawstring(600.0,700.0,0.0,"INSTRUCTIONS");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,640.0,0.0,"DAY MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,640.0,0.0,"PRESS 'D'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,640.0,0.0,"DAY MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,640.0,0.0,"PRESS 'D'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,600.0,0.0,"NIGHT MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,600.0,0.0,"PRESS 'N'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,560.0,0.0,"CAR MOVING");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,560.0,0.0,"PRESS 'C'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,520.0,0.0,"RAIN MODE");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,520.0,0.0,"PRESS 'R'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,480.0,0.0,"NO RAIN");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,480.0,0.0,"PRESS 'E'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,440.0,0.0,"TOP VIEW");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,440.0,0.0,"PRESS 'T'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,400.0,0.0,"PLANE MOVEMENT");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,400.0,0.0,"PRESS 'P'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,360.0,0.0,"Help");
 
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,360.0,0.0,"PRESS 'H'");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(250.0,320.0,0.0,"Escape");
+    glColor3f(1.000, 0.980, 0.941);
+    drawstring(600.0,320.0,0.0,"PRESS 'ESC'");
+    glColor3f(0.596, 0.984, 0.596);
+    drawstring(400.0,200.0,0.0,"NOW PRESS ENTER TO START THE SYSTEM");
+    glFlush();
 }
 
 void display()
