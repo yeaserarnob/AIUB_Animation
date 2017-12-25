@@ -33,14 +33,14 @@ void myInit (void)
 }
 
 
-void *currentfont; ///added by mahmodul
+void *currentfont;
 
-void setFont(void *font) ///added by mahmodul
+void setFont(void *font)
 {
 	currentfont=font;
 }
 
-void drawstring(float x,float y,float z,char *string) ///added by mahmodul
+void drawstring(float x,float y,float z,char *string)
 {
 	char *c;
 	glRasterPos3f(x,y,z);
@@ -1628,7 +1628,13 @@ void startscreen(void)
     drawstring(400,80,0.0,"PRESS ENTER TO START");
     glFlush();
 }
+void controlsScreen()
+{
+    setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+    glClearColor(0.000, 0.392, 0.000,0);
+    glClear(GL_COLOR_BUFFER_BIT);
 
+}
 
 void display()
 {
@@ -1653,15 +1659,6 @@ void display()
 }
 
 
-
-
-
-
-
-
-
-
-
 //Main Display Function
 void myDisplay()
 {
@@ -1673,7 +1670,7 @@ void myDisplay()
 
     }
     if(flag==1)
-        topViewf();
+        controlsScreen();
         //controlsScreen();
     if(flag>1)
         display();
