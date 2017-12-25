@@ -153,7 +153,7 @@ void playGround(int r,int g,int b)
     glEnd();
 
     //Walkway
-    glColor3ub(140,88,54);
+    glColor3ub(94, 65, 33);
     glBegin(GL_QUADS);
     glVertex3i(-200,250,0);
     glVertex3i(1324,250,0);
@@ -195,10 +195,11 @@ void Light(int x,int y,int z)
 {
     //light
     glColor3ub(200,200,200);
-    glBegin(GL_TRIANGLES);
+    glBegin(GL_QUADS);
     glVertex3i(x+9,y,z);
     glVertex3i(x+110,y,z);
-    glVertex3i(x+60,y+85,z);
+    glVertex3i(x+70,y+85,z);
+    glVertex3i(x+50,y+85,z);
     glEnd();
 
 }
@@ -1553,7 +1554,7 @@ void dayMode()
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
         //Building
-        FirstBuilding(140,80,60);
+        FirstBuilding(134, 89, 45);
 
         //First 4 Tree
         for(int i=5;i>=0;i--)
