@@ -233,18 +233,24 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 =======
 =======
 >>>>>>> 8625d0087f64fec91d4e1223b0d6c4964e164bde
+=======
+>>>>>>> b7652b8df2ae028160b5fa6ca1d72711f674382e
 1508088669 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 8625d0087f64fec91d4e1223b0d6c4964e164bde
 =======
 >>>>>>> 8625d0087f64fec91d4e1223b0d6c4964e164bde
+=======
+>>>>>>> b7652b8df2ae028160b5fa6ca1d72711f674382e
 
 902904872 58c0958e8d482e742c321761f95542773addb7
 	<windows.h>
