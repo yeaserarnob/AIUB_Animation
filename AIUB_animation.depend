@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-<<<<<<< HEAD
-1514194389 source:h:\study\graphics\aiub_animation\aiub\main.cpp
+8511632 <<<< HEAD
+
+1514219745 source:h:\study\graphics\aiub_animation\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
@@ -242,5 +243,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-=======
->>>>>>> b83f4a7b0da864fe2d16a45b360bde3ae564fd1d
+1341006776 
+
+1341006776 f4a7b0da864fe2d16a45b360bde3ae564fd1d
+

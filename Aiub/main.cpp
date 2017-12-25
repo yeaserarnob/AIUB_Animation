@@ -20,6 +20,7 @@ bool rain=false;
 bool carv=false;
 bool planev=false;
 bool top=false;
+int flag=0;
 
 void myInit (void)
 {
@@ -1394,22 +1395,14 @@ void topView(int x,int y,int z)
 }
 
 
-//Main Display Function
-void myDisplay()
+void nightMode()
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int roadlineX=-300;
     int treeXf=-350;
     int treeXl=528;
     int lamp=-350;
     int light=-350;
-    glPushMatrix();
-    glTranslatef(translate_x,translate_y,translate_z);
-
-
-    if(day==2)
-    {
-       //Full Body
+    //Full Body
         Full(55,55,55);
         //Road
         Road();
@@ -1493,9 +1486,16 @@ void myDisplay()
         {
             rainf();
         }
-    }
-    else if(day==1)
-    {
+}
+
+void dayMode()
+{
+        int roadlineX=-300;
+        int treeXf=-350;
+        int treeXl=528;
+        int lamp=-350;
+        int light=-350;
+
         Full(131,183,231);
         //Road
         Road();
@@ -1570,72 +1570,53 @@ void myDisplay()
         {
             rainf();
         }
+}
 
+void topViewf()
+{
+    Full(181,153,131);
+    topView(0,0,0);
+    glPopMatrix();
+
+}
+
+void display()
+{
+    glPushMatrix();
+    glTranslatef(translate_x,translate_y,translate_z);
+
+    if(day==2)
+    {
+       nightMode();
+    }
+    else if(day==1)
+    {
+        dayMode();
     }
 
     else if(day==3)
     {
-        Full(131,183,231);
-        //Road
-        Road();
-        //RoadLine
-        for(int i=25;i>0;i--)
-        {
-            roadlineX+=100;
-            RoadLine(roadlineX,55,0);
-        }
-       if(planev)
-        {
-            plane();
-            planeTwo();
-        }
-        //Play Ground
-        playGround(42,95,17);
-        //Middle Top Corridor
-        MiddleTop();
-
-        drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
-        //Building
-        FirstBuilding(100,88,54);
-
-        //First 4 Tree
-        for(int i=5;i>=0;i--)
-        {
-            treeXf+=120;
-            Tree(treeXf,260,0);
-        }
-        //Last 4 Tree
-        for(int i=5;i>=0;i--)
-        {
-            treeXl+=120;
-            Tree(treeXl,260,0);
-        }
-        //Front top corridor
-        FrontTop();
-
-        //TinShade
-
-        TinShade();
-
-        //lamp post
-        for(int i=9;i>=0;i--)
-        {
-            lamp+=310;
-            lampPost(lamp,130,0);
-        }
-        //light
-        roadBorder();
-        TinShade();
-        circleLine();
-        glColor3ub(0,0,255);
-        tprint(330,433,0,"AIUB");
-
-        Full(181,153,131);
-        topView(0,0,0);
-        glPopMatrix();
+        topViewf();
     }
     glFlush();
     glutSwapBuffers();
+}
+//Main Display Function
+void myDisplay()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    if(flag==0)
+    {
+        topViewf();
+    }
+    else if(flag==1)
+    {
+        nightMode();
+    }
+    else
+        display();
+
 }
 
 void keyboard(unsigned char key, int x, int y)
@@ -1676,6 +1657,10 @@ else if(key=='p')
 else if(key=='o')
 {
     planev=false;
+}
+else if(key==13)
+{
+    flag++;
 }
 }
 
