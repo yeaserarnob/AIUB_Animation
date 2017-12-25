@@ -1720,9 +1720,6 @@ void SpecialKeys(int key, int x, int y)
 	}
 }
 
-
-
-
 int main(int argc, char** argv)
 {
 glutInit(&argc, argv);
