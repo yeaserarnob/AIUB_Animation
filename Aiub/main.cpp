@@ -1216,7 +1216,7 @@ void topView(int x,int y,int z)
     //Top Tin Shade
 
     //left
-    glColor3ub(42,85,6);
+    glColor3ub(42,85,66);
     glBegin(GL_QUADS);
     glVertex3i(0,260,0);
     glVertex3i(396,260,0);
@@ -1232,7 +1232,7 @@ void topView(int x,int y,int z)
     glVertex3i(-200,320,0);
     glEnd();
     //right
-    glColor3ub(42,85,6);
+    glColor3ub(42,85,66);
     glBegin(GL_QUADS);
     glVertex3i(628,260,0);
     glVertex3i(1324,260,0);
@@ -1258,7 +1258,7 @@ void topView(int x,int y,int z)
 
     //middle
 
-    glColor3ub(42,105,6);
+    glColor3ub(42,105,86);
     glBegin(GL_QUADS);
     glVertex3i(396,255,0);
     glVertex3i(628,255,0);
@@ -1299,7 +1299,7 @@ void topView(int x,int y,int z)
     glEnd();
 
 //    Anex-2
-    glColor3ub(42,85,5);
+    glColor3ub(42,85,45);
     glBegin(GL_QUADS);
     glVertex3i(-200,320,0);
     glVertex3i(0,320,0);
@@ -1341,8 +1341,8 @@ void topView(int x,int y,int z)
     glVertex3i(0,400,0);
     glEnd();
 
-//Middle Coridor Top
-    glColor3ub(42,105,5);
+    //Middle Coridor Top
+    glColor3ub(42,105,85);
     glBegin(GL_QUADS);
     glVertex3i(0,400,0);
     glVertex3i(200,400,0);
@@ -1351,6 +1351,8 @@ void topView(int x,int y,int z)
     glEnd();
 
 //    middle coridor Top
+
+    glColor3ub(42,105,85);
     glBegin(GL_QUADS);
     glVertex3i(0,410,0);
     glVertex3i(200,410,0);
@@ -1360,18 +1362,18 @@ void topView(int x,int y,int z)
 
 //    annex 3
 
-    glColor3ub(42,85,5);
+    glColor3ub(42,95,45);
     glBegin(GL_QUADS);
     glVertex3i(-200,510,0);
     glVertex3i(200,510,0);
-    glVertex3i(200,610,0);
-    glVertex3i(-200,610,0);
+    glVertex3i(200,660,0);
+    glVertex3i(-200,660,0);
     glEnd();
 
 //    Annex 4
 
 
-    glColor3ub(42,95,5);
+    glColor3ub(42,95,45);
     glBegin(GL_QUADS);
     glVertex3i(100,610,0);
     glVertex3i(300,610,0);
@@ -1379,7 +1381,7 @@ void topView(int x,int y,int z)
     glVertex3i(100,770,0);
     glEnd();
 
-    glColor3ub(42,105,5);
+    glColor3ub(42,105,85);
     glBegin(GL_QUADS);
     glVertex3i(300,610,0);
     glVertex3i(500,610,0);
@@ -1388,7 +1390,7 @@ void topView(int x,int y,int z)
     glEnd();
 
 //    annex 5
-    glColor3ub(42,85,5);
+    glColor3ub(42,85,45);
     glBegin(GL_QUADS);
     glVertex3i(500,620,0);
     glVertex3i(700,620,0);
@@ -1397,7 +1399,7 @@ void topView(int x,int y,int z)
     glEnd();
 
 //Ashiq Chattor
-    glColor3ub(42,90,5);
+    glColor3ub(42,90,45);
     glBegin(GL_QUADS);
     glVertex3i(700,640,0);
     glVertex3i(800,640,0);
@@ -1405,7 +1407,7 @@ void topView(int x,int y,int z)
     glVertex3i(700,690,0);
     glEnd();
 
-    glColor3ub(42,85,5);
+    glColor3ub(42,85,45);
     glBegin(GL_QUADS);
     glVertex3i(750,640,0);
     glVertex3i(900,640,0);
@@ -1551,7 +1553,7 @@ void dayMode()
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
         //Building
-        FirstBuilding(100,88,54);
+        FirstBuilding(140,80,60);
 
         //First 4 Tree
         for(int i=5;i>=0;i--)
