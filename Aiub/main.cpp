@@ -6,6 +6,7 @@
 #include <GL/gl.h>
 #include <time.h>
 #include <iostream>
+#include <MMSystem.h>
 using namespace std;
 
 float translate_x = 0.0;
@@ -153,7 +154,7 @@ void playGround(int r,int g,int b)
     glEnd();
 
     //Walkway
-    glColor3ub(140,88,54);
+    glColor3ub(94, 65, 33);
     glBegin(GL_QUADS);
     glVertex3i(-200,250,0);
     glVertex3i(1324,250,0);
@@ -195,10 +196,11 @@ void Light(int x,int y,int z)
 {
     //light
     glColor3ub(200,200,200);
-    glBegin(GL_TRIANGLES);
+    glBegin(GL_QUADS);
     glVertex3i(x+9,y,z);
     glVertex3i(x+110,y,z);
-    glVertex3i(x+60,y+85,z);
+    glVertex3i(x+70,y+85,z);
+    glVertex3i(x+50,y+85,z);
     glEnd();
 
 }
@@ -619,10 +621,10 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 
 void car()
 {
-    static float a=-200.0f;
+    static float a=-400.0f;
     if(a>=1324)
     {
-         a=-200.0f;
+         a=-400.0f;
 
     }
     else
@@ -718,10 +720,10 @@ void car()
 
 void car2()
 {
-    static float a=-700.0f;
+    static float a=-1100.0f;
     if(a>=1324)
     {
-         a=-700.0f;
+         a=-1100.0f;
 
     }
     else
@@ -818,7 +820,7 @@ void car2()
 
 void truck()
 {
-    static float a=550.0f;
+    static float a=650.0f;
     if(a<=-1300)
     {
          a=550.0f;
@@ -1149,8 +1151,6 @@ void circleLine()
     glVertex3i(1112,450,0);
     glVertex3i(812,400,0);
     glVertex3i(1088,400,0);
-
-
     glEnd();
 }
 
@@ -1188,6 +1188,7 @@ void rainf()
     glEnd();
     glPopMatrix();
     glutPostRedisplay();
+
 }
 //LampStand
 void toplampPost(int x,int y,int z)
@@ -1520,7 +1521,6 @@ void topView(int x,int y,int z)
 
 }
 
-
 void nightMode()
 {
     int roadlineX=-300;
@@ -1612,7 +1612,9 @@ void nightMode()
 
         if(rain)
         {
+
             rainf();
+            //PlaySound(TEXT("D:\\GraohicsProject\\AIUB\\Aiub\\rain-07.wav"), NULL,SND_FILENAME|SND_LOOP);
         }
 }
 
@@ -1655,7 +1657,7 @@ void dayMode()
 
         drawFilledCircle(950.0f,500.0f,0.0f,170.0f,137.0f);
         //Building
-        FirstBuilding(140,80,60);
+        FirstBuilding(134, 89, 45);
 
         //First 4 Tree
         for(int i=5;i>=0;i--)
