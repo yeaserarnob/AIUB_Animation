@@ -1601,22 +1601,33 @@ void display()
     glFlush();
     glutSwapBuffers();
 }
+
+
+
+
+
+
+
+
+
+
+
 //Main Display Function
 void myDisplay()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     if(flag==0)
-    {
-        topViewf();
-    }
-    else if(flag==1)
-    {
         nightMode();
-    }
-    else
+        //startscreen();
+    if(flag==1)
+        topViewf();
+        //controlsScreen();
+    if(flag>1)
         display();
 
+    glFlush();
+    glutSwapBuffers();
 }
 
 void keyboard(unsigned char key, int x, int y)
