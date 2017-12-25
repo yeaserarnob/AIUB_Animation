@@ -621,7 +621,11 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 
 void car()
 {
+<<<<<<< HEAD
     static float a=-400.0f;
+=======
+    static float a=-300.0f;
+>>>>>>> a1354934d1fbf0ac029967e711a0472efbcecb04
     if(a>=1324)
     {
          a=-400.0f;
