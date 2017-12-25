@@ -1317,6 +1317,7 @@ void topView(int x,int y,int z)
 
     //Top Tin Shade
 
+//    anex 1
     //left
     glColor3ub(42,85,66);
     glBegin(GL_QUADS);
@@ -1461,6 +1462,34 @@ void topView(int x,int y,int z)
     glVertex3i(200,510,0);
     glVertex3i(0,510,0);
     glEnd();
+
+
+    ///garden front
+
+    glColor3ub(0,255,0);
+    glBegin(GL_QUADS);
+    glVertex3i(250,410,0);
+    glVertex3i(290,410,0);
+    glVertex3i(290,550,0);
+    glVertex3i(250,550,0);
+    glEnd();
+
+
+    ///pool
+
+     glColor3ub(0,255,0);
+    glBegin(GL_POLYGON);
+    glVertex3i(350,410,0);
+    glVertex3i(650,410,0);
+    glVertex3i(650,550,0);
+    glVertex3i(350,550,0);
+    glEnd();
+
+    otherCircle(355,425,0,15,0,255,0);
+    otherCircle(355,535,0,15,0,255,0);
+    otherCircle(525,465,0,25,153,204,255);
+    otherCircle(520,485,0,25,153,204,255);
+    otherCircle(500,490,0,25,0,255,0);
 
 //    annex 3
 

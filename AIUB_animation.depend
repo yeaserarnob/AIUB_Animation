@@ -229,28 +229,20 @@
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-1341010374 D
+1508088669 D
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
-=======
-=======
->>>>>>> 8625d0087f64fec91d4e1223b0d6c4964e164bde
-=======
->>>>>>> b7652b8df2ae028160b5fa6ca1d72711f674382e
 1508088669 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 8625d0087f64fec91d4e1223b0d6c4964e164bde
-=======
->>>>>>> 8625d0087f64fec91d4e1223b0d6c4964e164bde
-=======
->>>>>>> b7652b8df2ae028160b5fa6ca1d72711f674382e
+
+902904872 25d0087f64fec91d4e1223b0d6c4964e164bde
+
+902904872 652b8df2ae028160b5fa6ca1d72711f674382e
+
+1508088669 5d0087f64fec91d4e1223b0d6c4964e164bde
+
+1508088669 52b8df2ae028160b5fa6ca1d72711f674382e
 
 902904872 58c0958e8d482e742c321761f95542773addb7
 	<windows.h>
@@ -271,7 +263,7 @@
 
 1341006776 f4a7b0da864fe2d16a45b360bde3ae564fd1d
 
-1514236470 source:d:\graohicsproject\aiub\aiub\main.cpp
+1514239001 source:d:\graohicsproject\aiub\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
