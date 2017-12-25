@@ -22,6 +22,13 @@ bool planev=false;
 bool top=false;
 int flag=0;
 
+
+void delay(unsigned int mseconds)
+{
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
+}
+
 void myInit (void)
 {
     glClearColor(1.0, 1.0, 1.0, 0.0);
