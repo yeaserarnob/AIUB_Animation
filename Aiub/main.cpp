@@ -1495,12 +1495,13 @@ void nightMode()
         circleLine();
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
-        glPopMatrix();
         if(carv)
         {
             truck();
             car();
         }
+        glPopMatrix();
+
         if(rain)
         {
             rainf();
@@ -1579,12 +1580,13 @@ void dayMode()
         circleLine();
         glColor3ub(0,0,255);
         tprint(330,433,0,"AIUB");
-        glPopMatrix();
         if(carv)
         {
             truck();
             car();
         }
+        glPopMatrix();
+
         if(rain)
         {
             rainf();
