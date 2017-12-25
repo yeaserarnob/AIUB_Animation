@@ -520,7 +520,7 @@ void HorizontalLine(int x,int y,int z)
 void MiddleTop()
 {
     //Top
-    glColor3ub(205,205,205);
+    glColor3ub(205,205,204);
     glBegin(GL_QUADS);
     glVertex3i(300,430,0);
     glVertex3i(405,430,0);
@@ -621,10 +621,10 @@ void otherCircle(GLfloat x, GLfloat y,GLfloat z, GLfloat radius,int r,int g,int 
 
 void car()
 {
-    static float a=-300.0f;
+    static float a=-400.0f;
     if(a>=1324)
     {
-         a=-200.0f;
+         a=-400.0f;
 
     }
     else
@@ -720,10 +720,10 @@ void car()
 
 void car2()
 {
-    static float a=-700.0f;
+    static float a=-1100.0f;
     if(a>=1324)
     {
-         a=-700.0f;
+         a=-1100.0f;
 
     }
     else
