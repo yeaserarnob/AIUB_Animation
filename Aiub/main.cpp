@@ -1,6 +1,5 @@
-/*
-<<<<<<< HEAD
-   -------AUTHOR----------
+///GitHub Link: https://github.com/yeaserarnob/AIUB_Animation
+/*   -------AUTHOR----------
     1.ARNOB, MD. YEASER NAIME ARNOB
        ID:15-28915-1
     2.RAHMAN,MOBINUR
@@ -11,19 +10,6 @@
        ID:15-28858-1
 -------------------------------
 */
-///GitHub Link: https://github.com/yeaserarnob/AIUB_Animation
-=======
-1.ARNOB, MD. YEASER NAIME ARNOB
-15-28915-1
-2.RAHMAN,MOBINUR
-15-28878-1
-3.BABUL,MAHMODUL HASAN
-15-29262-1
-4.UZZAMAN, MD. HASAN
-15-28858-1
-
-*/
->>>>>>> 8f0980327b16984e9f1f45afdefda130ed080c98
 
 #include <stdio.h>
 #include <windows.h>
