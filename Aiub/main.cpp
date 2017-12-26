@@ -1,3 +1,15 @@
+/*
+1.ARNOB, MD. YEASER NAIME ARNOB
+15-28915-1
+2.RAHMAN,MOBINUR
+15-28878-1
+3.BABUL,MAHMODUL HASAN
+15-29262-1
+4.UZZAMAN, MD. HASAN
+15-28858-1
+
+*/
+
 #include <stdio.h>
 #include <windows.h>
 #include <math.h>
