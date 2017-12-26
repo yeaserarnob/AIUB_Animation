@@ -15,3 +15,7 @@
                                             Escape:   Press 'ESC'
                                             
                             #NOTICE: Make sure you installed 'glut' opengl on your compiler.
+                            
+                                      If you need full overview, run the project.
+                                      Here is a short overview of this animation.
+      <a href="https://imgflip.com/gif/21px4m"><img src="https://i.imgflip.com/21px4m.gif" title="made at imgflip.com"/></a>
