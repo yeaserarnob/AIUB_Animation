@@ -127,6 +127,7 @@ void RoadLine(int x,int y,int z)
     //TranslateRoadLine(x,y,z);
 }
 
+//print text
 void tprint(int x, int y,int z, char *string)
 {
     //set the position of the text in the window using the x and y coordinates
@@ -140,6 +141,7 @@ void tprint(int x, int y,int z, char *string)
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,string[i]);
     }
 };
+//print text
 void ttprint(int x, int y,int z, char *string)
 {
     //set the position of the text in the window using the x and y coordinates
