@@ -1,6 +1,6 @@
                                             # AIUB_2D_Animation
                  This is an opengl graphics project. In ths project we try to show 'AIUB CAMPUS' 2D view. 
-		 Add AIUB_animation.cbp file to add this as a glut project and run main.cpp
+		 	Add AIUB_animation.cbp file to add this as a glut project and run main.cpp
                                                
                                                Instructions:
                                             Day Mode:        Press 'D'
