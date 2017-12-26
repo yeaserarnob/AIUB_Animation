@@ -231,7 +231,11 @@
 
 1508088669 D
 
+<<<<<<< HEAD
 902904872 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+=======
+1508088669 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+>>>>>>> 61d1b3ea627ec8241ac22b8a9179d143adb09f70
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -263,7 +267,7 @@
 
 1341006776 f4a7b0da864fe2d16a45b360bde3ae564fd1d
 
-1514235943 source:d:\graohicsproject\aiub\aiub\main.cpp
+1514239001 source:d:\graohicsproject\aiub\aiub\main.cpp
 	<stdio.h>
 	<windows.h>
 	<math.h>
