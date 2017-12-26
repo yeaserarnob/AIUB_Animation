@@ -22,6 +22,7 @@
 #include <MMSystem.h>
 using namespace std;
 
+//Global Variable
 float translate_x = 0.0;
 float translate_y = 0.0;
 float translate_z = 0.0;
@@ -1756,7 +1757,7 @@ void topViewf()
 
 }
 
-
+//Descriptive Entro
 void startscreen(void)
 {
     setFont(GLUT_BITMAP_TIMES_ROMAN_24);
@@ -1784,6 +1785,8 @@ void startscreen(void)
     drawstring(400,80,0.0,"PRESS ENTER TO START");
     glFlush();
 }
+
+//Instruction
 void controlsScreen()
 {
     setFont(GLUT_BITMAP_TIMES_ROMAN_24);
